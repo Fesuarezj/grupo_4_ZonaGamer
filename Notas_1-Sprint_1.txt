@@ -1,0 +1,27 @@
+
+1. Crear Reposotorio Git : "grupo_4_ZonaGamer(Mandar URL)" / https://github.com/Fesuarezj/grupo_4_ZonaGamer.git
+	-->wireframes
+	-->design
+
+2. Temática : /Tecnología/Insumos de informática/PC's /Gamer
+2.1 README.md : descripción
+2.2 Descripción del equipo
+3 Referentes: 	(5 sitios)
+	https://compragamer.com/
+	https://www.mexx.com.ar/
+	https://www.fullh4rd.com.ar/
+	https://www.gamingcity.com.ar/
+	https://www.gezatek.com.ar
+
+4 wireframe y Boceto
+
+
+/*/*/*/*/*
+echo "# grupo_4_ZonaGamer" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Fesuarezj/grupo_4_ZonaGamer.git
+git push -u origin main
+
