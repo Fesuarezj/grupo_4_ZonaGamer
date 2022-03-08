@@ -1,6 +1,6 @@
 TEMATICA DEL SITIO Y PUBLICO OBJETIVO
 
-. La temática del sitio es la venta de insumos para PC (Hardaware) y está orientada a todo tipo de público, 
+. La temática del sitio es la venta de insumos para PC (Hardaware) y está orientada a todo tipo de público,
 ya sea para el hogar, trabajo, empresa, gamer o cualquier actividad que requiera de una PC para se desarrollo.
 
 .Los productos ofrecidos por Zona Gamer son básicamente todos los necessarios para el armado de una PC, tanto
@@ -9,6 +9,8 @@ son de las principales marcas del mercado ya que consideramos que muy importatnt
 base al uso que nuestros clientes le daran.
 
 . Los integrantes del equipo somos todos aprendices, con ganas de poder el día de mañana dedicarnos a esto.
+Tenemos ganas de aprender, compartir ideas, debatir, buscar soluciones a los distintos obstaculos que se nos presenten
+y asi poder lograr hacer un buen proyecto integrador como primer experiencia en el mundo de la programación.
 
 LISTADO DE PAGINAS REFERENTES
 
