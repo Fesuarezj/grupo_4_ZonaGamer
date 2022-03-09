@@ -9,15 +9,8 @@ son de las principales marcas del mercado ya que consideramos que muy importatnt
 base al uso que nuestros clientes le daran.
 
 . Los integrantes del equipo somos todos aprendices, con ganas de poder el día de mañana dedicarnos a esto.
-Tenemos ganas de aprender, compartir ideas, debatir, buscar soluciones a los distintos obstaculos que se nos presenten y asi poder lograr hacer un buen proyecto integrador como primer experiencia en el mundo de la programación.
-
-. Somos un equipo conformado por integrantes de diferentes paises. Estamos, un colombiano y tres argentinos con ganas de colaborarnos y hacer un excelente trabajo en equipo donde podamos poner en práctica lo aprendido.
-
-Somos:
-    . Franklin Enrique Suarez Jurado, de la ciudad de Santa Marta (Colombia), ciudad de la costa caribe colombiana denominada la bahía más linda de América. Son profesional en Infraestructura Tecnológica y con alrededor de 6 años de experiencia en el campo de la Seguridad de la Información en una entidad estatal. 
-    Soy soltero, padre de Juan David, un brillante niño de 12 años y que sueña con estudiar en Japón o Canadá. ¡¡Soy apasionado por la tecnología y siempre busco estar actualizando mis conocimientos frecuentemente, estoy a sus Servicios!!
-
-
+Tenemos ganas de aprender, compartir ideas, debatir, buscar soluciones a los distintos obstaculos que se nos presenten
+y asi poder lograr hacer un buen proyecto integrador como primer experiencia en el mundo de la programación.
 
 LISTADO DE PAGINAS REFERENTES
 
