@@ -23,6 +23,11 @@ Photoshop. Con el pasar de los años aprendi de manera autodidacta (videos de Yo
 formatear un sistema ooperativo, instalar un sistema operativo, etc. un poco de todo. Hoy me encuentro es este nuevo camino y desafio que en principio surgio ya que como comente en líneas atras
 me gusta el diseño y queria aprender a diseñar y programar sitios y aplicaciones web.
 
+. Nahuel Lescano, de Buenos Aires - Argentina (Zona Oeste), actualmente trabajo en el Ministerio de transporte como administrativo y tengo 4 años en el sector.
+    Mi objetivo con este curso es formar mis conocimientos en base a la programación y desarrollo para darle un cambio a mi vida.
+    Estoy en pareja y convivimos juntos sin hijos, soñamos con conocer el mundo y trabajar de lo que nos apasiona.
+
+
 LISTADO DE PAGINAS REFERENTES
 
 https://www.mexx.com.ar/
