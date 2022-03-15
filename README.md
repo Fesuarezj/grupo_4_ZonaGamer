@@ -24,9 +24,8 @@ formatear un sistema ooperativo, instalar un sistema operativo, etc. un poco de 
 me gusta el diseño y queria aprender a diseñar y programar sitios y aplicaciones web.
 
 . Nahuel Lescano, de Buenos Aires - Argentina (Zona Oeste), actualmente trabajo en el Ministerio de transporte como administrativo y tengo 4 años en el sector.
-    Mi objetivo con este curso es formar mis conocimientos en base a la programación y desarrollo para darle un cambio a mi vida.
-    Estoy en pareja y convivimos juntos sin hijos, soñamos con conocer el mundo y trabajar de lo que nos apasiona.
-
+Mi objetivo con este curso es formar mis conocimientos en base a la programación y desarrollo para darle un cambio a mi vida.
+Estoy en pareja y convivimos juntos sin hijos, soñamos con conocer el mundo y trabajar de lo que nos apasiona.
 
 LISTADO DE PAGINAS REFERENTES
 
@@ -41,3 +40,7 @@ https://compragamer.com/index.php
 https://www.gezatek.com.ar/
 
 https://www.hypergaming.com.ar/
+
+LINK TABLERO DE TRABAJO TRELLO
+
+https://trello.com/b/FqrBR5Le/tareas-sprint-2
