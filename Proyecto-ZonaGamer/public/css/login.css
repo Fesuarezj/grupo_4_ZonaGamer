@@ -1,0 +1,186 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+  background-color: #101217;
+}
+/*CAJAS HEADER*/
+h1{
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h2{
+    font-size: 20px;
+    color: #109dfa;
+    text-align: center;
+    margin: 8%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h3{
+    color: lightslategrey;
+    font-size: 20px;
+    text-align: center;
+}
+h4{
+    font-size: 20px;
+    color: #109dfa;
+    text-align: center;
+    margin: 8%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+}
+.headerlogin{
+  background-color: black;
+  height: 130px;
+  display: flex;
+  flex-direction: row;
+}
+.cajaimagen{ 
+  background-color: black;
+  width: 35%;
+}
+.cajaimagen img{
+  width: 129px;
+  
+}
+.cajalinks{ 
+  width:35%;
+  color: #109dfa;
+  display: flex;
+  
+}
+/*CAJA HIJO DE CAJA LINKS*/
+.texto1{
+  width: 33%;
+  font-size: 20px;
+  margin-top: auto;
+  
+}
+.texto2{
+  width: 33%;
+  font-size: 20px;
+  margin-top: auto;
+}
+.texto3{
+  width: 33%;
+  font-size: 20px;
+  margin-top: auto;
+}
+/*///////*/
+
+.cajaredes{
+  color: #109dfa;
+  font-size: 28px;
+  margin: auto;
+  margin-bottom: 5px;
+  width: 344px;
+}
+.cajaregistro{
+  width: 10%;
+  color: #109dfa;
+  margin: auto;
+  margin-bottom: 5px;
+  text-align: left;
+}
+/*RGB*/
+.cajargb{
+  height: 2px;
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(150deg, #3502eb, #02f122, #fd46f4, #3502eb);
+  background-size: 50% 70%;
+  animation: BgGradient 2s ease infinite;
+}
+@keyframes BgGradient {
+    0% {background-position: 0% 50%;}
+    50% {background-color: 100% 50%;}
+    100% {background-color: 0% 50%;}  
+} 
+/*CAJAS*/
+.padre{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.hijo1{
+     width: 33%;
+     background-color: #101217;
+}
+.hijo2{
+    width: 33%;
+    justify-content: center;
+    background-color: #101217;
+}
+/*CAJAS HIJO 2*/
+.fotologin{
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+    border-radius: 50%;
+    margin: auto;
+    border-color: #109dfa;  
+}
+.email{
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+}
+.contraseña{
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    margin-bottom: 27px;
+}
+input{
+    width: 60%;
+    padding: 3%;
+    background-color: black;
+    height: 29px;
+    border-color: #109dfa;
+    border-radius: 20px;
+    color: white;
+    justify-content: space-between;
+    display: flex;
+}
+.botones{
+    display: flex;
+    flex-direction:column;
+    color: #109dfa;
+    font-size: 26px;
+    position: relative;
+    left:30%; 
+}
+h5{
+  position: relative;
+  justify-content: space-between;
+  display: flex;
+  margin: 12px;
+}
+h6{
+  font-size: 12px;
+  position: relative;
+  left: 11%;
+  margin-top: -29px;
+}
+/*///////*/
+.hijo3{
+    width: 33%;
+    background-color: #101217;
+}
+.barradesplegable{
+  width: 40%;
+  margin: 53px auto;
+  border-radius: 20px;
+  border-color: #109dfa;
+  background-color: #101217;
+ border-style: solid;
+}
+button{
+  background-color: #109dfa;
+  border-radius: 20px;
+  display: flex;
+  position: relative;
+  left:93%;
+}
