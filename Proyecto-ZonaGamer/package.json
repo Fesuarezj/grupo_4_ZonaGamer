@@ -8,6 +8,7 @@
   },
   "repository": {
     "type": "git",
+    "start": "nodemon app.js",
     "url": "git+https://github.com/Fesuarezj/grupo_4_ZonaGamer.git"
   },
   "keywords": [
