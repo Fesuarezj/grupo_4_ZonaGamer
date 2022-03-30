@@ -5,6 +5,14 @@
     --azulClaro: #1a3c7d;
     --azulMedio: #06296b;
     --azulOscuro: #05183c;
+    --grisOscuro: #222222;
+    --grisMedio: #444444;
+    --blanco: #ffffff;
+    --negro: #000000;
+    --cyan: cyan;
+    --red: red;
+    --yellowGreen: yellowgreen;
+    --celestePaula: #109dfa;
 }
 body {
     font-family: var(--fuentePrincipal);
@@ -12,91 +20,63 @@ body {
 
 /* HEADER */
 
-.header {
+.main-header {
+    background-color: var(--negro);
     display: flex;
-}
-.contenedor-img-top {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    background-color: #222222;
-    border-top: 2px solid var(--azulClaro);
-    border-bottom: 2px solid var(--azulClaro);
-    align-items: center;
-}
-.section-redsocial {
-    color: white;
-    font-size: 5px;
-    display: flex;
-    align-items: center;
-    padding-right: 10px;
+    flex-direction: column; 
+    justify-content: center;
 }
 
-.contenedor-img {
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    background-color: #000000;
-}
-.img-header {
-    width: 40px;
-    padding: 5px 5px;
-    align-items: center;
-}
-.logo {
-    max-width: 15%;
-    padding-left: 10px;
+.logo-svg {
     display: none;
 }
-.logo:hover{
-    cursor: pointer;
-}
-.input-navbar {
-    height: 20px;
-    width: 60%;
-    align-items: center;
-    margin-left: 10px;
-    margin-right: 5px;
-}
-.nav-login {
+
+.contenedor2 {
     display: flex;
-    justify-content: space-between;
-    background-color: #000000;
-    align-items: center;
-    font-size: 10px;
+    justify-content: center;
+}
+
+.contenedor-barra {
+    margin-top: 18px;
+    margin-left: 10px;
+}
+
+.barraBusqueda {
+    border-radius: 5px;
+    position: relative;
+    left: 10px;
+}
+
+.nav-bar {
+    display: flex;
+    position: relative;
+    right: 30px;
+}
+
+.nav-bar li a {
+    text-decoration: none;
+    color: var(--blanco);
     font-weight: 600;
-    padding-right: 10px;
-    height: 25px;
+    font-size: 1rem;
+    padding-left: 10px;
 }
-.nav-link {
-    text-decoration: none;
-    color: white;
+
+.fa, .fas {
+    color: var(--celestePaula)
 }
-.nav-link:hover {
-    color: cyan;
-}
-nav a {
-    padding: 4px;
-}
-.nav-logo {
-    text-transform: uppercase;
-    text-decoration: none;
-    font-size: 16px;
-    color: red;
-    padding-left: 10px; 
-}
-.nav-logo:hover {
-    color: cyan;
+
+.contenedor-img {  
+    display: none;
 }
 
 /* MAIN */
 
 .contenedor {
-    background-color: #222222;
+    background-color: var(--grisOscuro);
 }
 
 .titulo__producto {
-    color: #ffffff;
+    color: var(--blanco);
     text-align: center;
     font-weight: bold;
     margin: 0;
@@ -117,14 +97,14 @@ nav a {
 /* PRODUCTO */
 
 .producto {
-    background-color: #444444;
+    background-color: var(--grisMedio);
     padding: 1.5rem;
     border-radius: 1rem;
     text-decoration: none;    
 }
 
 .producto:hover {
-    box-shadow: 0px 0px 5px 5px #ffffff;
+    box-shadow: 0px 0px 5px 5px var(--blanco);
     transition: all 0.5s;
 }
 
@@ -138,7 +118,7 @@ nav a {
 }
 
 .producto__imagen:hover {
-    box-shadow: 0px 0px 5px 5px #ffffff;
+    box-shadow: 0px 0px 5px 5px var(--blanco);
     transition: all 0.5s;
 }
 
@@ -148,13 +128,13 @@ nav a {
 
 .producto__nombre {
     font-size: 2rem;
-    color: #05183c;   
+    color: var(--celestePaula);   
     text-transform: uppercase;
 }
 
 .producto__precio {
     font-size: 2rem;
-    color: #ffffff;    
+    color: var(--blanco);
 }
 
 .producto__nombre, .producto__precio {
@@ -179,7 +159,7 @@ nav a {
 }
 
 .tipo__producto:hover {
-    box-shadow: 0px 0px 3px 3px #ffffff;
+    box-shadow: 0px 0px 3px 3px var(--blanco);
 }
 
 .tipo__producto__informacion p {
@@ -192,13 +172,13 @@ nav a {
 .navegacion {
     display: flex;
     justify-content: space-around;
-    color: #ffffff;
+    color: var(--blanco);
 }
 
 
 .sub__menu li a, .sub__menu2  li a {
     text-decoration: none;
-    color: #000000;
+    color: var(--negro);
     font-weight: 550;
 }
 
@@ -220,19 +200,17 @@ nav a {
 
 .tipo__producto__nombre {
     text-align: center;
-    color: #ffffff;
+    color: var(--blanco);
 }
 
 .tipo__producto a {
     text-decoration: none;
 }
 
-
-
 /* FOOTER */
 
 footer {
-    background-color: #000000;
+    background-color: var(--negro);
     padding: 50px;
 }
 
@@ -241,7 +219,29 @@ footer {
 
 /* MEDIA QUERYS */
 
-@media (min-width: 480px) {
+@media (min-width: 480px) {  
+    .main-header {
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 10px;
+    }
+    .logo-svg {       
+        display: block;
+        width: 100px;
+        margin-left: 15px;
+        margin-top:15px;
+    }  
+    .contenedor2-1 {
+        position: relative;
+        top: 20px;
+    }
+    .nav-bar {
+        position: relative;
+        right: 15px;
+    }
+    .nav-bar li a {
+        font-size: 12px;
+    }
     .grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -253,36 +253,43 @@ footer {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
         padding: 1rem;
-    }
-    .img-header {
-        width: 60px;
-        padding: 5px 5px;
-        align-items: center;
-    }
-    .input-navbar {
-        height: 20px;
-        width: 80%;
-        align-items: center;
-        margin-left: 10px;
-        margin-right: 5px;
-    }
+    }   
     div section h2 {
         padding: 3px;
         font-size: 10px;
-    }
-    .nav-logo {
-        text-transform: uppercase;
-        text-decoration: none;
-        font-size: 22px;
-        color: red;
-        padding-left: 10px;
-    }
-    .nav-link {     
-        font-size: 14px;
-    }    
+    } 
 }
 
 @media (min-width: 768px) {
+    .main-header {
+        display: flex;
+        flex-direction: row;
+    }   
+    .barraBusqueda {
+        position: relative;
+        left: 30px;
+    }
+    .contenedor2 {
+        display: flex;
+        flex-direction: column;      
+    }
+    .contenedor2-1 {
+        margin-left: 40px;
+    }
+    .nav-bar {
+        position: relative;
+        right: 0px;
+    }
+
+    .nav-bar li a {
+        font-size: 14px;
+    }
+    .contenedor-img {
+        display: block;
+        position: relative;
+        top: 15px;
+        left: 30px;
+    }
     .grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -316,7 +323,6 @@ footer {
     .navegacion {
         display: none;
     }
-
 }
 
 @media (min-width: 1140px) {

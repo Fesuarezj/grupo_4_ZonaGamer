@@ -1,0 +1,22 @@
+
+1. Fuentes
+
+ fuentePrincipal: 'Ubuntu', sans-serif;
+
+ 2. Paleta de Colores
+
+    negro: #0c0d0c;  
+    grisOscuro: #121217;
+    azulClaro: #1a3c7d;
+    azulMedio: #06296b;
+    azulOscuro: #05183c;
+    grisOscuro: #222222;
+    grisMedio: #444444;
+    blanco: #ffffff;
+    negro: #000000;
+    cyan: cyan;
+    red: red;
+    yellowGreen: yellowgreen;
+    celestePaula: #109dfa
+	
+
