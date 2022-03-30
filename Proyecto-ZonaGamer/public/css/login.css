@@ -15,8 +15,9 @@ h2{
     font-size: 20px;
     color: #109dfa;
     text-align: center;
-    margin: 8%;
+    margin: 5%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
 }
 h3{
     color: lightslategrey;
@@ -99,28 +100,81 @@ h4{
 } 
 /*CAJAS*/
 .padre{
+    
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: row;
 }
 .hijo1{
+<<<<<<< HEAD
     width: 33%;
     background-color: #101217;
+=======
+     padding: 2%;
+     width: 43%;
+     background-color: #101217;
+>>>>>>> 7fe28fb6193e2b2f3d51f33a8436177e6506bbd6
 }
 .hijo2{
-    width: 33%;
+    text-align: center;
+    width: 77%;
     justify-content: center;
     background-color: #101217;
 }
-/*CAJAS HIJO 2*/
+/*CAJA HIJO 2*/
+.beneficios{
+  background-color: #101217;
+  margin: 15%;
+  height: 45%;
+  width: 61%;
+  border-color: #109dfa;
+  border-radius: 20px;
+  border-style: solid;
+}
+/*CAJAS HIJO BENEFICIOS*/
+.beneficio1{
+  color: #109dfa;
+  font-size: 20px;
+  margin: 5%;
+}
+.beneficio2{
+  color: #109dfa;
+  font-size: 20px;
+  margin: 5%;
+}
+.beneficio3{
+  color: #109dfa;
+  font-size: 20px;
+  margin: 5%;
+
+}
+.beneficio4{
+  color: #109dfa;
+  font-size: 20px;
+  margin: 5%;
+
+}
+.beneficio5{
+  color: #109dfa;
+  font-size: 20px;
+  margin: 5%;
+
+}
+/*/////*/
+
+/*CAJAS HIJO 1*/
 .fotologin{
     width: 100px;
     height: 100px;
-    background-color: gray;
+    background-color: none;
     border-radius: 50%;
     margin: auto;
     border-color: #109dfa;  
+}
+h7{
+  color: #109dfa;
+  font-size: 110px;
 }
 .email{
     display: flex;
@@ -165,22 +219,3 @@ h6{
   margin-top: -29px;
 }
 /*///////*/
-.hijo3{
-    width: 33%;
-    background-color: #101217;
-}
-.barradesplegable{
-  width: 40%;
-  margin: 53px auto;
-  border-radius: 20px;
-  border-color: #109dfa;
-  background-color: #101217;
- border-style: solid;
-}
-button{
-  background-color: #109dfa;
-  border-radius: 20px;
-  display: flex;
-  position: relative;
-  left:93%;
-}
