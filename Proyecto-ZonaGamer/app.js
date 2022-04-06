@@ -1,30 +1,41 @@
-const express = require('express');
-const path = require("path");
-const app = express()
-const port = 3040
+var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
 
-////////////////////////////////////////////////////////////////////////////
-//  Se declara la ruta de los recursos estaticos del proyecto: /public  ///
-//////////////////////////////////////////////////////////////////////////
-const publicPath = path.resolve(__dirname, './public');
-app.use( express.static(publicPath) );
+var indexRouter = require('./routes/home');
+var usersRouter = require('./routes/users');
 
-/////////////////////////////////////////////////////////////
-//  Se inicia el servidor express en el puerto definido  ////
-/////////////////////////////////////////////////////////////
-app.listen(port, ()=> {
-    console.log(`Servidor Express ejecutando Proyecto -ZonaGamer- en el puerto : ${port}`);
+var app = express();
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+next(createError(404));
 });
 
-///////////////////////////////////////////////////////////////////
-////  Bloque donde se definen las Rutas del proyecto ZonaGamer  ///
-///////////////////////////////////////////////////////////////////
-app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/home.html'));
+// error handler
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+res.locals.message = err.message;
+res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+  // render the error page
+res.status(err.status || 500);
+res.render('error');
 });
-app.get('/registro', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/registro.html'));
-});
-app.get('/login', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/login.html'));
-});
+
+module.exports = app;
