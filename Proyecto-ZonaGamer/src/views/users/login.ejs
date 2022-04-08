@@ -6,84 +6,87 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link rel="stylesheet" href="/css/login.css">
+        <link rel="stylesheet" href="/css/style.css">
         <script src="https://kit.fontawesome.com/1dd1823b70.js" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.google.com/share?selection.family=Ubuntu" rel="stylesheet">
 </head>
 
 <body>
+
         <!--CAJAS HEADER-->
-        <header class="headerlogin">
-                <div class="cajaimagen">
-                        <img src="/images/Logo_Zona_Gamer_Temp.png">
-                </div>
-                <div class="cajalinks">
-                        <div class="texto1"> Nuestros Productos </div>
-                        <div class="texto2"> Sobre Nosotros</div>
-                        <div class="texto3"> Contactanos </div>
-                </div>
-                <div class="cajaredes">
-                        <i class="fa-brands fa-facebook"></i>
-                        <i class="fa-brands fa-instagram"></i>
-                        <i class="fa-brands fa-twitter"></i>
-                </div>
-                <div class="cajaregistro">
-                        <h1 style="text-align:left">Login|Registro</h1>
-                </div>
-        </header>
-        <!--RGB-->
-        <div class="cajargb">
-                <div>
-                </div>
-        </div>
-        <!----->
-        <!--CAJAS-->
-        <div class="padre">
-                <div class="hijo1">
-                        <div class="titulo2" class="center">
-                                <h4>INICIAR SESIÓN</h4>
-                        </div>
-                        <div class="fotologin">
-                                <h7 class="fa-solid fa-circle-user"></h7>
-                        </div>
-                        <div class="email">
-                                <input type="email" placeholder="ejemplo@gmail.com" id="email" name="email">
-                        </div>
-                        <div class="contraseña">
-                                <input type="password" placeholder="contraseña" id="contraseña" name="contraseña">
-                        </div>
-                        <div class="botones">
-                                <h5 class="fa-solid fa-envelope">
-                                        <h6>Ingresar con Gmail </h6>
-                                </h5>
-                                <h5 class="fa-brands fa-facebook">
-                                        <h6>Ingresar con Facebook </h6>
-                                </h5>
-                                <h5 class="fa-solid fa-lock">
-                                        <h6>Reestablecer contraseña </h6>
-                                </h5>
+
+        <%- include('../partials/header')%>
+
+        <main>
+                <!--RGB-->
+                <div class="cajargb">
+                        <div>
                         </div>
                 </div>
-                  
-                <div class="hijo2">
-                        <div class="beneficios">
-                             <h2>TUS BENEFICIOS AL INICIAR SESIÓN</h2> 
-                        
-                                <div class="beneficio1">
-                                    <i class="fa-solid fa-key"></i> Control de privacidad
+                <!----->
+                <!--CAJAS-->
+                <div class="padre">
+                        <div class="hijo1">
+                                <div class="titulo2" class="center">
+                                        <h4>INICIAR SESIÓN</h4>
                                 </div>
-                                <div class="beneficio2">
-                                        <i class="fa-solid fa-bell"></i> Recibir informacion sobre nuevos productos
+                                <div class="fotologin">
+                                        <h7 class="fa-solid fa-circle-user"></h7>
                                 </div>
-                                <div class="beneficio3">
-                                        <i class="fa-solid fa-arrow-down"></i> Descuentos exclusivos en productos seleccionados
+                                <div class="email">
+                                        <input type="email" placeholder="ejemplo@gmail.com" id="email" name="email">
                                 </div>
-                                <div class="beneficio4">
-                                        <i class="fa-solid fa-headset"></i> Servicio de consultas durante la compra
+                                <div class="contraseña">
+                                        <input type="password" placeholder="contraseña" id="contraseña"
+                                                name="contraseña">
                                 </div>
-                                <div class="beneficio5">
-                                        <i class="fa-solid fa-star"></i> Acumulacion de puntos en cada compra 
+                                <div class="botones">
+                                        <h5 class="fa-solid fa-envelope">
+                                                <h6>Ingresar con Gmail </h6>
+                                        </h5>
+                                        <h5 class="fa-brands fa-facebook">
+                                                <h6>Ingresar con Facebook </h6>
+                                        </h5>
+                                        <h5 class="fa-solid fa-lock">
+                                                <h6>Reestablecer contraseña </h6>
+                                        </h5>
                                 </div>
                         </div>
-                </div>
+
+                        <div class="hijo2">
+                                <div class="beneficios">
+                                        <h2>TUS BENEFICIOS AL INICIAR SESIÓN</h2>
+
+                                        <div class="beneficio1">
+                                                <i class="fa-solid fa-key"></i> Control de privacidad
+                                        </div>
+                                        <div class="beneficio2">
+                                                <i class="fa-solid fa-bell"></i> Recibir informacion sobre nuevos
+                                                productos
+                                        </div>
+                                        <div class="beneficio3">
+                                                <i class="fa-solid fa-arrow-down"></i> Descuentos exclusivos en
+                                                productos
+                                                seleccionados
+                                        </div>
+                                        <div class="beneficio4">
+                                                <i class="fa-solid fa-headset"></i> Servicio de consultas durante la
+                                                compra
+                                        </div>
+                                        <div class="beneficio5">
+                                                <i class="fa-solid fa-star"></i> Acumulacion de puntos en cada compra
+                                        </div>
+                                </div>
+                        </div>
+        </main>
+
+        <!--*** FIN CUERPO PRINCIPAL ****-->
+
+        <!--*** FOOTER ****-->
+
+        <%- include('../partials/footer')%>
+
+        <!--*** FIN FOOTER ****-->
+
 </body>
