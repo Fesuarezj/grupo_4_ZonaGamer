@@ -1,33 +1,16 @@
 {
   "name": "proyecto-zonagamer",
-  "version": "1.0.0",
-  "description": "Proyecto Integrador DH -Zona Gamer-, eCommerce relacionador la venta de insumos para PC (Hardaware) y está orientada a todo tipo de público,",
-  "main": "ue requiera de una PC para se desarrollo.",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "start": "nodemon app.js",
-    "url": "git+https://github.com/Fesuarezj/grupo_4_ZonaGamer.git"
-  },
-  "keywords": [
-    "Gamer",
-    "Zone",
-    "Hardware",
-    "tecnología",
-    "home",
-    "internet",
-    "compras",
-    "eCommerce"
-  ],
-  "author": "Grupo 4: Pablo Scherpa / Franklin Suarez / Nahuel Lescano / Vito",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Fesuarezj/grupo_4_ZonaGamer/issues"
-  },
-  "homepage": "https://github.com/Fesuarezj/grupo_4_ZonaGamer#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1"
   }
 }
