@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head')%>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Usuario - Zona Gamer</title>
+  <link rel="preload" href="/css/normalize.css" as="style">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="/css/style-register.css">
+  <link rel="stylesheet" href="/css/style-register.css">
+  <script src="https://kit.fontawesome.com/3a84dfeae6.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/89cdafc43a.js" crossorigin="anonymous"></script>
+  <link rel="preload" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+
+<body>
+  <!--***CABECERA****-->
+  <%- include('../partials/header')%>
+
+  <!--*** FIN CABECERA ****-->
+
+  <!--*** CUERPO PRINCIPAL ****-->
+  <main>
+
+    <section class="signup-group">
+      <section class="container-titulo-form">
+        <h2><span class="semi-bold">Agregando Nuevos Productos a -Zona Gamer-</span></h2>
+      </section>
+
+      <section class="form-container">
+        <form action="/">
+          <div>                        
+            <i class="fa-solid fa-computer"></i>
+            <label>*Nombre del Producto</label>
+            <input type="text" id="signup-firstname" placeholder="Nombre nuevo del producto">
+          </div>          
+          <div>
+            <i class="fa-solid fa-rectangle-ad"></i>
+            <label>*Descripción del Producto</label>
+            <textarea name="message" rows="5" cols="53" placeholder="Descrioción del nuevo producto"></textarea>
+          </div>
+          <div>
+            <i class="fa-solid fa-camera"></i>            
+            <label>*Imagen del Producto</label>
+            <input type="file" id="imagenProducto" name="imagenProducto" accept="image/*" title="Seleccionar la imagen del nuevo producto">
+          </div>
+
+          <div>            
+            <i class="fa-solid fa-money-check-dollar"></i>
+            <label>*Precio del Producto</label>
+            <input type="text" id="signup-lastname" placeholder="Detalle el precio al público, incluir puntos">
+          </div>                 
+
+          <input class="button" id="signup-submit" type="submit" value="Agregar Nuevo Producto">
+        </form>
+
+        <p class="terminos">Al dar clic -Registrarse-, estás aceptando nuestros <span>Términos y
+            Condiciones</span></sub>
+      </section>
+
+    </section>
+    <section>
+      <header class="informacion-lateral">
+        <h1>Tener en Cuenta al Agregar Productos</h1>
+        <p><i class="fa-solid fa-cart-plus"> </i> Compra protegida. Si tu compra no es lo que querías, te devolvemos tu
+          dinero.</p><br>
+        <p><i class="fa-solid fa-truck-fast"> </i> Envío rápido y gratis. Con envíos rápidos compras hoy y recibes
+          gratis entre 24 y 48 hrs en productos seleccionados.</p><br>
+        <p><i class="fa-solid fa-tags"> </i> 95% productos nuevos. Descubre miles de productos nuevos en nuestras
+          Tiendas Oficiales.</p>
+      </header>
+    </section>
+  </main>
+  <!--*** FIN CUERPO PRINCIPAL ****-->
+
+  <!--*** FOOTER ****-->
+
+  <%- include('../partials/footer')%>
+
+  <!--*** FIN FOOTER ****-->
+</body>
+
+</html>

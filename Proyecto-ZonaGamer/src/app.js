@@ -9,6 +9,7 @@ const homeRouter = require('./routes/home');
 const userRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
 
+
 var app = express();
 
 // view engine setup

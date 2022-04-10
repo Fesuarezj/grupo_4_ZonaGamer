@@ -4,6 +4,9 @@ const productsControllers = {
     },
     carrito: (req, res) => {
         res.render('../views/products/carrito.ejs')
+    },
+    agregarProducto: (req, res) => {
+        res.render('../views/products/agregarProducto.ejs', { title: 'Agregar Producto' });
     }
 };
 

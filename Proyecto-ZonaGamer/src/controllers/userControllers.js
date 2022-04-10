@@ -8,7 +8,7 @@ const userControllers = {
     },
     login: (req, res) => {
         res.render('../views/users/login.ejs')
-    }
+    },
 };
 
 
