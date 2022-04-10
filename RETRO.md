@@ -1,4 +1,4 @@
-Retrosprectiva Sprint 2
+## Retrosprectiva Sprint 2
 
 1. Comenzar a hacer.
    -Organizar un poco más las tareas a realizar cada uno y coordinar los días y horarios para reunirnos ya que al haber miembros de diferentes paises con distintas horas se complica un poco.
@@ -18,7 +18,7 @@ Retrosprectiva Sprint 2
 5. Dejar de hacer.
    -Pensar que es imposible realizar un proyecto web, creer que nunca vamos a alncar un nivel senion en este campo
 
-Retrosprectiva Sprint 3
+## Retrosprectiva Sprint 3
 
 1. Comenzar a hacer.
    -Deberiamos juntarnos más. Reorganizarnos nuevamente ya que tenemos un integrante menos.
@@ -33,7 +33,7 @@ Retrosprectiva Sprint 3
    -Seguir comunicandonos e interactunado via whatsapp e ir ajustando temas para llegar a las reuniones por zoom mas organizados.
 
 4. Hacer menos.
-   -Procrastinar
+   -Confiarnos con los tiempos y dejar las cosas para otro momento.
 
 5. Dejar de hacer.
    -Pensar que es imposible realizar un proyecto web, creer que nunca vamos a alncar un nivel senion en este campo
