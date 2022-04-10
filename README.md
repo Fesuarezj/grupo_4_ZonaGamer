@@ -44,3 +44,5 @@ https://www.hypergaming.com.ar/
 LINK TABLERO DE TRABAJO TRELLO
 
 https://trello.com/b/FqrBR5Le/tareas-sprint-2
+
+https://trello.com/b/JEY2BBRI/tareas-sprint-3

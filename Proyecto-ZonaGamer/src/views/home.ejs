@@ -1,58 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zona Gamer</title>
-    <link rel="preload" href="/css/normalize.css" as="style">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="preload" href="/css/style.css" as="style">
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="https://kit.fontawesome.com/3a84dfeae6.js" crossorigin="anonymous"></script>
-
-</head>
+<%- include('./partials/head')%>
 
 <body>
-    <header class="main-header">
-        <div class="contenedor1">
-            <div class="logo-svg">
-                <img src="/images/Logo_Zona_Gamer.svg" alt="imagen logo">
-            </div>
-        </div>
-        <div class="contenedor2">
-            <div class="contenedor2-1">
-                <div class="contenedor-barra">
-                    <input class="barraBusqueda" size="30" type="search" name="busqueda"
-                        placeholder="¿qué estás buscando?">
-                </div>
-                <nav>
-                    <ul class="nav-bar">
-                        <li><a href="/registro">Crea tu Cuenta</a> <i class="fa fa-solid fa-address-card"></i> </li>
-                        <li><a href="/login">Ingresa</a> <i class="fas fa-sign-in-alt"></i> </li>
-                        <li><a href="#">Mis Compras</a> <i class=" fa fa-solid fa-basket-shopping"> </i> </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="contenedor-img">
-                <img src="/images/nav_amd.png" class="img-header">
-                <img src="/images/nav_corsair.png" class="img-header">
-                <img src="/images/nav_geforce.png" class="img-header">
-                <img src="/images/nav_intel.png" class="img-header">
-                <img src="/images/nav_logitech.png" class="img-header">
-                <img src="/images/nav_trust.png" class="img-header">
-            </div>
-        </div>
-    </header>
+
+    <%- include('./partials/header')%>
+
     <main class="contenedor">
         <h1 class="titulo__producto">Productos Destacados</h1>
         <div class="grid">
             <div class="producto">
-                <a href="producto.html">
+                <a href="/products/producto">
                     <img class="producto__imagen" src="/images/monitor05.png" alt="imagen monitor01">
                     <div class="producto__informacion">
                         <p class="producto__nombre">Monitor Glast 19"</p>
@@ -430,9 +389,8 @@
             </div>
         </div>
     </main>
-    <footer>
 
-    </footer>
+    <%- include('./partials/footer')%>
 
 </body>
 
