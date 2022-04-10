@@ -24,15 +24,19 @@
     <main class="contenedor__dt">
         <h1 class="titulo__producto__dt">Detalle del Producto</h1>
         <div class="producto__dt">
-            <a href="producto.html">
-                <img class="producto__imagen__dt" src="/images/monitor05.png" alt="imagen monitor01">
-                <div class="producto__informacion__dt">
-                    <p class="producto__nombre__dt">Monitor Glast 19"</p>
-                    <p class="producto__precio__dt">$15.000</p>
-                </div>
-            </a>
+            <img class="producto__imagen__dt" src="/images/monitor05.png" alt="imagen monitor01">
+            <div class="producto__informacion__dt">
+                <p class="producto__nombre__dt">Monitor Glast 19"</p>
+                <p class="producto__precio__dt">$15.000</p>
+                <a href="/products/agregar">
+                    <p class="producto__agregar__dt">Agregar Producto</p>
+                </a>
+                <p class="producto__editar__dt">Editar Producto</p>
+            </div>
         </div>
     </main>
+
+    <%- include('../partials/footer')%>
 
 </body>
 
