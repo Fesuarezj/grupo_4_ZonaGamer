@@ -76,7 +76,7 @@ body {
 /* MAIN */
 /* ------------------------------ */
 
-.contenedor, .contenedor__dt {
+.contenedor, .contenedor__dt, .contenedor-main {
     background-color: var(--grisOscuro);
 }
 
@@ -118,10 +118,11 @@ body {
 
 .producto__dt {
     margin: 10px;
+    border: 2px solid var(--blanco);
 }
 
 .producto:hover {
-    box-shadow: 0px 0px 5px 5px var(--blanco);
+    box-shadow: 0px 0px 5px 5px var(--celestePaula);
     transition: all 0.5s;
 }
 
@@ -146,7 +147,6 @@ body {
 .producto__nombre {
     font-size: 2rem;
     color: var(--celestePaula);   
-    text-transform: uppercase;
 }
 
 .producto__precio {
@@ -155,8 +155,7 @@ body {
 }
 
 .producto__nombre, .producto__precio,
-.producto__nombre__dt, .producto__precio__dt, 
-.producto__agregar__dt, .producto__editar__dt {
+.producto__nombre__dt, .producto__precio__dt {
     text-align: center;
     margin: 0.5rem 0;
     font-weight: bold;
@@ -176,14 +175,17 @@ body {
     text-decoration: none;
 }
 
-.producto__agregar__dt, .producto__editar__dt {
-    color: var(--negro);
+.contenedor__producto__desc__dt, .contenedor__producto__carac__dt {
+    text-align: center;
+    border-top: 1px solid var(--blanco);
 }
 
-.producto__agregar__dt:hover, .producto__editar__dt:hover {
-    cursor: pointer;
-    color: var(--yellowGreen);
-    font-size: 1.5rem;
+.contenedor__producto__desc__dt h3, .contenedor__producto__carac__dt h3 {
+    color: var(--celestePaula);
+}
+
+.contenedor__producto__desc__dt p, .contenedor__producto__carac__dt p {
+    color: var(--blanco);
 }
 
 /* ------------------------------ */
@@ -225,7 +227,7 @@ body {
 
 .sub__menu li a, .sub__menu2  li a {
     text-decoration: none;
-    color: var(--negro);
+    color: var(--celestePaula);
     font-weight: 550;
 }
 
@@ -296,17 +298,32 @@ body {
 /* CARRITO EJS */
 /* ---------------------------- */
 
-.body__cto {
+/* .body__cto {
     background-color: #F2F2F2;
     margin: 0;
     color: #000000;
     font-family: 'Ubuntu', sans-serif;
+} */
+
+.contenedor-main {
+    padding-top: 20px;
+}
+
+.contenedor-main-imagen {
+    border: 2px solid var(--blanco);
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    max-width: 470px;
+    margin: 0 auto;
+    width: 340px;
 }
 
 .titulo img{
-    box-shadow: 1px 1px 6px #000000;
-    width: 350px;
-    height: auto;
+    box-shadow: 1px 1px 4px 4px var(--celestePaula);
+    width: 300px;
+    /* height: auto; */
+    border-radius: 5px;
 }
 
 .titulo{
@@ -318,12 +335,18 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid #ccc;
+    /* border-bottom: 1px solid #ccc; */
+    color: var(--blanco);
+    margin-top: 0px;
+    font-size: 35px;
+    margin-top: 10px;
 }
 
 .iconos{
     display: flex;
     justify-content: space-around;
+    max-width: 350px;
+    margin: 0 auto;
 }
 
 .iconos a{
@@ -342,9 +365,23 @@ body {
 .precio h4{
     padding-top: 10px;
     margin-bottom: 0px;
+    font-size: 25px;
+    color: var(--blanco);
 }
+
+.precio p{
+    padding-top: 10px;
+    margin-bottom: 0px;
+    font-size: 30px;
+    color: var(--celestePaula);
+    margin-top: 0px;
+    font-weight: bold;
+}
+
 .precio h6{
     margin-top: 10px;
+    color: var(--blanco);
+    font-size: 14px;
 }
 
 .descripcion{
@@ -414,6 +451,10 @@ body {
         padding: 3px;
         font-size: 10px;
     }   
+    .iconos{
+    max-width: 350px;
+    margin: 0 auto;
+}
 }
 
 @media (min-width: 768px) {
