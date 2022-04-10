@@ -5,9 +5,10 @@
 // }
 
 const mainControllers = {
-    index: (req, res) => {
-        res.render('home')
+    home: (req, res) => {
+        res.render('home.ejs')
     }
 };
+
 
 module.exports = mainControllers;

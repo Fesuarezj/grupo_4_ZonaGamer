@@ -1,4 +1,4 @@
-body{
+/* body{
     background-color: #F2F2F2;
     margin: 0;
     color: #000000;
@@ -73,6 +73,7 @@ body{
     height: auto;
     text-align: center;
   }
+   */
   
   
   
@@ -84,8 +85,7 @@ body{
   
   
   
-  
-  .header {
+  /* .header {
       display: flex;
   }
   .contenedor-img-top {
@@ -113,7 +113,6 @@ body{
       width: 100%;
       justify-content: space-evenly;
       background-color: #000000;
-      /* border: 1px solid red; */
   }
   .img-header {
       width: 40px;
@@ -162,4 +161,4 @@ body{
       font-size: 16px;
       color: #ccc;
       padding-left: 10px; 
-  }
+  } */

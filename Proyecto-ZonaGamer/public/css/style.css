@@ -14,11 +14,14 @@
     --yellowGreen: yellowgreen;
     --celestePaula: #109dfa;
 }
+
 body {
     font-family: var(--fuentePrincipal);
 }
 
+/* ------------------------------ */
 /* HEADER */
+/* ------------------------------ */
 
 .main-header {
     background-color: var(--negro);
@@ -69,13 +72,19 @@ body {
     display: none;
 }
 
+/* ------------------------------ */
 /* MAIN */
+/* ------------------------------ */
 
-.contenedor {
+.contenedor, .contenedor__dt, .contenedor-main {
     background-color: var(--grisOscuro);
 }
 
-.titulo__producto {
+.contenedor__dt {
+    padding-bottom: 10px;
+}
+
+.titulo__producto, .titulo__producto__dt {
     color: var(--blanco);
     text-align: center;
     font-weight: bold;
@@ -84,7 +93,9 @@ body {
     width: 100%;
 }
 
+/* ------------------------------ */
 /* GRID */
+/* ------------------------------ */
 
 .grid {
     display: grid;
@@ -94,17 +105,24 @@ body {
 
 }
 
+/* ------------------------------ */
 /* PRODUCTO */
+/* ------------------------------ */
 
-.producto {
+.producto, .producto__dt {
     background-color: var(--grisMedio);
     padding: 1.5rem;
     border-radius: 1rem;
     text-decoration: none;    
 }
 
+.producto__dt {
+    margin: 10px;
+    border: 2px solid var(--blanco);
+}
+
 .producto:hover {
-    box-shadow: 0px 0px 5px 5px var(--blanco);
+    box-shadow: 0px 0px 5px 5px var(--celestePaula);
     transition: all 0.5s;
 }
 
@@ -112,7 +130,7 @@ body {
     text-decoration: none;
 }
 
-.producto__imagen {
+.producto__imagen, .producto__imagen__dt {
     width: 100%;    
     border-radius: 0.5rem;
 }
@@ -129,7 +147,6 @@ body {
 .producto__nombre {
     font-size: 2rem;
     color: var(--celestePaula);   
-    text-transform: uppercase;
 }
 
 .producto__precio {
@@ -137,13 +154,43 @@ body {
     color: var(--blanco);
 }
 
-.producto__nombre, .producto__precio {
+.producto__nombre, .producto__precio,
+.producto__nombre__dt, .producto__precio__dt {
     text-align: center;
     margin: 0.5rem 0;
     font-weight: bold;
 }
 
+.producto__nombre__dt {
+    font-size: 2rem;
+    color: var(--celestePaula);
+}
+
+.producto__precio__dt {
+    font-size: 1.8rem;
+    color: var(--blanco);
+}
+
+.producto__informacion__dt a {
+    text-decoration: none;
+}
+
+.contenedor__producto__desc__dt, .contenedor__producto__carac__dt {
+    text-align: center;
+    border-top: 1px solid var(--blanco);
+}
+
+.contenedor__producto__desc__dt h3, .contenedor__producto__carac__dt h3 {
+    color: var(--celestePaula);
+}
+
+.contenedor__producto__desc__dt p, .contenedor__producto__carac__dt p {
+    color: var(--blanco);
+}
+
+/* ------------------------------ */
 /* GRID 2 */
+/* ------------------------------ */
 
 .grid_2 {
     display: grid;
@@ -167,7 +214,9 @@ body {
     font-weight: 550; 
 }
 
+/* ------------------------------ */
 /* MENU */
+/* ------------------------------ */
 
 .navegacion {
     display: flex;
@@ -178,7 +227,7 @@ body {
 
 .sub__menu li a, .sub__menu2  li a {
     text-decoration: none;
-    color: var(--negro);
+    color: var(--celestePaula);
     font-weight: 550;
 }
 
@@ -187,7 +236,9 @@ body {
     right: 30px;
 }
 
+/* ------------------------------ */
 /* TIPO PRODUCTO */
+/* ------------------------------ */
 
 .tipo__producto {
     display: none;
@@ -207,7 +258,9 @@ body {
     text-decoration: none;
 }
 
+/* ------------------------------ */
 /* FOOTER */
+/* ------------------------------ */
 
 .footer {
     background-color: var(--negro);
@@ -241,8 +294,123 @@ body {
     color: var(--blanco);
 }
 
+/* ---------------------------- */
+/* CARRITO EJS */
+/* ---------------------------- */
 
+/* .body__cto {
+    background-color: #F2F2F2;
+    margin: 0;
+    color: #000000;
+    font-family: 'Ubuntu', sans-serif;
+} */
+
+.contenedor-main {
+    padding-top: 20px;
+}
+
+.contenedor-main-imagen {
+    border: 2px solid var(--blanco);
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    max-width: 470px;
+    margin: 0 auto;
+    width: 340px;
+}
+
+.titulo img{
+    box-shadow: 1px 1px 4px 4px var(--celestePaula);
+    width: 300px;
+    /* height: auto; */
+    border-radius: 5px;
+}
+
+.titulo{
+    text-align: center;
+}
+
+.titulo h2{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border-bottom: 1px solid #ccc; */
+    color: var(--blanco);
+    margin-top: 0px;
+    font-size: 35px;
+    margin-top: 10px;
+}
+
+.iconos{
+    display: flex;
+    justify-content: space-around;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.iconos a{
+    color: #000000;
+}
+
+.iconos a:hover{
+    color: #444;
+}
+
+
+.precio{
+    text-align: center;
+}
+
+.precio h4{
+    padding-top: 10px;
+    margin-bottom: 0px;
+    font-size: 25px;
+    color: var(--blanco);
+}
+
+.precio p{
+    padding-top: 10px;
+    margin-bottom: 0px;
+    font-size: 30px;
+    color: var(--celestePaula);
+    margin-top: 0px;
+    font-weight: bold;
+}
+
+.precio h6{
+    margin-top: 10px;
+    color: var(--blanco);
+    font-size: 14px;
+}
+
+.descripcion{
+    border-top: 1px solid #D1D1CB;
+    background-color: #E3E3DC;
+    font-size: 14px;
+    line-height: 1.7em;
+    font-style: italic;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.caracteristica h4{
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.caracteristica div{
+    line-height: 1.4em;
+    border-bottom: 1px solid #ccc;
+    height: auto;
+    text-align: center;
+}
+
+/* ---------------------------- */
 /* MEDIA QUERYS */
+/* ---------------------------- */
 
 @media (min-width: 480px) {  
     .main-header {
@@ -282,7 +450,11 @@ body {
     div section h2 {
         padding: 3px;
         font-size: 10px;
-    } 
+    }   
+    .iconos{
+    max-width: 350px;
+    margin: 0 auto;
+}
 }
 
 @media (min-width: 768px) {
@@ -343,7 +515,14 @@ body {
     }
     .tipo__producto {
         display: block;
-    }       
+    }   
+    .producto__dt {
+        width: 720px;
+        margin: 0 auto;
+    }    
+    .producto__imagen__dt {
+        width: 715px;
+    }   
 }
 
 @media (min-width: 1140px) {

@@ -1,179 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zona Gamer</title>
-    <link rel="preload" href="/css/normalize.css" as="style">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="preload" href="/css/style.css" as="style">
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="https://kit.fontawesome.com/3a84dfeae6.js" crossorigin="anonymous"></script>
-
-</head>
+<%- include('./partials/head')%>
 
 <body>
-    <header class="main-header">
-        <div class="contenedor1">
-            <div class="logo-svg">
-                <img src="/images/Logo_Zona_Gamer.svg" alt="imagen logo">
-            </div>
-        </div>
-        <div class="contenedor2">
-            <div class="contenedor2-1">
-                <div class="contenedor-barra">
-                    <input class="barraBusqueda" size="30" type="search" name="busqueda"
-                        placeholder="¿qué estás buscando?">
-                </div>
-                <nav>
-                    <ul class="nav-bar">
-                        <li><a href="/registro">Crea tu Cuenta</a> <i class="fa fa-solid fa-address-card"></i> </li>
-                        <li><a href="/login">Ingresa</a> <i class="fas fa-sign-in-alt"></i> </li>
-                        <li><a href="#">Mis Compras</a> <i class=" fa fa-solid fa-basket-shopping"> </i> </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="contenedor-img">
-                <img src="/images/nav_amd.png" class="img-header">
-                <img src="/images/nav_corsair.png" class="img-header">
-                <img src="/images/nav_geforce.png" class="img-header">
-                <img src="/images/nav_intel.png" class="img-header">
-                <img src="/images/nav_logitech.png" class="img-header">
-                <img src="/images/nav_trust.png" class="img-header">
-            </div>
-        </div>
-    </header>
+
+    <%- include('./partials/header')%>
+
     <main class="contenedor">
         <h1 class="titulo__producto">Productos Destacados</h1>
         <div class="grid">
             <div class="producto">
-                <a href="producto.html">
+                <a href="/products/producto">
                     <img class="producto__imagen" src="/images/monitor05.png" alt="imagen monitor01">
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Monitor Glast 19"</p>
+                        <p class="producto__nombre">Monitor LG 19"</p>
                         <p class="producto__precio">$15.000</p>
                     </div>
                 </a>
             </div>
             <div class="producto">
-                <a href="producto.html">
+                <a href="/products/producto">
                     <img class="producto__imagen" src="/images/monitor02.png" alt="imagen monitor01">
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Monitor Glast 19"</p>
-                        <p class="producto__precio">$15.000</p>
+                        <p class="producto__nombre">Monitor Philips 21"</p>
+                        <p class="producto__precio">$20.000</p>
                     </div>
                 </a>
             </div>
             <div class="producto">
-                <a href="producto.html">
+                <a href="/products/producto">
                     <img class="producto__imagen" src="/images/monitor01.png" alt="imagen monitor01">
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Monitor Glast 19"</p>
-                        <p class="producto__precio">$15.000</p>
+                        <p class="producto__nombre">Monitor Glast 20"</p>
+                        <p class="producto__precio">$18.000</p>
                     </div>
                 </a>
             </div>
             <div class="producto">
-                <a href="producto.html">
+                <a href="/products/producto">
                     <img class="producto__imagen" src="/images/monitor04.png" alt="imagen monitor01">
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Monitor Glast 19"</p>
-                        <p class="producto__precio">$15.000</p>
+                        <p class="producto__nombre">Monitor Philips 23"</p>
+                        <p class="producto__precio">$28.000</p>
                     </div>
                 </a>
             </div>
             <div class="producto">
-                <a href="producto.html">
+                <a href="/products/producto">
                     <img class="producto__imagen" src="/images/monitor05.png" alt="imagen monitor01">
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Monitor Glast 19"</p>
-                        <p class="producto__precio">$15.000</p>
+                        <p class="producto__nombre">Monitor LG 22"</p>
+                        <p class="producto__precio">$25.000</p>
                     </div>
                 </a>
             </div>
             <div class="producto">
-                <a href="producto.html">
+                <a href="/products/producto">
                     <img class="producto__imagen" src="/images/placa05.png" alt="imagen monitor01">
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Monitor Glast 19"</p>
-                        <p class="producto__precio">$15.000</p>
+                        <p class="producto__nombre">Terjeta Gráfica AMD RX 600 XT</p>
+                        <p class="producto__precio">$150.000</p>
                     </div>
                 </a>
             </div>
             <div class="producto">
-                <a href="producto.html">
+                <a href="/products/producto">
                     <img class="producto__imagen" src="/images/placa02.png" alt="imagen monitor01">
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Monitor Glast 19"</p>
-                        <p class="producto__precio">$15.000</p>
+                        <p class="producto__nombre">Tarjeta Gráfica MSI N210</p>
+                        <p class="producto__precio">$140.000</p>
                     </div>
                 </a>
             </div>
             <div class="producto">
-                <a href="producto.html">
+                <a href="/products/producto">
                     <img class="producto__imagen" src="/images/placa03.png" alt="imagen monitor01">
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Monitor Glast 19"</p>
-                        <p class="producto__precio">$15.000</p>
+                        <p class="producto__nombre">Tarjeta Gráfica MSI GT730</p>
+                        <p class="producto__precio">$180.000</p>
                     </div>
                 </a>
             </div>
             <div class="producto">
-                <a href="producto.html">
+                <a href="/products/producto">
                     <img class="producto__imagen" src="/images/placa04.png" alt="imagen monitor01">
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Monitor Glast 19"</p>
-                        <p class="producto__precio">$15.000</p>
+                        <p class="producto__nombre">Tarjeta Gráfica Power Color RX 550</p>
+                        <p class="producto__precio">$132.000</p>
                     </div>
                 </a>
             </div>
             <div class="producto">
-                <a href="producto.html">
+                <a href="/products/producto">
                     <img class="producto__imagen" src="/images/placa05.png" alt="imagen monitor01">
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Monitor Glast 19"</p>
-                        <p class="producto__precio">$15.000</p>
+                        <p class="producto__nombre">Tarjeta Gráfica Gigabyte RX 6600 RT Pro</p>
+                        <p class="producto__precio">$200.000</p>
                     </div>
                 </a>
             </div>
             <div class="producto">
-                <a href="producto.html">
+                <a href="/products/producto">
                     <img class="producto__imagen" src="/images/gabinete02.png" alt="imagen monitor01">
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Monitor Glast 19"</p>
-                        <p class="producto__precio">$15.000</p>
+                        <p class="producto__nombre">Gabinete Air Cool</p>
+                        <p class="producto__precio">$5.000</p>
                     </div>
                 </a>
             </div>
             <div class="producto">
-                <a href="producto.html">
+                <a href="/products/producto">
                     <img class="producto__imagen" src="/images/gabinete05.png" alt="imagen monitor01">
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Monitor Glast 19"</p>
-                        <p class="producto__precio">$15.000</p>
+                        <p class="producto__nombre">Gabinete Raidmax</p>
+                        <p class="producto__precio">$6.500</p>
                     </div>
                 </a>
             </div>
             <div class="producto">
-                <a href="producto.html">
+                <a href="/products/producto">
                     <img class="producto__imagen" src="/images/gabinete04.png" alt="imagen monitor01">
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Monitor Glast 19"</p>
-                        <p class="producto__precio">$15.000</p>
+                        <p class="producto__nombre">Gabinete Air Cool Max</p>
+                        <p class="producto__precio">$8.000</p>
                     </div>
                 </a>
             </div>
             <div class="producto">
-                <a href="producto.html">
+                <a href="/products/producto">
                     <img class="producto__imagen" src="/images/gabinete05.png" alt="imagen monitor01">
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Monitor Glast 19"</p>
-                        <p class="producto__precio">$15.000</p>
+                        <p class="producto__nombre">Gabinete Raidmax Pro</p>
+                        <p class="producto__precio">$9.500</p>
                     </div>
                 </a>
             </div>
@@ -430,20 +389,8 @@
             </div>
         </div>
     </main>
-    <footer class="footer">
-        <div class="contenedor-footer">
-            <div class="barra">
-                <a class="logo" href="index.html">
-                    <h1 class="logo-nombre">Zona <span class="logo-bold">Gamer</span></h1>
-                </a>
-                <nav class="navegacion">
-                    <a href="nosotros.html" class="navegacion-enlace">Nosotros</a>
-                    <a href="cursos.html" class="navegacion-enlace">Carrito</a>
-                    <a href="contacto.html" class="navegacion-enlace">Contacto</a>
-                </nav>
-            </div><!-- barra -->
-        </div><!-- contetenedor -->
-    </footer>
+
+    <%- include('./partials/footer')%>
 
 </body>
 
