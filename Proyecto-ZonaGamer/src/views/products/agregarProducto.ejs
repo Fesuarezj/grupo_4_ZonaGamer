@@ -43,10 +43,10 @@
             <label>*Nombre del Producto</label>
             <input type="text" id="signup-firstname" placeholder="Nombre nuevo del producto">
           </div>          
-          <div>
-            <i class="fa-solid fa-rectangle-ad"></i>
+          <div>            
+            <i class="fa-solid fa-circle-info"></i>
             <label>*Descripción del Producto</label>
-            <textarea name="message" rows="5" cols="53" placeholder="Descrioción del nuevo producto"></textarea>
+            <textarea name="message" rows="3" cols="53" placeholder="Descrioción del nuevo producto"></textarea>
           </div>
           <div>
             <i class="fa-solid fa-camera"></i>            
@@ -54,29 +54,48 @@
             <input type="file" id="imagenProducto" name="imagenProducto" accept="image/*" title="Seleccionar la imagen del nuevo producto">
           </div>
 
-          <div>            
-            <i class="fa-solid fa-money-check-dollar"></i>
+          <div>
+            <i class="fa-regular fa-circle-check"></i>            
+            <label>*Categoría del Producto</label><br>
+            <select name="categoria-productp">
+              <option value="accesorios">Accesorios</option>
+                <option value="audio">Audio</option>
+                <option value="coolers">Coolers</option>
+                <option value="discos-rigidos">Discos Rigidos</option>
+                <option value="memorias">Memorias</option>
+                <option value="monitores">Monitores</option>
+                <option value="modtherboards">Motherboards</option>
+                <option value="perofericos">Periféricos</option>
+                <option value="placas-videos">Placas de Video</option>
+                <option value="-procesadores">Procesadores</option>
+                <option value="ssd">SSD</option>
+                <option value="teclados">Teclados</option>
+            </select>
+          </div>
+          <div>                                    
+            <i class="fa-solid fa-file-invoice-dollar"></i>
             <label>*Precio del Producto</label>
-            <input type="text" id="signup-lastname" placeholder="Detalle el precio al público, incluir puntos">
-          </div>                 
+            <input type="number" id="precio-producto" placeholder="Detalle el precio al público, incluir puntos">
+          </div>                          
+          <div>                        
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            <label>*Garantía del Producto (meses)</label>
+            <input type="number" id="garantia-producto" placeholder="Detalle los meses de garantía del producto">
+          </div>                  
 
           <input class="button" id="signup-submit" type="submit" value="Agregar Nuevo Producto">
         </form>
 
-        <p class="terminos">Al dar clic -Registrarse-, estás aceptando nuestros <span>Términos y
-            Condiciones</span></sub>
+        <p class="terminos">Al dar clic -Agregar-, estás adicionando un nuevo producto al público </p>
       </section>
 
     </section>
     <section>
       <header class="informacion-lateral">
         <h1>Tener en Cuenta al Agregar Productos</h1>
-        <p><i class="fa-solid fa-cart-plus"> </i> Compra protegida. Si tu compra no es lo que querías, te devolvemos tu
-          dinero.</p><br>
-        <p><i class="fa-solid fa-truck-fast"> </i> Envío rápido y gratis. Con envíos rápidos compras hoy y recibes
-          gratis entre 24 y 48 hrs en productos seleccionados.</p><br>
-        <p><i class="fa-solid fa-tags"> </i> 95% productos nuevos. Descubre miles de productos nuevos en nuestras
-          Tiendas Oficiales.</p>
+        <p><i class="fa-solid fa-circle-info"> </i> Descripción del Producto. Describa la características más relevantes del producto que se mustrarán al público.</p><br>
+        <p><i class="fa-solid fa-file-invoice-dollar"> </i> Tener en cuenta al detallar el Precio al Público del Producto, debe expresarlo solo numeros e incluir puntos.</p><br>
+        <p><i class="fa-solid fa-clock-rotate-left"> </i> Debe expresar el número de meses que tendrá de garantía el nuevo producto.</p>
       </header>
     </section>
   </main>
