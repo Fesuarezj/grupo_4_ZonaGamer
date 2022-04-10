@@ -107,14 +107,11 @@ h4{
     flex-direction: row;
 }
 .hijo1{
-<<<<<<< HEAD
     width: 33%;
     background-color: #101217;
-=======
      padding: 2%;
      width: 43%;
      background-color: #101217;
->>>>>>> 7fe28fb6193e2b2f3d51f33a8436177e6506bbd6
 }
 .hijo2{
     text-align: center;
