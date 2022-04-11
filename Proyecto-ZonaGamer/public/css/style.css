@@ -53,7 +53,8 @@ body {
 .nav-bar {
     display: flex;
     position: relative;
-    right: 30px;
+    /* right: 5px; */
+    left: 10px;
 }
 
 .nav-bar li a {
@@ -61,7 +62,7 @@ body {
     color: var(--blanco);
     font-weight: 600;
     font-size: 1rem;
-    padding-left: 10px;
+    padding-left: 10px;/*  */
 }
 
 .fa, .fas {
@@ -489,10 +490,11 @@ body {
     }
     .nav-bar {
         position: relative;
-        right: 15px;
+        /* right: 15px; */
+        left: 15px;
     }
     .nav-bar li a {
-        font-size: 12px;
+        font-size: 1rem;
     }
     .grid {
         display: grid;
@@ -538,10 +540,11 @@ body {
     }
     .nav-bar {
         position: relative;
-        right: 0px;
+        /* right: 0px; */
+        left: 20px;
     }
     .nav-bar li a {
-        font-size: 14px;
+        font-size: 1.2rem;
     }
     .contenedor-img {
         display: block;
