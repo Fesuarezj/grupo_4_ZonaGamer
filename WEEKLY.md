@@ -1,4 +1,5 @@
 FRANKLIN: 
+-Se retoma la vista del login.ejs para agregar ciertas caracteristas y dar paso a la vista del crear y editar nuevos productos
 -Revisión del sprint 3 e iniciar con las tareas asignadas y pendientes
 -Revisión de documentación para completar el sprint 3 (Playground y externa)
 -Se realizó lo solitado en el punto 4 del Sprint 3, Implementar el motor de Plantillas, el cual se realiza con EJS
