@@ -22,18 +22,23 @@
 
 1. Comenzar a hacer.
    -Deberiamos juntarnos más. Reorganizarnos nuevamente ya que tenemos un integrante menos.
+   -complementar con recursos externos ciertos conocimientos requeridos de acuerdo a necesidades surgidas
 
 2. Hacer más.
    -fortalecer la dinámica de las metodologías ágiles en el desarrollo de softeare
    -Revisar el uso de las validaciones de formulación en el FRONT-END que fortalezca la usabilidad de nuestro proyecto integrador
+   -Identificación ya de funcionalidades que deberán irse teniendo encuenta para poder ir integrando al proyecto
 
 3. Continuar haciendo.
    -Seguir revisando documentación y consolidando los conocimientos que vamos adquiriendo clase a clase y mediante el playground.
    -Revisar con el equipo de trabajo, las falencias y fortalezcas que vayaos descubriendo.
    -Seguir comunicandonos e interactunado via whatsapp e ir ajustando temas para llegar a las reuniones por zoom mas organizados.
+   -Implementado ciertas mejoras al proyecto a medida que vamos adquiriendo mas conocimiento con el transcurrir de las clases y nuevas dudadas e inquitudus que nos hacemos
 
 4. Hacer menos.
    -Confiarnos con los tiempos y dejar las cosas para otro momento.
+   -Procrastinar
+
 
 5. Dejar de hacer.
    -Pensar que es imposible realizar un proyecto web, creer que nunca vamos a alncar un nivel senion en este campo
