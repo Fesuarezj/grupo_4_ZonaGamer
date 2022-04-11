@@ -9,6 +9,9 @@ const userControllers = {
     login: (req, res) => {    
         res.render('../views/users/login.ejs')
     },
+    contacto: (req, res) => {
+        res.render('../views/users/contacto.ejs')
+    }
 };
 
 
