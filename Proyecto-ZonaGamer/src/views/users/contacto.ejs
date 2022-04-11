@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head')%>
+
+<body>
+
+    <%- include('../partials/header')%>
+
+    <main class="contenedor-ctto">
+        <h3 class="centrar-texto">Contacto</h3>
+        <div class="contacto--bg"></div>
+        <form class="formulario">
+            <div class="campo">
+                <label class="campo__label" for="nombre">Nombre</label>
+                <input class="campo__field" type="text" placeholder="tu nombre" id="nombre">
+            </div>
+            <div class="campo">
+                <label class="campo__label" for="correo">E-Mail</label>
+                <input class="campo__field" type="email" placeholder="tu correo" id="correo">
+            </div>
+            <div class="campo">
+                <label class="campo__label" for="mensaje">Mensaje</label>
+                <textarea class="campo__field campo__field--textarea" id="mensaje"
+                    placeholder="escribe tu mensaje aquí"></textarea>
+            </div>
+            <div class="input__btn">
+                <input type="submit" value="Enviar" class="boton boton--primario">
+            </div>
+        </form>
+    </main>
+
+    <%- include('../partials/footer')%>
+
+</body>
+
+</html>
