@@ -1,6 +1,6 @@
 const productsControllers = {
     producto: (req, res) => {
-        res.render('../views/products/producto.ejs')
+        res.render('../views/products/detalleProducto.ejs')
     },
     carrito: (req, res) => {
         res.render('../views/products/carrito.ejs')
