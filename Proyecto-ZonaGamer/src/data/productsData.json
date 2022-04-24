@@ -14,7 +14,7 @@
  {
   "id": 2,
   "name": "Philips 21\"",
-  "description":  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ad, quaerat sequi eos magni ut consectetur optio modi porro possimus soluta voluptatum maxime ipsam impedit ratione dicta iusto ipsum tenetur!",
+  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ad, quaerat sequi eos magni ut consectetur optio modi porro possimus soluta voluptatum maxime ipsam impedit ratione dicta iusto ipsum tenetur!",
   "image": "monitor02.png",
   "category": "Monitor",
   "warranty": 31,
@@ -26,7 +26,7 @@
  {
   "id": 3,
   "name": "Glast 20\"",
-  "description":  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ad, quaerat sequi eos magni ut consectetur optio modi porro possimus soluta voluptatum maxime ipsam impedit ratione dicta iusto ipsum tenetur!",
+  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ad, quaerat sequi eos magni ut consectetur optio modi porro possimus soluta voluptatum maxime ipsam impedit ratione dicta iusto ipsum tenetur!",
   "image": "monitor01.png",
   "category": "Monitor",
   "warranty": 6,
@@ -38,7 +38,7 @@
  {
   "id": 4,
   "name": "Philips 23\"",
-  "description":  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ad, quaerat sequi eos magni ut consectetur optio modi porro possimus soluta voluptatum maxime ipsam impedit ratione dicta iusto ipsum tenetur!",
+  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ad, quaerat sequi eos magni ut consectetur optio modi porro possimus soluta voluptatum maxime ipsam impedit ratione dicta iusto ipsum tenetur!",
   "image": "monitor04.png",
   "category": "Monitor",
   "warranty": 12,
@@ -62,7 +62,7 @@
  {
   "id": 6,
   "name": "AMD RX 600 XT",
-  "description":  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ad, quaerat sequi eos magni ut consectetur optio modi porro possimus soluta voluptatum maxime ipsam impedit ratione dicta iusto ipsum tenetur!",
+  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ad, quaerat sequi eos magni ut consectetur optio modi porro possimus soluta voluptatum maxime ipsam impedit ratione dicta iusto ipsum tenetur!",
   "image": "placa05.png",
   "category": "Placa de Video",
   "warranty": 18,
@@ -74,7 +74,7 @@
  {
   "id": 7,
   "name": "MSI N210",
-  "description":  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ad, quaerat sequi eos magni ut consectetur optio modi porro possimus soluta voluptatum maxime ipsam impedit ratione dicta iusto ipsum tenetur!",
+  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ad, quaerat sequi eos magni ut consectetur optio modi porro possimus soluta voluptatum maxime ipsam impedit ratione dicta iusto ipsum tenetur!",
   "image": "placa02.png",
   "category": "Placa de Video",
   "warranty": 24,
@@ -86,7 +86,7 @@
  {
   "id": 8,
   "name": "MSI GT730",
-  "description":  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ad, quaerat sequi eos magni ut consectetur optio modi porro possimus soluta voluptatum maxime ipsam impedit ratione dicta iusto ipsum tenetur!",
+  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ad, quaerat sequi eos magni ut consectetur optio modi porro possimus soluta voluptatum maxime ipsam impedit ratione dicta iusto ipsum tenetur!",
   "image": "placa03.png",
   "category": "Placa de Video",
   "warranty": 12,
@@ -98,7 +98,7 @@
  {
   "id": 9,
   "name": "Power Color RX 550",
-  "description":  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ad, quaerat sequi eos magni ut consectetur optio modi porro possimus soluta voluptatum maxime ipsam impedit ratione dicta iusto ipsum tenetur!",
+  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ad, quaerat sequi eos magni ut consectetur optio modi porro possimus soluta voluptatum maxime ipsam impedit ratione dicta iusto ipsum tenetur!",
   "image": "placa04.png",
   "category": "Placa de Video",
   "warranty": 6,
@@ -110,7 +110,7 @@
  {
   "id": 10,
   "name": "Gigabyte RX 6600 RT Pro",
-  "description":  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ad, quaerat sequi eos magni ut consectetur optio modi porro possimus soluta voluptatum maxime ipsam impedit ratione dicta iusto ipsum tenetur!",
+  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ad, quaerat sequi eos magni ut consectetur optio modi porro possimus soluta voluptatum maxime ipsam impedit ratione dicta iusto ipsum tenetur!",
   "image": "placa05.png",
   "category": "Placa de Video",
   "warranty": 18,
@@ -146,7 +146,7 @@
  {
   "id": 13,
   "name": "Air Cool Max",
-  "description":  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ad, quaerat sequi eos magni ut consectetur optio modi porro possimus soluta voluptatum maxime ipsam impedit ratione dicta iusto ipsum tenetur!",
+  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ad, quaerat sequi eos magni ut consectetur optio modi porro possimus soluta voluptatum maxime ipsam impedit ratione dicta iusto ipsum tenetur!",
   "image": "gabinete04.png",
   "category": "Gabinete",
   "warranty": 6,
@@ -158,7 +158,7 @@
  {
   "id": 14,
   "name": "Raidmax Pro",
-  "description":  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ad, quaerat sequi eos magni ut consectetur optio modi porro possimus soluta voluptatum maxime ipsam impedit ratione dicta iusto ipsum tenetur!",
+  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ad, quaerat sequi eos magni ut consectetur optio modi porro possimus soluta voluptatum maxime ipsam impedit ratione dicta iusto ipsum tenetur!",
   "image": "gabinete05.png",
   "category": "Gabinete",
   "warranty": 6,
@@ -166,5 +166,17 @@
   "discount": 5,
   "date": "24/05/2021",
   "status": false
+ },
+ {
+  "id": 15,
+  "name": "Gabinete",
+  "description": "Gabinete Gamer",
+  "image": "imagenProducto-1650831077805.png",
+  "category": "gabinetes",
+  "warranty": 6,
+  "price": 7000,
+  "discount": 5,
+  "date": "2022-04-24",
+  "status": "true"
  }
 ]
