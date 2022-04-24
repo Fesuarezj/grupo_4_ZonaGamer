@@ -13,6 +13,7 @@
     --red: red;
     --yellowGreen: yellowgreen;
     --celestePaula: #109dfa;
+    --amarillo: yellow;
 }
 
 body {
@@ -91,7 +92,9 @@ body {
     font-weight: bold;
     margin: 0;
     padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
     width: 100%;
+    font-size: 3rem;
 }
 
 /* ------------------------------ */
@@ -160,6 +163,11 @@ body {
     color: var(--blanco);
 }
 
+.producto__preciof__dt {
+    font-size: 2.7rem;
+    color: var(--negro);
+}
+
 .producto__descuento {
     font-size: 1.5rem;
     color: var(--yellowGreen);
@@ -174,14 +182,21 @@ body {
     color: var(--celestePaula);
 }
 
+.producto__garantiapf {
+    font-size: 1rem;
+    color: var(--celestePaula);
+}
+
 .producto__nombre, .producto__precio, 
-.producto__nombre__dt, .producto__precio__dt {
+.producto__nombre__dt, .producto__precio__dt,
+.producto__preciof__dt {
     text-align: center;
     margin: 0.5rem 0;
     font-weight: bold;
 }
 
-.producto__categoria, .producto__descuento, .producto__garantia {
+.producto__categoria, .producto__descuento, 
+.producto__garantia, .producto__garantiapf {
     text-align: center;
     margin: 0.5rem 0;
     font-weight: 400;
@@ -208,6 +223,7 @@ body {
 
 .contenedor__producto__desc__dt h3, .contenedor__producto__carac__dt h3 {
     color: var(--celestePaula);
+    font-size: 2rem;
 }
 
 .contenedor__producto__desc__dt p, .contenedor__producto__carac__dt p {
@@ -537,7 +553,7 @@ body {
     .formulario {
         max-width: 420px;
         margin: 0 auto;
-    }    
+    }      
 }
 
 @media (min-width: 768px) {
