@@ -33,55 +33,78 @@
 
     <section class="signup-group">
       <section class="container-titulo-form">
-        <h2><span class="semi-bold">Agregando Nuevos Productos a -Zona Gamer-</span></h2>
+        <h2><span class="semi-bold">Agregando Nuevo Producto a -Zona Gamer-</span></h2>
       </section>
 
       <section class="form-container">
-        <form action="/">
-          <div>                        
+        <form action="./" method="POST" enctype="multipart/form-data">
+          <div>
             <i class="fa-solid fa-computer"></i>
             <label>*Nombre del Producto</label>
-            <input type="text" id="signup-firstname" placeholder="Nombre nuevo del producto">
-          </div>          
-          <div>            
-            <i class="fa-solid fa-circle-info"></i>
-            <label>*Descripción del Producto</label>
-            <textarea name="message" rows="3" cols="53" placeholder="Descrioción del nuevo producto"></textarea>
+            <input name="name" type="text" id="signup-firstname" placeholder="Nombre nuevo del producto">
           </div>
           <div>
-            <i class="fa-solid fa-camera"></i>            
+            <i class="fa-solid fa-circle-info"></i>
+            <label>*Descripción del Producto</label>
+            <textarea name="description" rows="3" cols="53" placeholder="Descrioción del nuevo producto"></textarea>
+          </div>
+          <div>
+            <i class="fa-solid fa-camera"></i>
             <label>*Imagen del Producto</label>
-            <input type="file" id="imagenProducto" name="imagenProducto" accept="image/*" title="Seleccionar la imagen del nuevo producto">
+            <input type="file" id="imagenProducto" name="imagenProducto" accept="image/*"
+              title="Seleccionar la imagen del nuevo producto">
           </div>
 
           <div>
-            <i class="fa-regular fa-circle-check"></i>            
+            <i class="fa-regular fa-circle-check"></i>
             <label>*Categoría del Producto</label><br>
-            <select name="categoria-productp">
-              <option value="accesorios">Accesorios</option>
-                <option value="audio">Audio</option>
-                <option value="coolers">Coolers</option>
-                <option value="discos-rigidos">Discos Rigidos</option>
-                <option value="memorias">Memorias</option>
-                <option value="monitores">Monitores</option>
-                <option value="modtherboards">Motherboards</option>
-                <option value="perofericos">Periféricos</option>
-                <option value="placas-videos">Placas de Video</option>
-                <option value="-procesadores">Procesadores</option>
-                <option value="ssd">SSD</option>
-                <option value="teclados">Teclados</option>
+            <select name="category">
+              <option value="">Seleccionar...</option>
+              <option value="Audio">Audio</option>
+              <option value="Coolers">Coolers</option>
+              <option value="Disco Rigido">Discos Rigidos</option>
+              <option value="Gabinete">Gabinetes</option>
+              <option value="Memorias">Memorias</option>
+              <option value="Monitor">Monitores</option>
+              <option value="Motherboards">Motherboards</option>
+              <option value="perifericos">Periféricos</option>
+              <option value="Placa de Video">Placas de Video</option>
+              <option value="-Procesador">Procesadores</option>
+              <option value="SSD">SSD</option>
+              <option value="Teclado">Teclados</option>
             </select>
           </div>
-          <div>                                    
+          <div>
             <i class="fa-solid fa-file-invoice-dollar"></i>
             <label>*Precio del Producto</label>
-            <input type="number" id="precio-producto" placeholder="Detalle el precio al público, incluir puntos">
-          </div>                          
-          <div>                        
+            <input name="price" type="number" id="precio-producto"
+              placeholder="Detalle el precio al público, incluir puntos">
+          </div>
+          <div>
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+            <label>*Descuento del Producto</label>
+            <input name="discount" type="number" id="precio-producto" placeholder="descuento por pago en efectivo">
+          </div>
+          <div>
             <i class="fa-solid fa-clock-rotate-left"></i>
             <label>*Garantía del Producto (meses)</label>
-            <input type="number" id="garantia-producto" placeholder="Detalle los meses de garantía del producto">
-          </div>                  
+            <input name="warranty" type="number" id="garantia-producto"
+              placeholder="Detalle los meses de garantía del producto">
+          </div>
+          <div>
+            <i class="fa-solid fa-computer"></i>
+            <label>*Fecha de Ingreso</label>
+            <input name="date" type="date" id="signup-firstname" placeholder="Nombre nuevo del producto">
+          </div>
+          <div>
+            <i class="fa-regular fa-circle-check"></i>
+            <label>*Estado del Producto</label><br>
+            <select name="status">
+              <option value="">Seleccionar...</option>
+              <option value="true">Activo</option>
+              <option value="false">Inactivo</option>
+            </select>
+          </div>
 
           <input class="button" id="signup-submit" type="submit" value="Agregar Nuevo Producto">
         </form>
@@ -93,9 +116,12 @@
     <section>
       <header class="informacion-lateral">
         <h1>Tener en Cuenta al Agregar Productos</h1>
-        <p><i class="fa-solid fa-circle-info"> </i> Descripción del Producto. Describa la características más relevantes del producto que se mustrarán al público.</p><br>
-        <p><i class="fa-solid fa-file-invoice-dollar"> </i> Tener en cuenta al detallar el Precio al Público del Producto, debe expresarlo solo numeros e incluir puntos.</p><br>
-        <p><i class="fa-solid fa-clock-rotate-left"> </i> Debe expresar el número de meses que tendrá de garantía el nuevo producto.</p>
+        <p><i class="fa-solid fa-circle-info"> </i> Descripción del Producto. Describa la características más relevantes
+          del producto que se mustrarán al público.</p><br>
+        <p><i class="fa-solid fa-file-invoice-dollar"> </i> Tener en cuenta al detallar el Precio al Público del
+          Producto, debe expresarlo solo numeros e incluir puntos.</p><br>
+        <p><i class="fa-solid fa-clock-rotate-left"> </i> Debe expresar el número de meses que tendrá de garantía el
+          nuevo producto.</p>
       </header>
     </section>
   </main>
