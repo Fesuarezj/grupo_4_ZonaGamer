@@ -33,89 +33,100 @@
 
     <section class="signup-group">
       <section class="container-titulo-form">
-        <h2><span class="semi-bold">Agregando Nuevo Producto a -Zona Gamer-</span></h2>
+        <h2><span class="semi-bold">Editando Producto de -Zona Gamer-</span></h2>
       </section>
 
       <section class="form-container">
-        <form action="./" method="POST" enctype="multipart/form-data">
+
+        <form action="./?_method=PUT" method="POST">
           <div>
             <i class="fa-solid fa-computer"></i>
             <label>*Nombre del Producto</label>
-            <input name="name" type="text" id="signup-firstname" placeholder="Nombre nuevo del producto">
+            <input name="name" value="<%= producto.name %>" type="text" id="signup-firstname"
+              placeholder="Nombre nuevo del producto">
           </div>
           <div>
             <i class="fa-solid fa-circle-info"></i>
             <label>*Descripción del Producto</label>
-            <textarea name="description" rows="3" cols="53" placeholder="Descrioción del nuevo producto"></textarea>
+            <textarea name="description" rows="3" cols="53"
+              placeholder="Descrioción del nuevo producto"><%= producto.description %></textarea>
           </div>
           <div>
             <i class="fa-solid fa-camera"></i>
             <label>*Imagen del Producto</label>
-            <input type="file" id="imagenProducto" name="imagenProducto" accept="image/*"
+            <input type="file" value="<%= producto.image %>" id="imagenProducto" name="imagenProducto" accept="image/*"
               title="Seleccionar la imagen del nuevo producto">
           </div>
 
           <div>
             <i class="fa-regular fa-circle-check"></i>
             <label>*Categoría del Producto</label><br>
-            <select name="category">
+            <select name="category" value="<%= producto.category %>">
               <option value="">Seleccionar...</option>
-              <option value="Audio">Audio</option>
-              <option value="Coolers">Coolers</option>
-              <option value="Disco Rigido">Discos Rigidos</option>
-              <option value="Gabinete">Gabinetes</option>
-              <option value="Memorias">Memorias</option>
-              <option value="Monitor">Monitores</option>
-              <option value="Motherboards">Motherboards</option>
-              <option value="perifericos">Periféricos</option>
-              <option value="Placa de Video">Placas de Video</option>
-              <option value="-Procesador">Procesadores</option>
-              <option value="SSD">SSD</option>
-              <option value="Teclado">Teclados</option>
+              <option value="Audio" <%= (producto.category == 'Audio')? 'selected' : '' %>>Audio</option>
+              <option value="Cooler" <%= (producto.category == 'Coller')? 'selected' : '' %>>Coolers</option>
+              <option value="Disco Rigido" <%= (producto.category == 'Disco Rigido')? 'selected' : '' %>>Discos Rigidos
+              </option>
+              <option value="Gabinete" <%= (producto.category == 'Gabinete')? 'selected' : '' %>>Gabinetes</option>
+              <option value="Memoria" <%= (producto.category == 'Memoria')? 'selected' : '' %>>Memorias</option>
+              <option value="Monitor" <%= (producto.category == 'Monitor')? 'selected' : '' %>>Monitores</option>
+              <option value="Motherboard" <%= (producto.category == 'Motherboard')? 'selected' : '' %>>Motherboards
+              </option>
+              <option value="Periferico" <%= (producto.category == 'Periferico')? 'selected' : '' %>>Periféricos
+              </option>
+              <option value="Placa de Video" <%= (producto.category == 'Placa de Video')? 'selected' : '' %>>Placas de
+                Video</option>
+              <option value="Procesador" <%= (producto.category == 'Procesador')? 'selected' : '' %>>
+                Procesadores
+              </option>
+              <option value="SSD" <%= (producto.category == 'SSD')? 'selected' : '' %>>SSD</option>
+              <option value="Teclado" <%= (producto.category == 'Teclado')? 'selected' : '' %>>Teclados</option>
             </select>
           </div>
           <div>
             <i class="fa-solid fa-file-invoice-dollar"></i>
             <label>*Precio del Producto</label>
-            <input name="price" type="number" id="precio-producto"
+            <input name="price" value="<%= producto.price %>" type="number" id="precio-producto"
               placeholder="Detalle el precio al público, incluir puntos">
           </div>
           <div>
             <i class="fa-solid fa-file-invoice-dollar"></i>
             <label>*Descuento del Producto</label>
-            <input name="discount" type="number" id="precio-producto" placeholder="descuento por pago en efectivo">
+            <input name="discount" value="<%= producto.discount %>" type="number" id="precio-producto"
+              placeholder="descuento por pago en efectivo">
           </div>
           <div>
             <i class="fa-solid fa-clock-rotate-left"></i>
             <label>*Garantía del Producto (meses)</label>
-            <input name="warranty" type="number" id="garantia-producto"
+            <input name="warranty" value="<%= producto.warranty %>" type="number" id="garantia-producto"
               placeholder="Detalle los meses de garantía del producto">
           </div>
           <div>
             <i class="fa-solid fa-computer"></i>
-            <label>*Fecha de Ingreso</label>
-            <input name="date" type="date" id="signup-firstname" placeholder="Nombre nuevo del producto">
+            <label>*Fecha de Edición</label>
+            <input name="date" value="<%= producto.date %>" type="date" id="signup-firstname"
+              placeholder="Nombre nuevo del producto">
           </div>
           <div>
             <i class="fa-regular fa-circle-check"></i>
             <label>*Estado del Producto</label><br>
-            <select name="status">
+            <select name="status" value="<%= producto.status %>">
               <option value="">Seleccionar...</option>
               <option value="true">Activo</option>
               <option value="false">Inactivo</option>
             </select>
           </div>
 
-          <input class="button" id="signup-submit" type="submit" value="Agregar Nuevo Producto">
+          <input class="button" id="signup-submit" type="submit" value="Editar Producto">
         </form>
 
-        <p class="terminos">Al dar clic -Agregar-, estás adicionando un nuevo producto al público </p>
+        <p class="terminos">Al dar clic -Editar-, estás adicionando un nuevo producto al público </p>
       </section>
 
     </section>
     <section>
       <header class="informacion-lateral">
-        <h1>Tener en Cuenta al Agregar Productos</h1>
+        <h1>Tener en Cuenta al Editar Productos</h1>
         <p><i class="fa-solid fa-circle-info"> </i> Descripción del Producto. Describa la características más relevantes
           del producto que se mustrarán al público.</p><br>
         <p><i class="fa-solid fa-file-invoice-dollar"> </i> Tener en cuenta al detallar el Precio al Público del

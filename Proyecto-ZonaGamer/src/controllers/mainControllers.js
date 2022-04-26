@@ -8,7 +8,7 @@ const path = require('path');
 
 const mainControllers = {
     home: (req, res) => {
-    const productsFilePath = path.join(__dirname, '../data/productsData.json');
+        const productsFilePath = path.join(__dirname, '../data/productsData.json');
 		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
         const allProducts = products;

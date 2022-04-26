@@ -172,11 +172,35 @@
   "name": "Gabinete",
   "description": "Gabinete Gamer",
   "image": "imagenProducto-1650831077805.png",
-  "category": "gabinetes",
+  "category": "Gabinete",
   "warranty": 6,
   "price": 7000,
   "discount": 5,
   "date": "2022-04-24",
+  "status": "true"
+ },
+ {
+  "id": 16,
+  "name": "Monitor 32\"",
+  "description": "Gamer",
+  "image": "imagenProducto-1650936080503.png",
+  "category": "Monitor",
+  "warranty": 6,
+  "price": 25000,
+  "discount": 10,
+  "date": "2022-04-25",
+  "status": "true"
+ },
+ {
+  "id": 17,
+  "name": "jajajaj",
+  "description": "jnkajajkakja",
+  "image": "imagenProducto-1650943303778.png",
+  "category": "",
+  "warranty": 1,
+  "price": 1212221212,
+  "discount": 2,
+  "date": "2022-04-25",
   "status": "true"
  }
 ]

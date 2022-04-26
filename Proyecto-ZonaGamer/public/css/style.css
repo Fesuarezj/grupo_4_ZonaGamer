@@ -624,6 +624,9 @@ body {
     .producto__imagen__dt {
         width: 715px;
     }   
+    .navegacion {
+        display: none;
+    }
 }
 
 @media (min-width: 1140px) {

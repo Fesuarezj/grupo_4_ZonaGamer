@@ -7,6 +7,14 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const productsControllers = {
+    index: (req, res) => {
+        const productsFilePath = path.join(__dirname, '../data/productsData.json');
+		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+        const allProducts = products;
+        res.render('../views/home.ejs', {productos : allProducts});
+    },
+
     producto: (req, res) => {
         const productsFilePath = path.join(__dirname, '../data/productsData.json');
 		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -28,6 +36,19 @@ const productsControllers = {
         // const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
         res.render('../views/products/agregarProducto.ejs');        
+    },
+
+    /*** EDITAR PRODUCTO ***/
+    editarProducto: (req, res) => {
+        const productsFilePath = path.join(__dirname, '../data/productsData.json');
+		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+        const productoBuscado = products.find(producto => producto.id == req.params.id);
+        // const precioFinal = productoBuscado.price - (productoBuscado.price * (productoBuscado.discount / 100));	
+
+        console.log('*********', req.params.id);
+
+        res.render('../views/products/editarProducto.ejs', {producto: productoBuscado})
     },
 
 
@@ -54,7 +75,29 @@ const productsControllers = {
 		
 		res.redirect('/');
 
-    }
+    },
+    /*** ACTUALIZAR PRODUCTO ***/ 
+    actualizar: (req, res) => {	
+		const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+		const indiceProductoAEditar = products.findIndex(producto => producto.id == req.params.id);
+
+        console.log('************entrando a actualizar**************');
+
+		if (indiceProductoAEditar != -1) {
+			products[indiceProductoAEditar].name = req.body.name;
+			products[indiceProductoAEditar].price = Number(req.body.price);
+			products[indiceProductoAEditar].discount = Number(req.body.discount);
+			products[indiceProductoAEditar].category = req.body.category;
+			products[indiceProductoAEditar].description = req.body.description;
+		}
+		// console.log(products[indiceProductoAEditar].id);
+
+		fs.writeFileSync(productsFilePath,JSON.stringify(products, null , ' '));
+
+		res.redirect('/');
+	},
 
 };
 
