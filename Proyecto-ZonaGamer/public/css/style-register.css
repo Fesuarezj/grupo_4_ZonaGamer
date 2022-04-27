@@ -102,7 +102,8 @@ header {
     
 } 
 .container-titulo-form h2 { 
-    padding: 20px 80px;     
+    padding: 20px 80px;    
+    margin-top: 1rem; 
 }
 
 
@@ -112,8 +113,8 @@ header {
     background: #969694;
     border-radius: 10px;
     filter: var(--ds-blackNoblur);    
-    background-color: rgb(8, 8, 8);
-    /*box-shadow: 0px 0px 10px 10px #969694;*/
+    background-color: rgb(8, 8, 8);    
+    margin-bottom: 2rem;
     
 }
 
@@ -132,6 +133,13 @@ form .button {
     filter: var(--cNeutral-light);
     cursor: pointer;
 }
+form .eliminar {
+    border: 0;
+    background: var(--cPrimary-red);
+    filter: var(--cNeutral-light);
+    cursor: pointer;
+}
+
 form i, .informacion-lateral i{
     color: rgb(22, 240, 22); 
     font-size: 20px;
@@ -169,7 +177,7 @@ form input, textarea, select {
 }
 
 form .button {
-    font-weight: var(--fw-medium);
+    font-weight: var(--fw-bold);
     color: white;
     text-transform: uppercase;
     letter-spacing: 0.1rem;

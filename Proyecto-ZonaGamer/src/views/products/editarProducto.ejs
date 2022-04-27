@@ -33,12 +33,11 @@
 
     <section class="signup-group">
       <section class="container-titulo-form">
-        <h2><span class="semi-bold">Editando Producto de -Zona Gamer-</span></h2>
+        <h2><span class="semi-bold">Editando Producto <i>ID: <%= producto.id %></i></span></h2>
       </section>
 
       <section class="form-container">
-
-        <form action="./?_method=PUT" method="POST">
+        <form action="/products/<%= producto.id %>?_method=PUT" method="POST">
           <div>
             <i class="fa-solid fa-computer"></i>
             <label>*Nombre del Producto</label>
@@ -59,12 +58,12 @@
           </div>
 
           <div>
-            <i class="fa-regular fa-circle-check"></i>
+            <i class="fa-solid fa-list-check"></i>
             <label>*Categoría del Producto</label><br>
             <select name="category" value="<%= producto.category %>">
               <option value="">Seleccionar...</option>
               <option value="Audio" <%= (producto.category == 'Audio')? 'selected' : '' %>>Audio</option>
-              <option value="Cooler" <%= (producto.category == 'Coller')? 'selected' : '' %>>Coolers</option>
+              <option value="Cooler" <%= (producto.category == 'Cooler')? 'selected' : '' %>>Coolers</option>
               <option value="Disco Rigido" <%= (producto.category == 'Disco Rigido')? 'selected' : '' %>>Discos Rigidos
               </option>
               <option value="Gabinete" <%= (producto.category == 'Gabinete')? 'selected' : '' %>>Gabinetes</option>
@@ -90,7 +89,7 @@
               placeholder="Detalle el precio al público, incluir puntos">
           </div>
           <div>
-            <i class="fa-solid fa-file-invoice-dollar"></i>
+            <i class="fa-solid fa-percent"></i>
             <label>*Descuento del Producto</label>
             <input name="discount" value="<%= producto.discount %>" type="number" id="precio-producto"
               placeholder="descuento por pago en efectivo">
@@ -102,7 +101,7 @@
               placeholder="Detalle los meses de garantía del producto">
           </div>
           <div>
-            <i class="fa-solid fa-computer"></i>
+            <i class="fa-regular fa-calendar-check"></i>
             <label>*Fecha de Edición</label>
             <input name="date" value="<%= producto.date %>" type="date" id="signup-firstname"
               placeholder="Nombre nuevo del producto">
@@ -118,6 +117,11 @@
           </div>
 
           <input class="button" id="signup-submit" type="submit" value="Editar Producto">
+
+        </form>
+
+        <form action="/products/<%= producto.id %>?_method=DELETE" method="POST">
+          <input class="button eliminar" id="signup-submit" type="submit" value="Eliminar Producto">
         </form>
 
         <p class="terminos">Al dar clic -Editar-, estás adicionando un nuevo producto al público </p>

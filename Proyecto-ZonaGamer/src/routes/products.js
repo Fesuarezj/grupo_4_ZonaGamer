@@ -35,6 +35,9 @@ router.post('/', uploadFile.any(), productsControllers.store);
 
 /*** EDITAR PRODUCTO ***/
 router.get('/editar/:id', productsControllers.editarProducto);
-router.put('/', uploadFile.any(), productsControllers.actualizar); 
+router.put('/:id', productsControllers.actualizar); 
+
+/*** ELIMINAR PRODUCTO ***/ 
+router.delete('/:id', productsControllers.destroy); 
 
 module.exports = router;
