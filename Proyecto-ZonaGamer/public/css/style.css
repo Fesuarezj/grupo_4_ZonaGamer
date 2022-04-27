@@ -230,6 +230,14 @@ body {
     color: var(--blanco);
 }
 
+.boton__eliminar {
+    color: var(--blanco);
+    font-weight: bold;
+    background-color: var(--red);
+    border-radius: 5px;
+    border: solid 2px var(--red);
+}
+
 /* ------------------------------ */
 /* GRID 2 */
 /* ------------------------------ */

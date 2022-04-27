@@ -12,7 +12,7 @@ const productsControllers = {
 		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
         const allProducts = products;
-        res.render('../views/home.ejs', {productos : allProducts});
+        res.render('../views/products/listadoProductos.ejs', {productos : allProducts});
     },
 
     producto: (req, res) => {
@@ -38,20 +38,6 @@ const productsControllers = {
         res.render('../views/products/agregarProducto.ejs');        
     },
 
-    /*** EDITAR PRODUCTO ***/
-    editarProducto: (req, res) => {
-        const productsFilePath = path.join(__dirname, '../data/productsData.json');
-		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-        const productoBuscado = products.find(producto => producto.id == req.params.id);
-        // const precioFinal = productoBuscado.price - (productoBuscado.price * (productoBuscado.discount / 100));	
-
-        console.log('*********', req.params.id);
-
-        res.render('../views/products/editarProducto.ejs', {producto: productoBuscado})
-    },
-
-
     store: (req, res) => {
         const productsFilePath = path.join(__dirname, '../data/productsData.json');
         const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -74,32 +60,56 @@ const productsControllers = {
 		fs.writeFileSync(productsFilePath,JSON.stringify(products, null , ' '));
 		
 		res.redirect('/');
-
     },
-    /*** ACTUALIZAR PRODUCTO ***/ 
-    actualizar: (req, res) => {	
-		const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+
+    /*** EDITAR PRODUCTO ***/
+    editarProducto: (req, res) => {
+        const productsFilePath = path.join(__dirname, '../data/productsData.json');
 		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-		const indiceProductoAEditar = products.findIndex(producto => producto.id == req.params.id);
+        const idProduct = req.params.id;
+		const productoBuscado = products.find(producto => producto.id == idProduct);      
 
-        console.log('************entrando a actualizar**************');
+        res.render('../views/products/editarProducto.ejs', {producto: productoBuscado});
+    },   
+    /*** ACTUALIZAR PRODUCTO ***/ 
+    actualizar: (req, res) => {	
+		const productsFilePath = path.join(__dirname, '../data/productsData.json');
+		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-		if (indiceProductoAEditar != -1) {
-			products[indiceProductoAEditar].name = req.body.name;
-			products[indiceProductoAEditar].price = Number(req.body.price);
-			products[indiceProductoAEditar].discount = Number(req.body.discount);
-			products[indiceProductoAEditar].category = req.body.category;
-			products[indiceProductoAEditar].description = req.body.description;
+		const indiceProductoBuscado = products.findIndex(producto => producto.id == req.params.id);   
+        
+        console.log(products[indiceProductoBuscado]);
+
+
+		if (indiceProductoBuscado != -1) {
+			products[indiceProductoBuscado].name = req.body.name;
+            products[indiceProductoBuscado].description = req.body.description;
+            products[indiceProductoBuscado].image = req.body.image;
+            products[indiceProductoBuscado].category = req.body.category;
+            products[indiceProductoBuscado].warranty = req.body.warranty;
+			products[indiceProductoBuscado].price = Number(req.body.price);
+			products[indiceProductoBuscado].discount = Number(req.body.discount);
+			products[indiceProductoBuscado].date = req.body.date;
+			products[indiceProductoBuscado].status = req.body.status;
 		}
-		// console.log(products[indiceProductoAEditar].id);
-
+		
 		fs.writeFileSync(productsFilePath,JSON.stringify(products, null , ' '));
 
 		res.redirect('/');
 	},
 
-};
+    	// Delete - Delete one product from DB
+	destroy : (req, res) => {
+		const productsFilePath = path.join(__dirname, '../data/productsData.json');
+		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+		let idAEliminar =  req.params.id;
+		let productosFiltrados = products.filter(product => product.id != idAEliminar);
+		fs.writeFileSync(productsFilePath,JSON.stringify(productosFiltrados, null , ' '));
+
+		res.redirect('/');
+	}
+};
 
 module.exports = productsControllers;

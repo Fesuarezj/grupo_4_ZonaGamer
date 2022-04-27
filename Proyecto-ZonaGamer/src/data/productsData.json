@@ -57,7 +57,7 @@
   "price": 25000,
   "discount": 10,
   "date": "26/01/2022",
-  "status": true
+  "status": false
  },
  {
   "id": 6,
@@ -93,7 +93,7 @@
   "price": 180000,
   "discount": 10,
   "date": "20/06/2021",
-  "status": true
+  "status": false
  },
  {
   "id": 9,
@@ -117,7 +117,7 @@
   "price": 200000,
   "discount": 10,
   "date": "28/02/2022",
-  "status": false
+  "status": true
  },
  {
   "id": 11,
@@ -153,7 +153,7 @@
   "price": 8000,
   "discount": 5,
   "date": "20/04/2022",
-  "status": false
+  "status": true
  },
  {
   "id": 14,
@@ -166,41 +166,5 @@
   "discount": 5,
   "date": "24/05/2021",
   "status": false
- },
- {
-  "id": 15,
-  "name": "Gabinete",
-  "description": "Gabinete Gamer",
-  "image": "imagenProducto-1650831077805.png",
-  "category": "Gabinete",
-  "warranty": 6,
-  "price": 7000,
-  "discount": 5,
-  "date": "2022-04-24",
-  "status": "true"
- },
- {
-  "id": 16,
-  "name": "Monitor 32\"",
-  "description": "Gamer",
-  "image": "imagenProducto-1650936080503.png",
-  "category": "Monitor",
-  "warranty": 6,
-  "price": 25000,
-  "discount": 10,
-  "date": "2022-04-25",
-  "status": "true"
- },
- {
-  "id": 17,
-  "name": "jajajaj",
-  "description": "jnkajajkakja",
-  "image": "imagenProducto-1650943303778.png",
-  "category": "",
-  "warranty": 1,
-  "price": 1212221212,
-  "discount": 2,
-  "date": "2022-04-25",
-  "status": "true"
  }
 ]
