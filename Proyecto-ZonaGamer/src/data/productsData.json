@@ -166,5 +166,53 @@
   "discount": 5,
   "date": "24/05/2021",
   "status": false
+ },
+ {
+  "id": 15,
+  "name": "Glest 26\"",
+  "description": "Nuevo Monitor 2022",
+  "image": "imagenProducto-1651101971111.png",
+  "category": "Monitor",
+  "warranty": 12,
+  "price": 23000,
+  "discount": 10,
+  "date": "2022-04-27",
+  "status": true
+ },
+ {
+  "id": 16,
+  "name": "GeForce 8500 RXT",
+  "description": "Disfruta de lo mejor en gráficos",
+  "image": "imagenProducto-1651102285658.png",
+  "category": "Placa de Video",
+  "warranty": 12,
+  "price": 230000,
+  "discount": 15,
+  "date": "2022-04-27",
+  "status": true
+ },
+ {
+  "id": 17,
+  "name": "Thermaltake Pro 2000",
+  "description": "Gabinete Gamer 2022",
+  "image": "imagenProducto-1651102602468.png",
+  "category": "Gabinete",
+  "warranty": 6,
+  "price": 10000,
+  "discount": 5,
+  "date": "2022-04-27",
+  "status": true
+ },
+ {
+  "id": 18,
+  "name": "Samsung A200",
+  "description": "Monitor N200 2022 Pro",
+  "image": "imagenProducto-1651102828451.png",
+  "category": "Monitor",
+  "warranty": 12,
+  "price": 30000,
+  "discount": 15,
+  "date": "2022-04-27",
+  "status": true
  }
 ]

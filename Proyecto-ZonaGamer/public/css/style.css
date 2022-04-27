@@ -268,7 +268,7 @@ body {
 /* MENU */
 /* ------------------------------ */
 
-.navegacion {
+.navegacion__home {
     display: flex;
     justify-content: space-around;
     color: var(--blanco);
@@ -339,7 +339,13 @@ body {
     font-weight: bold;
 }
 
-.navegacion-enlace {
+.navegacion {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.navegacion a {
     text-decoration: none;
     color: var(--blanco);
 }
@@ -632,9 +638,9 @@ body {
     .producto__imagen__dt {
         width: 715px;
     }   
-    .navegacion {
+    .navegacion__home {
         display: none;
-    }
+    }   
 }
 
 @media (min-width: 1140px) {
@@ -667,5 +673,3 @@ body {
         background-position: center center;
     }
 }
-
-
