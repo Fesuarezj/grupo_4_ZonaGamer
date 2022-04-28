@@ -102,17 +102,16 @@
           </div>
           <div>
             <i class="fa-regular fa-calendar-check"></i>
-            <label>*Fecha de Edición</label>
-            <input name="date" value="<%= producto.date %>" type="date" id="signup-firstname"
-              placeholder="Nombre nuevo del producto">
+            <label>*Fecha de Edición</label>            
+            <input name="date" value="2022-10-10" type="date" id="signup-firstname">
           </div>
           <div>
             <i class="fa-regular fa-circle-check"></i>
             <label>*Estado del Producto</label><br>
             <select name="status" value="<%= producto.status %>">
               <option value="">Seleccionar...</option>
-              <option value="true">Activo</option>
-              <option value="false">Inactivo</option>
+              <option value="true" <%= (producto.status == true)? 'selected' : '' %> >Activo</option>
+              <option value="false" <%= (producto.status == false)? 'selected' : '' %> >Inactivo</option>
             </select>
           </div>
 
