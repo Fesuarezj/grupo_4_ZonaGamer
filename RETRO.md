@@ -39,6 +39,34 @@
    -Confiarnos con los tiempos y dejar las cosas para otro momento.
    -Procrastinar
 
+5. Dejar de hacer.
+   -Pensar que es imposible realizar un proyecto web, creer que nunca vamos a alncar un nivel senion en este campo
+
+## Retrosprectiva Sprint 4
+
+1. Comenzar a hacer.
+   -Revisar algunas vistas que no quedaron del todo correcto .
+   -Complementar con recursos externos ciertos conocimientos requeridos de acuerdo a necesidades surgidas.
+   -Revisar la implementación del partial head en las páginas de productos.
+   -Hacer mayor uso de ejs para trabajar las visualizaciones.
+
+2. Hacer más.
+   -fortalecer la dinámica de las metodologías ágiles en el desarrollo de softeare.
+   -Revisar el uso de las validaciones de formulación en el FRONT-END que fortalezca la usabilidad de nuestro proyecto integrador
+   -Identificación ya de funcionalidades que deberán irse teniendo encuenta para poder ir integrando al proyecto.
+
+3. Continuar haciendo.
+   -Revisar el feedback de cada sprint anterior, tomando en cuenta las sugerencias y mejoras recibidas.
+   -Seguir revisando documentación y consolidando los conocimientos que vamos adquiriendo clase a clase y mediante el playground.
+   -Revisar con el equipo de trabajo, las falencias y fortalezcas que vayaos descubriendo.
+   -Seguir comunicandonos e interactunado via whatsapp e ir ajustando temas para llegar a las reuniones por zoom mas organizados.
+   -Implementado ciertas mejoras al proyecto a medida que vamos adquiriendo mas conocimiento con el transcurrir de las clases y nuevas dudadas e inquitudus que nos hacemos.
+   -Adicionar más funcionalidades que van surgiendo a medida que avanzamos de acorde a la ionfoemación que queremos mostrar.
+   -Nutrirnos de información externa de modo que complemente los conocimientos a implementar en el proyecto.
+
+4. Hacer menos.
+   -Confiarnos con los tiempos y dejar las cosas para otro momento.
+   -Procrastinar
 
 5. Dejar de hacer.
    -Pensar que es imposible realizar un proyecto web, creer que nunca vamos a alncar un nivel senion en este campo
