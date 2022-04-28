@@ -109,7 +109,7 @@
  },
  {
   "id": 10,
-  "name": "Gigabyte RX 6600 RT Pro",
+  "name": "Gigabyte RX 6600",
   "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ad, quaerat sequi eos magni ut consectetur optio modi porro possimus soluta voluptatum maxime ipsam impedit ratione dicta iusto ipsum tenetur!",
   "image": "placa05.png",
   "category": "Placa de Video",
@@ -181,7 +181,7 @@
  },
  {
   "id": 16,
-  "name": "GeForce 8500 RXT",
+  "name": "GeForce 8500",
   "description": "Disfruta de lo mejor en gráficos",
   "image": "imagenProducto-1651102285658.png",
   "category": "Placa de Video",
@@ -193,7 +193,7 @@
  },
  {
   "id": 17,
-  "name": "Thermaltake Pro 2000",
+  "name": "Thermaltake Pro",
   "description": "Gabinete Gamer 2022",
   "image": "imagenProducto-1651102602468.png",
   "category": "Gabinete",

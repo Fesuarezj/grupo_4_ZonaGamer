@@ -52,7 +52,9 @@ const productsControllers = {
         "price": Number(req.body.price),
         "discount": Number(req.body.discount),
         "date": req.body.date,
-        "status": req.body.status      
+        "status": (req.body.status == "true")? true : false 
+        // "status": new Boolean(req.body.status )
+  
     }
 
         products.push(nuevoProducto);
@@ -91,7 +93,7 @@ const productsControllers = {
 			products[indiceProductoBuscado].price = Number(req.body.price);
 			products[indiceProductoBuscado].discount = Number(req.body.discount);
 			products[indiceProductoBuscado].date = req.body.date;
-			products[indiceProductoBuscado].status = req.body.status;
+			products[indiceProductoBuscado].status = (req.body.status == "true")? true : false;
 		}
 		
 		fs.writeFileSync(productsFilePath,JSON.stringify(products, null , ' '));
