@@ -6,6 +6,8 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
+
+
 const productsControllers = {
     index: (req, res) => {
         const productsFilePath = path.join(__dirname, '../data/productsData.json');
@@ -24,7 +26,6 @@ const productsControllers = {
 
         res.render('../views/products/detalleProducto.ejs', {producto: productoBuscado, precio_final: precioFinal})
     },
-
     
     carrito: (req, res) => {
         res.render('../views/products/carrito.ejs')
@@ -53,10 +54,8 @@ const productsControllers = {
         "discount": Number(req.body.discount),
         "date": req.body.date,
         "status": (req.body.status == "true")? true : false 
-        // "status": new Boolean(req.body.status )
-  
+        // "status": new Boolean(req.body.status )  
     }
-
         products.push(nuevoProducto);
 
 		fs.writeFileSync(productsFilePath,JSON.stringify(products, null , ' '));
