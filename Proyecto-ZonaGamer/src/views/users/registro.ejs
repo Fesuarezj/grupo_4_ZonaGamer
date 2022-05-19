@@ -34,36 +34,81 @@
 
     <section class="signup-group">
       <section class="container-titulo-form">
-        <h2><span class="semi-bold">Crearás tu cuenta en -Zona Gamer-</span> Disfrútala YA!!</h2>
+        <h2><span class="semi-bold">Formulario de Registro</h2>
       </section>
 
       <section class="form-container">
-        <form action="/">
+        <form action="/users/registro" method="POST" enctype="multipart/form-data">
+          <div>
+            <i class="fa-solid fa-camera"></i>
+            <label>*Imagen de Perfil</label>
+            <input type="file" id="imagenPerfil" name="imagenPerfil" accept="image/*"
+              title="Seleccionar la imagen del nuevo producto">
+            <% if (locals.errors && errors.imagenPerfil) { %>
+            <div class="text-danger">
+              <%= errors.imagenPerfil.msg %>
+            </div>
+            <% } %>
+          </div>
+
           <div>
             <i class="fa-regular fa-user"></i>
             <label>*Nombre</label>
-            <input type="text" id="signup-firstname" placeholder="Nombre">
+            <input type="text" id="signup-firstname" name="nombre" placeholder="Nombre"
+              value="<%= locals.oldData ? oldData.nombre : null %>">
+            <% if (locals.errors && errors.nombre) { %>
+            <div class="text-danger">
+              <%= errors.nombre.msg %>
+            </div>
+            <% } %>
           </div>
+
           <div>
             <i class="fa-solid fa-signature"></i>
             <label>*Apellido</label>
-            <input type="text" id="signup-lastname" placeholder="Apellido">
+            <input type="text" id="signup-lastname" name="apellido" placeholder="Apellido"
+              value="<%= locals.oldData ? oldData.apellido : null %>">
+            <% if (locals.errors && errors.apellido) { %>
+            <div class="text-danger">
+              <%= errors.apellido.msg %>
+            </div>
+            <% } %>
           </div>
+
           <div>
             <i class="fa-regular fa-envelope"></i>
             <label>E-mail</label>
-            <input type="email" id="signup-email" placeholder="Correo Electrónico">
+            <input type="email" id="signup-email" name="correoElectronico" placeholder="Correo Electrónico"
+              value="<%= locals.oldData ? oldData.correoElectronico : null %>">
+            <% if (locals.errors && errors.correoElectronico) { %>
+            <div class="text-danger">
+              <%= errors.correoElectronico.msg %>
+            </div>
+            <% } %>
           </div>
+
           <div>
             <i class="fa-regular fa-id-badge"></i>
             <label>*Nombre de Usuario</label>
-            <input type="text" id="signup-username" placeholder="Nombre de usuario">
+            <input type="text" id="signup-username" name="userName" placeholder="Nombre de usuario"
+              value="<%= locals.oldData ? oldData.userName : null %>">
+            <% if (locals.errors && errors.userName) { %>
+            <div class="text-danger">
+              <%= errors.userName.msg %>
+            </div>
+            <% } %>
           </div>
           <div>
             <i class="fa-solid fa-key"></i>
             <label>*Contraseña</label>
-            <input type="password" id="signup-password" placeholder="Ingrese un contraseña">
+            <input type="password" id="signup-password" name="contrasenia" placeholder="Ingrese un contraseña">
+            <% if (locals.errors && errors.contrasenia) { %>
+            <div class="text-danger">
+              <%= errors.contrasenia.msg %>
+            </div>
+            <% } %>
           </div>
+
           <div>
             <i class="fa-solid fa-spell-check"></i>
             <label>*Confirmar Contraseña</label>
