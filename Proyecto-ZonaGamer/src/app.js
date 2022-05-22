@@ -1,8 +1,9 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
-var cookieParser = require('cookie-parser');
+var cookies = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session');
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
 
 // var indexRouter = require('./routes/home');
@@ -10,18 +11,27 @@ const homeRouter = require('./routes/home');
 const userRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
 
+const app = express();
 
-var app = express();
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
-// view engine setup
+app.use(session({
+  secret: 'informacion secreta', 
+  resave: false, 
+  saveUninitialized: false}));
+
+app.use(cookies());
+
+app.use(userLoggedMiddleware);
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
+
 app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 
 app.use('/', homeRouter);

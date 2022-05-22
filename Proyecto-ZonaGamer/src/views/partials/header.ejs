@@ -11,10 +11,30 @@
             </div>
             <nav>
                 <ul class="nav-bar">
-                    <li><a href="/users/registro">Registro</a> <i class="fa fa-solid fa-address-card"></i></li>
+                    <% if (locals.estaLogeado) { %>
+                    <div class="nav-bar-user">
+                        <li>
+                            <a href="#">
+                                <img src="/images/avatars/<%= locals.usuarioLogeado.imagenPerfil %>" width="40"
+                                    style="border-radius: 100%;">
+                                Hola <%= locals.usuarioLogeado.nombre %></a>
+                            </a>
+                    </div>
+                    <div class="nav-bar-user">
+                        <ul>
+                            <a href="/users/perfil">Mi Perfil</a>
+                            <li>
+                                <hr class="lineaDivisoria">
+                            </li>
+                            <a href="/users/logout">Logout</a>
+                        </ul>
+                        </li>
+                    </div>
+                    <% } else { %>
+                    <li><a href="/products">Productos</a> <i class="fa fa-solid fa-store"></i> </li>
+                    <li><a href="/users/registro">Registro</a> <i class="fa fa-solid fa-address-card"></i> </li>
                     <li><a href="/users/login">Login</a> <i class="fas fa-sign-in-alt"></i> </li>
-                    <li><a href="/products/carrito">Carrito</a> <i class="fas fa-shopping-cart"></i></a> </i>
-                    </li>
+                    <% } %>
                 </ul>
             </nav>
         </div>

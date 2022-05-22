@@ -16,6 +16,10 @@
     --amarillo: yellow;
 }
 
+html {
+    background-color: var(--negro);
+}
+
 body {
     font-family: var(--fuentePrincipal);
 }
@@ -46,16 +50,24 @@ body {
 }
 
 .barraBusqueda {
-    border-radius: 5px;
-    position: relative;
-    left: 10px;
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 3px;    
+    width: 328px;
 }
 
 .nav-bar {
     display: flex;
-    position: relative;
-    /* right: 5px; */
-    left: 10px;
+    justify-content: flex-start;    
+}
+
+.nav-bar-user a {
+    display: inline-flex;
+    text-decoration: none;
+    color: var(--blanco);
+    font-weight: 600;
+    font-size: 1rem;
+    padding-left: 10px;
 }
 
 .nav-bar li a {
@@ -63,7 +75,11 @@ body {
     color: var(--blanco);
     font-weight: 600;
     font-size: 1rem;
-    padding-left: 10px;/*  */
+    padding-left: 10px;
+}
+
+.lineaDivisoria {
+    width: 80px;
 }
 
 .fa, .fas {
@@ -351,11 +367,88 @@ body {
 }
 
 /* ---------------------------- */
+/* PERFIL EJS */
+/* ---------------------------- */
+
+.contenedor-main-imagen-perfil {
+    border: 2px solid var(--blanco);
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    max-width: 470px;
+    margin: 0 auto;
+    width: 340px;
+}
+
+.saludoUsuario img{
+    box-shadow: 1px 1px 4px 4px var(--celestePaula);
+    width: 300px;
+    border-radius: 5px;
+}
+
+.saludoUsuario{
+    text-align: center;
+}
+
+.saludoUsuario h2{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    color: var(--blanco);
+    margin-top: 20px;
+    font-size: 35px;   
+}
+
+.datosUsuario{
+    text-align: center;
+}
+
+.datosUsuario h4{    
+    font-size: 25px;
+    color: var(--celestePaula);
+    margin-top: -20px;
+    margin-bottom: -15px;
+}
+
+.datosUsuario h5{  
+    font-size: 15px;
+    color: var(--blanco);
+}
+
+.datosUsuario h6{    
+    font-size: 20px;
+    color: var(--celestePaula);
+    margin-top: -20px;
+}
+
+.buttonp {   
+    margin-bottom: 20px;
+    margin-top: -10px;
+    color: var(--negro);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: var(--yellowGreen);
+    border-radius: 5px;
+    border: none;
+    width: 125px;
+    height: 20px;
+}
+
+.buttonp:hover {
+    cursor: pointer;
+    color: var(--blanco);
+    background-color: var(--red);
+}
+
+/* ---------------------------- */
 /* CARRITO EJS */
 /* ---------------------------- */
 
 .contenedor-main {
     padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .contenedor-main-imagen {
@@ -371,7 +464,6 @@ body {
 .titulo img{
     box-shadow: 1px 1px 4px 4px var(--celestePaula);
     width: 300px;
-    /* height: auto; */
     border-radius: 5px;
 }
 
@@ -383,10 +475,8 @@ body {
     height: 50px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    /* border-bottom: 1px solid #ccc; */
+    justify-content: center;  
     color: var(--blanco);
-    margin-top: 0px;
     font-size: 35px;
     margin-top: 10px;
 }
@@ -405,7 +495,6 @@ body {
 .iconos a:hover{
     color: #444;
 }
-
 
 .precio{
     text-align: center;
@@ -472,9 +561,7 @@ body {
     font-size: 30px;
 }
 .formulario {
-    background-color: var(--grisMedio);
-    /* margin: 0 auto; */
-    /* width: 95%; */
+    background-color: var(--grisMedio);    
     padding: 20px;
     border: 3px solid var(--grisOscuro);
     border-radius: 10px;
@@ -537,9 +624,8 @@ body {
         top: 20px;
     }
     .nav-bar {
-        position: relative;
-        /* right: 15px; */
-        left: 15px;
+        display: flex;
+        justify-content: flex-start;           
     }
     .nav-bar li a {
         font-size: 1rem;
@@ -575,6 +661,12 @@ body {
         display: flex;
         flex-direction: row;
     }   
+    .logo-svg {       
+        display: block;
+        width: 150px;
+        margin-left: 30px;
+        margin-top:15px;
+    }  
     .barraBusqueda {
         position: relative;
         left: 30px;
@@ -587,8 +679,7 @@ body {
         margin-left: 40px;
     }
     .nav-bar {
-        position: relative;
-        /* right: 0px; */
+        position: relative;       
         left: 20px;
     }
     .nav-bar li a {

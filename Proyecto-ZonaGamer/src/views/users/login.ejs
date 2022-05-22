@@ -34,25 +34,44 @@
 
     <section class="signup-group">
       <section class="container-titulo-form">
-        <h2><span class="semi-bold">Inicio de Sesión </span> <br> -Zona Gamer-</h2>
+        <h2><span class="semi-bold">Inicio de Sesión</h2>
       </section>
 
       <section class="form-container">
-        <form action="/products/agregar" name="form-login">
+        <form action="/users/login" method="POST" name="form-login">
           <div>
             <i class="fa-regular fa-id-badge"></i>
             <label>*Nombre de Usuario</label>
-            <input type="text" id="signup-username" placeholder="Nombre de usuario">
+            <input type="text" id="signup-username" name="userName" placeholder="Nombre de usuario">
+            <% if (locals.errors && errors.userName) { %>
+            <div class="text-danger">
+              <%= errors.userName.msg %>
+            </div>
+            <% } %>
           </div>
           <div>
             <i class="fa-solid fa-key"></i>
             <label>*Contraseña</label>
-            <input type="password" id="signup-password" placeholder="Ingrese un contraseña">
-          </div>          
+            <input type="password" id="signup-password" name="contrasenia" placeholder="Ingrese un contraseña">
+            <% if (locals.errors && errors.contrasenia) { %>
+            <div class="text-danger">
+              <%= errors.contrasenia.msg %>
+            </div>
+            <% } %>
+          </div>
+
+          <div>
+            <div>
+              <label class="label"><input class="check" name='recordarUsuario' type="checkbox" /> *Recordar
+                Usuario</label>
+            </div>
+          </div>
+
           <input class="button" id="signup-submit" type="submit" value="Ingresar">
         </form>
 
-        <p class="terminos">Para ingresar como admiistrador ingresar con admin/adminr <br><span>Para Ir a agregar/editar productos</span> </p>
+        <p class="terminos">Para ingresar como admiistrador ingresar con admin/adminr <br><span>Para Ir a agregar/editar
+            productos</span> </p>
       </section>
 
     </section>
@@ -62,7 +81,7 @@
         <p><i class="fa-solid fa-key"> </i> Control de privacidad.</p><br>
         <p><i class="fa-solid fa-arrow-down"> </i> Descuentos exclusivos en productos seleccionados.</p><br>
         <p><i class="fa-solid fa-headset"> </i> Servicio de consultas durante la compra.</p><br>
-        <p><i class="fa-solid fa-star"> </i> Acumulacion de puntos en cada compra.</p><br>                  
+        <p><i class="fa-solid fa-star"> </i> Acumulacion de puntos en cada compra.</p><br>
       </header>
     </section>
   </main>

@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Perfil de Usuario</title>
+        <link rel="preload" href="/css/normalize.css" as="style">
+        <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+        <!-- <link rel="preload" href="/css/style-register.css">
+        <link rel="stylesheet" href="/css/style-register.css"> -->
+        <script src="https://kit.fontawesome.com/3a84dfeae6.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/89cdafc43a.js" crossorigin="anonymous"></script>
+        <link rel="preload" href="/css/style.css">
+        <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+        <!--CAJAS HEADER-->
+
+        <%- include('../partials/header')%>
+
+        <main class="contenedor-main">
+                <div class="contenedor-main-imagen-perfil">
+                        <div class="saludoUsuario">
+                                <h2>Hola <%= usuario.nombre %> </h2>
+                                <img src="/images/avatars/<%= usuario.imagenPerfil %>">
+                        </div>
+
+                        <div class="datosUsuario">
+                                <h5>Usuario</h5>
+                                <h4><%= usuario.userName %></h4>
+                                <h5>Correo</h5>
+                                <h6><%= usuario.correoElectronico %></h6>
+                                <form action="/users/logout" method="GET" name="form-login">
+                                        <input class="buttonp" id="signup-submit" type="submit" value="Cerrar Sesion">
+                                </form>
+                        </div>
+
+                </div>
+
+        </main>
+
+        <!--*** FIN CUERPO PRINCIPAL ****-->
+
+        <!--*** FOOTER ****-->
+
+        <%- include('../partials/footer')%>
+
+        <!--*** FIN FOOTER ****-->
+
+</body>

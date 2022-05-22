@@ -39,17 +39,6 @@
 
       <section class="form-container">
         <form action="/users/registro" method="POST" enctype="multipart/form-data">
-          <div>
-            <i class="fa-solid fa-camera"></i>
-            <label>*Imagen de Perfil</label>
-            <input type="file" id="imagenPerfil" name="imagenPerfil" accept="image/*"
-              title="Seleccionar la imagen del nuevo producto">
-            <% if (locals.errors && errors.imagenPerfil) { %>
-            <div class="text-danger">
-              <%= errors.imagenPerfil.msg %>
-            </div>
-            <% } %>
-          </div>
 
           <div>
             <i class="fa-regular fa-user"></i>
@@ -78,7 +67,7 @@
           <div>
             <i class="fa-regular fa-envelope"></i>
             <label>E-mail</label>
-            <input type="email" id="signup-email" name="correoElectronico" placeholder="Correo Electrónico"
+            <input type="text" id="signup-email" name="correoElectronico" placeholder="Correo Electrónico"
               value="<%= locals.oldData ? oldData.correoElectronico : null %>">
             <% if (locals.errors && errors.correoElectronico) { %>
             <div class="text-danger">
@@ -114,7 +103,21 @@
             <label>*Confirmar Contraseña</label>
             <input type="password" id="signup-password" placeholder="Confirmar la contraseña asignada">
           </div>
+
+          <div>
+            <i class="fa-solid fa-camera"></i>
+            <label>*Imagen de Perfil</label>
+            <input type="file" id="imagenPerfil" name="imagenPerfil" accept="image/*"
+              title="Seleccionar la imagen del nuevo producto">
+            <% if (locals.errors && errors.imagenPerfil) { %>
+            <div class="text-danger">
+              <%= errors.imagenPerfil.msg %>
+            </div>
+            <% } %>
+          </div>
+
           <input class="button" id="signup-submit" type="submit" value="Resgistrarse">
+
         </form>
 
         <p class="terminos">Al dar clic -Registrarse-, estás aceptando nuestros <span>Términos y

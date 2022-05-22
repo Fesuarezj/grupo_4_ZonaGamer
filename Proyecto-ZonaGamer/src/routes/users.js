@@ -6,6 +6,11 @@ const path = require('path');
 const userControllers = require('../controllers/userControllers');
 
 const { body } = require('express-validator');
+const req = require('express/lib/request');
+
+//MIDDLEWARES
+const guestMiddleware = require('../middlewares/guestMiddleware.js');
+const authMiddleware = require('../middlewares/authMiddleware.js');
 
 const validations = [
     body('imagenPerfil').custom((value, { req }) =>{
@@ -49,17 +54,23 @@ const storage = multer.diskStorage({
 const uploadFile = multer({ storage: storage });
 
 //FORMULARIO DE REGISTRO
-router.get('/registro', userControllers.registro);
+router.get('/registro', guestMiddleware, userControllers.registro);
 
 //PROCESAR REGISTRO
 // router.post('/registro', uploadFile.single('imagenPerfil'), validations, userControllers.procesoRegistro);
 router.post('/registro', uploadFile.single('imagenPerfil'), validations, userControllers.procesoRegistro);
 
 //FORMULARIO DE LOGIN
-router.get('/login', userControllers.login);
+router.get('/login', guestMiddleware, userControllers.login);
 
-//LISTA DE USUARIOS
-router.get('/usersList', userControllers.listaDeUsuarios);
+//PROCESO DE LOGIN
+router.post('/login', userControllers.procesoLogin);
+
+//PERFIL DE USUARIO
+router.get('/perfil', authMiddleware, userControllers.perfil);
+
+//CERRAR SESION
+router.get('/logout', userControllers.logout);
 
 //FORMULARIO DE CONTACTO
 router.get('/contacto', userControllers.contacto);
