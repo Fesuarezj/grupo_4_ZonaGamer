@@ -1,45 +1,29 @@
-SPRINT 4:
+SPRINT 5:
 
 FRANKLIN:
--Trabajamos en las vistas de listadoProductos, detalleProductos, agregarProdutos y editarProductos para agregar ciertas caracteristas y funcionalidades nuevas.
--Revisión del sprint 4 e iniciar con las tareas asignadas y pendientes
--Revisión de documentación para completar el sprint 4 (Playground y externa)
--Se realizó lo solitado en el punto 1 del Sprint 4, Definir los campos necesarios para los productos y generar archivo JSON
--Se realizó lo solitado en el punto 2 del Sprint 4, Definir los campos necesarios para los usuarios y generar archivo JSON
--Se realizó lo solitado en el punto 3 del Sprint 4, CRUD de productos
--Se actualizaron los controladores y las rutas de acuerdo a lo requerido por las nuevas funcionalidades.
--De igual forma, realizamos el punto 6, donde se solicita hacer uso de /partials/, donde separamos las partes comunes en todas las vistas y haciendo uso de la instrucción <inlude>
--Asistir a nuestras reunios de Equipo para revisión de avances y pendientes y asegurarnos de las falencias presentes que atenten con el normal avance el proyecto
+-Trabajamos en la implementacion de Middlewares en la estructura de archivos y directorios.
+-Trabajmos en la implementacion de Registro de Usuarios, la subida de imagenes a travez de Multer, encriptación de contraseña con bcrypt, validación de los campos requeridos al momento de la registración y el guardado de los datos del usuatrio registrado en un archivo JSON.
+-Trabajamos en la implementacion del Login de Usuarios, utilizando middlewares, session y cookies, validando la información del mismo y redireccionando a la vista correspondiente según el resultado del login.
+-Trabajamos en la función de recordar usuario con la implementación de un checkbox, utilizando cookies para guardar esa información y la implementación de un middleware de aplicación que busque es cookie y loguee al usuario en caso de que el mismo exista y sean sus datos validados correctamente.
+-Trabajamos en la implementación de rutas de huespedes y usuarios, redireccionando a donde corresponda según si el usuario esta logueado o no.
 
 PAULA:
--Trabajamos en las vistas de listadoProductos, detalleProductos, agregarProdutos y editarProductos para agregar ciertas caracteristas y funcionalidades nuevas.
--Revisión del sprint 4 e iniciar con las tareas asignadas y pendientes
--Revisión de documentación para completar el sprint 4 (Playground y externa)
--Se realizó lo solitado en el punto 1 del Sprint 4, Definir los campos necesarios para los productos y generar archivo JSON
--Se realizó lo solitado en el punto 2 del Sprint 4, Definir los campos necesarios para los usuarios y generar archivo JSON
--Se realizó lo solitado en el punto 3 del Sprint 4, CRUD de productos
--Se actualizaron los controladores y las rutas de acuerdo a lo requerido por las nuevas funcionalidades.
--De igual forma, realizamos el punto 6, donde se solicita hacer uso de /partials/, donde separamos las partes comunes en todas las vistas y haciendo uso de la instrucción <inlude>
--Asistir a nuestras reunios de Equipo para revisión de avances y pendientes y asegurarnos de las falencias presentes que atenten con el normal avance el proyecto
+-Trabajamos en la implementacion de Middlewares en la estructura de archivos y directorios.
+-Trabajmos en la implementacion de Registro de Usuarios, la subida de imagenes a travez de Multer, encriptación de contraseña con bcrypt, validación de los campos requeridos al momento de la registración y el guardado de los datos del usuatrio registrado en un archivo JSON.
+-Trabajamos en la implementacion del Login de Usuarios, utilizando middlewares, session y cookies, validando la información del mismo y redireccionando a la vista correspondiente según el resultado del login.
+-Trabajamos en la función de recordar usuario con la implementación de un checkbox, utilizando cookies para guardar esa información y la implementación de un middleware de aplicación que busque es cookie y loguee al usuario en caso de que el mismo exista y sean sus datos validados correctamente.
+-Trabajamos en la implementación de rutas de huespedes y usuarios, redireccionando a donde corresponda según si el usuario esta logueado o no.
 
 PABLO:
-Trabajamos en las vistas de listadoProductos, detalleProductos, agregarProdutos y editarProductos para agregar ciertas caracteristas y funcionalidades nuevas.
--Revisión del sprint 4 e iniciar con las tareas asignadas y pendientes
--Revisión de documentación para completar el sprint 4 (Playground y externa)
--Se realizó lo solitado en el punto 1 del Sprint 4, Definir los campos necesarios para los productos y generar archivo JSON
--Se realizó lo solitado en el punto 2 del Sprint 4, Definir los campos necesarios para los usuarios y generar archivo JSON
--Se realizó lo solitado en el punto 3 del Sprint 4, CRUD de productos
--Se actualizaron los controladores y las rutas de acuerdo a lo requerido por las nuevas funcionalidades.
--De igual forma, realizamos el punto 6, donde se solicita hacer uso de /partials/, donde separamos las partes comunes en todas las vistas y haciendo uso de la instrucción <inlude>
--Asistir a nuestras reunios de Equipo para revisión de avances y pendientes y asegurarnos de las falencias presentes que atenten con el normal avance el proyecto
+-Trabajamos en la implementacion de Middlewares en la estructura de archivos y directorios.
+-Trabajmos en la implementacion de Registro de Usuarios, la subida de imagenes a travez de Multer, encriptación de contraseña con bcrypt, validación de los campos requeridos al momento de la registración y el guardado de los datos del usuatrio registrado en un archivo JSON.
+-Trabajamos en la implementacion del Login de Usuarios, utilizando middlewares, session y cookies, validando la información del mismo y redireccionando a la vista correspondiente según el resultado del login.
+-Trabajamos en la función de recordar usuario con la implementación de un checkbox, utilizando cookies para guardar esa información y la implementación de un middleware de aplicación que busque es cookie y loguee al usuario en caso de que el mismo exista y sean sus datos validados correctamente.
+-Trabajamos en la implementación de rutas de huespedes y usuarios, redireccionando a donde corresponda según si el usuario esta logueado o no.
 
 VITO:
-Trabajamos en las vistas de listadoProductos, detalleProductos, agregarProdutos y editarProductos para agregar ciertas caracteristas y funcionalidades nuevas.
--Revisión del sprint 4 e iniciar con las tareas asignadas y pendientes
--Revisión de documentación para completar el sprint 4 (Playground y externa)
--Se realizó lo solitado en el punto 1 del Sprint 4, Definir los campos necesarios para los productos y generar archivo JSON
--Se realizó lo solitado en el punto 2 del Sprint 4, Definir los campos necesarios para los usuarios y generar archivo JSON
--Se realizó lo solitado en el punto 3 del Sprint 4, CRUD de productos
--Se actualizaron los controladores y las rutas de acuerdo a lo requerido por las nuevas funcionalidades.
--De igual forma, realizamos el punto 6, donde se solicita hacer uso de /partials/, donde separamos las partes comunes en todas las vistas y haciendo uso de la instrucción <inlude>
--Asistir a nuestras reunios de Equipo para revisión de avances y pendientes y asegurarnos de las falencias presentes que atenten con el normal avance el proyecto
+-Trabajamos en la implementacion de Middlewares en la estructura de archivos y directorios.
+-Trabajmos en la implementacion de Registro de Usuarios, la subida de imagenes a travez de Multer, encriptación de contraseña con bcrypt, validación de los campos requeridos al momento de la registración y el guardado de los datos del usuatrio registrado en un archivo JSON.
+-Trabajamos en la implementacion del Login de Usuarios, utilizando middlewares, session y cookies, validando la información del mismo y redireccionando a la vista correspondiente según el resultado del login.
+-Trabajamos en la función de recordar usuario con la implementación de un checkbox, utilizando cookies para guardar esa información y la implementación de un middleware de aplicación que busque es cookie y loguee al usuario en caso de que el mismo exista y sean sus datos validados correctamente.
+-Trabajamos en la implementación de rutas de huespedes y usuarios, redireccionando a donde corresponda según si el usuario esta logueado o no.

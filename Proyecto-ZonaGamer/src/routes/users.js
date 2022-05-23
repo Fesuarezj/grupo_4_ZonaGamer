@@ -73,7 +73,7 @@ router.get('/perfil', authMiddleware, userControllers.perfil);
 router.get('/logout', userControllers.logout);
 
 //FORMULARIO DE CONTACTO
-router.get('/contacto', userControllers.contacto);
+// router.get('/contacto', userControllers.contacto);
 
 
 module.exports = router;

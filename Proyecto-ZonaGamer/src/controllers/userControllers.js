@@ -64,7 +64,7 @@ const userControllers = {
                 req.session.usuarioLogeado = usuarioALogear;
 
                 if (req.body.recordarUsuario) {
-                    res.cookie('userName', req.body.userName, {maxAge: 1000 * 30});
+                    res.cookie('userName', req.body.userName, {maxAge: 1000 * 60});
                 }
 
                 return res.redirect('../users/perfil');    

@@ -1,0 +1,36 @@
+Definir los campos necesarios para el registro de usuarios y generar archivo JSON
+
+● Identificador: id  
+● Nombre: nombre 
+● Apellido: apellido 
+● Email: correoElectronico 
+● Nombre de Usuario: userName
+● Contraseña: contrasenia 
+● Imagen de Perfil: imagenPerfil 	
+
+Definir los campos necesarios para el login de usuarios
+
+● Nombre de Usuario: userName
+● Contraseña: contrasenia 
+	
+
+
+CRUD de Usuarios            
+
+1. '/registro' (GET)
+Formulario de Registro
+
+2. '/registro' (POST)
+Proceso de Registro
+
+3. '/login' (GET)
+Formulario de Login
+
+4. '/login' (POST)
+Proceso de Login
+
+5. '/perfil' (GET)
+Perfil de Usuario
+
+6. '/logout' (GET)
+Cerra Sesión Usuario
