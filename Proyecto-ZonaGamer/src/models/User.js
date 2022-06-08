@@ -4,7 +4,7 @@ const fs = require('fs');
 
 
 const User = {
-    fileName: ('./data/usersData.json'),
+    fileName: ('./src/data/usersData.json'),
     
     getData: function () {
         return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'));
