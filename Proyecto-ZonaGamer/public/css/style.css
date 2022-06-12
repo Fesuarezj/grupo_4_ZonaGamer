@@ -284,7 +284,7 @@ body {
 /* MENU */
 /* ------------------------------ */
 
-.navegacion__home {
+.navegacion, .navegacion__home {
     display: flex;
     justify-content: space-around;
     color: var(--blanco);
@@ -355,13 +355,13 @@ body {
     font-weight: bold;
 }
 
-.navegacion {
+.navegacion, .navegacion__home {
     display: flex;
     justify-content: center;
     gap: 3rem;
 }
 
-.navegacion a {
+.navegacion a, .navegacion__home a {
     text-decoration: none;
     color: var(--blanco);
 }
@@ -729,7 +729,7 @@ body {
     .producto__imagen__dt {
         width: 715px;
     }   
-    .navegacion__home {
+    .navegacion, .navegacion__home {
         display: none;
     }   
 }
