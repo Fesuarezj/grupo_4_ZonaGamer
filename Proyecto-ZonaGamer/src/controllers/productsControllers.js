@@ -4,7 +4,7 @@ const path = require('path');
 const db = require('../database/models');
 
 const productsFilePath = path.join(__dirname, '../data/productsData.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+// const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -16,8 +16,8 @@ const productsControllers = {
             .then(function(products){
                 res.render('../views/products/listadoProductos.ejs', {products : products});
             })
-        const productsFilePath = path.join(__dirname, '../data/productsData.json');
-		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+        // const productsFilePath = path.join(__dirname, '../data/productsData.json');
+		// const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
         // const allProducts = products;
         // res.render('../views/products/listadoProductos.ejs', {productos : allProducts});

@@ -6,6 +6,7 @@
   "correoElectronico": "scherpablo@gmail.com",
   "userName": "scherpablo",
   "contrasenia": "$2a$10$N1vCY8989AWWmBrUXHYpA.H4hRnztt4OMS0DZRAhxhBWPCMMhGCaC",
-  "imagenPerfil": "1653186366957_img.jpg"
+  "imagenPerfil": "1653186366957_img.jpg",
+  "rol_ID_rol": "administrador"
  }
 ]

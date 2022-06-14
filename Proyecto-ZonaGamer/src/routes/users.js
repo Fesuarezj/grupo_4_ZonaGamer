@@ -41,7 +41,7 @@ const validations = [
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, '../public/images/avatars');
+        cb(null, './public/images/avatars');
     },
     filename: (req, file, cb) => {
         

@@ -25,23 +25,32 @@
         <%- include('../partials/header')%>
 
         <main class="contenedor-main">
+
+                <!-- <% for (let i = 0; i < users.length; i++) { %> -->
+
+                <% console.log('hola mundooooooooooooooooooooooooooo') %>
+
                 <div class="contenedor-main-imagen-perfil">
                         <div class="saludoUsuario">
-                                <h2>Hola <%= usuario.nombre %> </h2>
-                                <img src="/images/avatars/<%= usuario.imagenPerfil %>">
+                                <h2>Hola <%= users.nombre %> </h2>
+                                <img src="/images/avatars/<%= users.imagenPerfil %>">
                         </div>
 
                         <div class="datosUsuario">
                                 <h5>Usuario</h5>
-                                <h4><%= usuario.userName %></h4>
+                                <h4><%= users.userName %></h4>
                                 <h5>Correo</h5>
-                                <h6><%= usuario.correoElectronico %></h6>
+                                <h6><%= users.correoElectronico %></h6>
+                                <h5>Rol</h5>
+                                <h6><%= users.rol_ID_rol %></h6>
                                 <form action="/users/logout" method="GET" name="form-login">
                                         <input class="buttonp" id="signup-submit" type="submit" value="Cerrar Sesion">
                                 </form>
                         </div>
 
                 </div>
+
+                <!-- <% } %> -->
 
         </main>
 

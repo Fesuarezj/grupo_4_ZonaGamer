@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
+const db = require('../database/models');
 
 const userFilePath = path.join(__dirname, '../data/usersData.json');
 const users = JSON.parse(fs.readFileSync(userFilePath, 'utf-8'));
@@ -88,13 +89,26 @@ const userControllers = {
         });
     },
     
-    perfil: (req, res) => {      
+    perfil: (req, res) => {  
+        // console.log(db, '******************')
+        db.Users.findOne({
+            where: {
+                userName: 'scherpablo',              
+                contrasenia: '11111111'
+            }
+        })
+            .then(function(users){
+
+                console.log('++++++++++++++++++++++++++', users.correoElectronico)
+                
+                res.render('../views/users/perfil.ejs', {users : users});
+            })  
         
-        console.log(req.cookies.userName);      
+        // console.log(req.cookies.userName);      
         
-        res.render('../views/users/perfil.ejs', {
-            usuario : req.session.usuarioLogeado
-        });
+        // res.render('../views/users/perfil.ejs', {
+            // usuario : req.session.usuarioLogeado
+        // });
     },
 
     logout: (req, res) => {
