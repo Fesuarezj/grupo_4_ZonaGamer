@@ -89,8 +89,11 @@ const userControllers = {
         });
     },
     
-    perfil: (req, res) => {  
-        // console.log(db, '******************')
+    perfil: (req, res) => {   
+        
+        console.log('*******************+++++++++++++++++', users.u )
+        
+        
         db.Users.findOne({
             where: {
                 userName: 'scherpablo',              
@@ -98,13 +101,14 @@ const userControllers = {
             }
         })
             .then(function(users){
+            
+                if(users.rol_ID_rol == 1){
+                    res.render('../views/users/perfil.ejs', {users : users});
+                }else {
+                    res.render('../views/users/contacto.ejs', {users : users});
+                }         
 
-                console.log('++++++++++++++++++++++++++', users.correoElectronico)
-                
-                res.render('../views/users/perfil.ejs', {users : users});
-            })  
-        
-        // console.log(req.cookies.userName);      
+            })          
         
         // res.render('../views/users/perfil.ejs', {
             // usuario : req.session.usuarioLogeado
