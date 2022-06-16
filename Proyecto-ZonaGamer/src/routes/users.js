@@ -11,6 +11,7 @@ const req = require('express/lib/request');
 //MIDDLEWARES
 const guestMiddleware = require('../middlewares/guestMiddleware.js');
 const authMiddleware = require('../middlewares/authMiddleware.js');
+const userLoggedMiddleware = require('../middlewares/userLoggedMiddleware.js');
 
 const validations = [
     body('imagenPerfil').custom((value, { req }) =>{
@@ -61,7 +62,7 @@ router.get('/registro', guestMiddleware, userControllers.registro);
 router.post('/registro', uploadFile.single('imagenPerfil'), validations, userControllers.procesoRegistro);
 
 //FORMULARIO DE LOGIN
-router.get('/login', guestMiddleware, userControllers.login);
+router.get('/login', guestMiddleware, userLoggedMiddleware, userControllers.login);
 
 //PROCESO DE LOGIN
 router.post('/login', userControllers.procesoLogin);
