@@ -1,4 +1,3 @@
-// 4. Editar el usuario
 
 const fs = require('fs');
 
