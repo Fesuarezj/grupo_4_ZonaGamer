@@ -8,6 +8,7 @@
         <%- include('../partials/header')%>
 
         <main class="contenedor-main">
+
                 <div class="contenedor-main-imagen-perfil">
                         <div class="saludoUsuario">
                                 <h2>Hola <%= users.nombre %> </h2>
@@ -19,8 +20,42 @@
                                 <h4><%= users.userName %></h4>
                                 <h5>Correo</h5>
                                 <h6><%= users.correoElectronico %></h6>
-                                <h5>Rol</h5>
-                                <h6><%= users.rol_ID_rol %></h6>
+                                <h3>Rol</h3>
+                                <!-- <h6 class="rol"><%= users.rol_ID_rol %></h6> -->
+                                <h6 class="rol"><%= rolId[users.rol_ID_rol-1] %></h6>
+
+                                <% if (users.rol_ID_rol == 1) { %>
+
+                                <ul>
+                                        <li class="listaPerfilUsuarios">
+                                                <a href="/users/registro">Crear Usuario</a>
+                                                <a href="">Editar Usuario</a>
+                                                <!-- <a href="http:#">Ver Detalle</a> -->
+                                        </li>
+                                </ul>
+                                <ul>
+                                        <li class="listaPerfilProductos">
+                                                <a href="/products/agregar">Crear Producto</a>
+                                                <a href="/detalle/:id">Buscar Producto</a>
+                                                <a href="/products">Listado Productos</a>
+                                        </li>
+                                </ul>
+
+
+
+
+
+
+                                <% } else {%>
+
+                                <ul>
+                                        <li class="listaPerfilUsuarios">
+                                                <a href="/users/editar">Mi Perfil</a>
+                                                <a href="http:#">Favoritos</a>
+                                        </li>
+                                </ul>
+                                <% } %>
+
                                 <form action="/users/logout" method="GET" name="form-login">
                                         <input class="buttonp" id="signup-submit" type="submit" value="Cerrar Sesion">
                                 </form>

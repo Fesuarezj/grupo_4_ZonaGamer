@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head')%>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Usuario - Zona Gamer</title>
+  <link rel="preload" href="/css/normalize.css" as="style">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://kit.fontawesome.com/3a84dfeae6.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/89cdafc43a.js" crossorigin="anonymous"></script>
+  <link rel="preload" href="/css/style-register.css">
+  <link rel="stylesheet" href="/css/style-register.css">
+</head>
+
+
+<body>
+  <!--***CABECERA****-->
+
+  <%- include('../partials/header')%>
+
+  <!--*** FIN CABECERA ****-->
+
+  <!--*** CUERPO PRINCIPAL ****-->
+  <main>
+
+    <section class="signup-group">
+      <section class="container-titulo-form">
+        <h2><span class="semi-bold">Formulario de Edicion</h2>
+      </section>
+
+      <section class="form-container">
+        <form action="/users/editar" method="GET" enctype="multipart/form-data">
+
+          <div>
+            <i class="fa-regular fa-id-badge"></i>
+            <label>*Nombre de Usuario</label>
+            <input type="text" id="signup-username" name="userName" placeholder="Nombre de usuario"
+              value="<%= locals.oldData ? oldData.userName : null %>">
+            <% if (locals.errors && errors.userName) { %>
+            <div class="text-danger">
+              <%= errors.userName.msg %>
+            </div>
+            <% } %>
+          </div>
+          <div>
+            <i class="fa-solid fa-key"></i>
+            <label>*Contraseña</label>
+            <input type="password" id="signup-password" name="contrasenia" placeholder="Ingrese un contraseña">
+            <% if (locals.errors && errors.contrasenia) { %>
+            <div class="text-danger">
+              <%= errors.contrasenia.msg %>
+            </div>
+            <% } %>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-camera"></i>
+            <label>*Imagen de Perfil</label>
+            <input type="file" id="imagenPerfil" name="imagenPerfil" accept="image/*"
+              title="Seleccionar la imagen del nuevo producto">
+            <% if (locals.errors && errors.imagenPerfil) { %>
+            <div class="text-danger">
+              <%= errors.imagenPerfil.msg %>
+            </div>
+            <% } %>
+          </div>
+
+          <input class="button" id="signup-submit" type="submit" value="Editar">
+
+        </form>
+
+        <p class="terminos">Al dar clic -Registrarse-, estás aceptando nuestros <span>Términos y
+            Condiciones</span> </p>
+      </section>
+
+    </section>
+    <section>
+      <header class="informacion-lateral">
+        <h1>¿Qué beneficios tenés al registarte?</h1>
+        <p><i class="fa-solid fa-cart-plus"> </i> Compra protegida. Si tu compra no es lo que querías, te devolvemos tu
+          dinero.</p><br>
+        <p><i class="fa-solid fa-truck-fast"> </i> Envío rápido y gratis. Con envíos rápidos compras hoy y recibes
+          gratis entre 24 y 48 hrs en productos seleccionados.</p><br>
+        <p><i class="fa-solid fa-tags"> </i> 95% productos nuevos. Descubre miles de productos nuevos en nuestras
+          Tiendas Oficiales.</p>
+      </header>
+    </section>
+  </main>
+  <!--*** FIN CUERPO PRINCIPAL ****-->
+
+  <!--*** FOOTER ****-->
+
+  <%- include('../partials/footer')%>
+
+  <!--*** FIN FOOTER ****-->
+</body>
+
+</html>

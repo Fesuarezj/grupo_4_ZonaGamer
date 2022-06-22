@@ -411,9 +411,14 @@ body {
     margin-bottom: -15px;
 }
 
-.datosUsuario h5{  
+.datosUsuario h5, .datosUsuario h3{  
     font-size: 15px;
     color: var(--blanco);
+}
+
+.datosUsuario h3 {
+    margin-top: -30px;
+    padding-bottom: 10px;
 }
 
 .datosUsuario h6{    
@@ -422,9 +427,24 @@ body {
     margin-top: -20px;
 }
 
+.listaPerfilUsuarios, .listaPerfilProductos {
+    padding-bottom: 30px;
+    margin-top: -30px;
+    text-transform: uppercase;
+    font-size: 0.7rem;   
+    margin-left: -40px;
+    color: var(--grisOscuro)
+}
+
+.listaPerfilUsuarios a, .listaPerfilProductos a {
+    color: var(--blanco);
+    text-decoration: none;
+    padding: 3px;
+}
+
 .buttonp {   
     margin-bottom: 20px;
-    margin-top: -10px;
+    margin-top: -50px;
     color: var(--negro);
     font-weight: bold;
     text-transform: uppercase;

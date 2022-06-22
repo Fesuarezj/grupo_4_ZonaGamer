@@ -1,12 +1,13 @@
 [
  {
   "id": 1,
-  "nombre": "Pablo",
+  "nombre": "Tito",
   "apellido": "Scherpa",
-  "correoElectronico": "scherpablo@gmail.com",
+  "correoElectronico": "scherpablo@gmail.com.ar",
   "userName": "scherpablo",
   "contrasenia": "$2a$10$N1vCY8989AWWmBrUXHYpA.H4hRnztt4OMS0DZRAhxhBWPCMMhGCaC",
   "imagenPerfil": "1653186366957_img.jpg",
-  "rol_ID_rol": "administrador"
+  "rol_ID_rol": 2
  }
+
 ]

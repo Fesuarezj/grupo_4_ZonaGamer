@@ -15,6 +15,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
             notNull: true,
         },
+        apellido: {
+            type: dataTypes.STRING,
+            notNull: true,
+        },
         correoElectronico: {
             primaryKey: true,
             type: dataTypes.STRING,
@@ -36,7 +40,11 @@ module.exports = (sequelize, dataTypes) => {
         rol_ID_rol: {
             type: dataTypes.INTEGER,
             notNull: true,
-        }      
+        },
+        estado_ID_estado: {
+            type: dataTypes.INTEGER,
+            notNull: true,
+        }       
     };
     let config = {
         tableName: 'users',
@@ -44,6 +52,17 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     const User = sequelize.define(alias, cols, config)
+
+    User.associate = function (models) {
+        User.belongsTo(models.Roles, {
+            as: 'usersRol',
+            foreignKey: 'rol_ID_rol'
+        });
+        User.belongsTo(models.Estados, {
+            as: 'usersEstado',
+            foreignKey: 'estado_ID_estado'
+        });
+    }
 
     return User;
 }
