@@ -50,3 +50,5 @@ https://trello.com/b/JEY2BBRI/tareas-sprint-3
 https://trello.com/b/vpbZIRuk/tareas-sprint-4
 
 https://trello.com/b/UqTx2h5M/tareas-sprint-5
+
+https://trello.com/b/LFXbqlNn/tareas-sprint-6

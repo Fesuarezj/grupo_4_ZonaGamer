@@ -1,0 +1,39 @@
+***Diagrama de Base de Datos***
+
+● Usuarios
+● Productos
+● Tablas secundarias (según lo requiera su proyecto).
+Para productos: categorías, marcas, colores, talles, etc.
+
+***Script de Estructura***
+
+● Poblar la tabla de usuarios.
+● Poblar la tabla de productos.
+● Poblar las tablas secundarias (categorías, marcas, colores, talles, etc).
+
+***Creación de carpeta Sequelize y archivos de modelos***
+
+● Los archivos de configuración para que Sequelize se conecte a la base de datos.
+● Los archivos de modelos para representar las tablas de:
+○ Usuarios.
+○ Productos.
+○ Tablas secundarias (rol, estado, category, etc).
+
+● Los modelos deben incluir todas las relaciones existentes en la base de datos.
+
+***¡CRUD! (productos)***
+
+● Para productos:
+○ Crear
+○ Editar
+○ Eliminar
+○ Listar
+○ Ver el detalle
+○ Buscar
+
+***¡CRUD! (usuarios)***
+
+● Para usuarios:
+○ Crear
+○ Editar
+○ Ver el detalle
