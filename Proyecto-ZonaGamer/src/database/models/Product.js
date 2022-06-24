@@ -38,11 +38,11 @@ module.exports = (sequelize, dataTypes) => {
             notNull: true
         },
         estado_ID_estado: {
-            type: dataTypes.DATE,
+            type: dataTypes.INTEGER,
             notNull: true
         },
         category_ID_category: {
-            type: dataTypes.DATE,
+            type: dataTypes.INTEGER,
             notNull: true
         }
     };
@@ -55,11 +55,11 @@ module.exports = (sequelize, dataTypes) => {
 
     Product.associate = function (models) {
         Product.belongsTo(models.Categorys, {
-            as: 'productCategory',
+            as: 'productsCategory',
             foreignKey: 'category_ID_category'
         });
         Product.belongsTo(models.Estados, {
-            as: 'productEstado',
+            as: 'productsEstado',
             foreignKey: 'estado_ID_estado'
         });
     }
