@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos - Zona Gamer</title>
+    <title>Detalle Productos - Zona Gamer</title>
     <link rel="preload" href="/css/normalize.css" as="style">
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,19 +24,19 @@
     <main class="contenedor__dt">
         <h1 class="titulo__producto__dt">Detalle del Producto</h1>
         <div class="producto__dt">
-            <img class="producto__imagen__dt" src="/images/<%= producto.image %>" alt="imagen monitor01">
+            <img class="producto__imagen__dt" src="/images/products/<%= products.image %>" alt="imagen monitor01">
             <div class="producto__informacion__dt">
-                <p class="producto__categoria"><%= producto.category %></p>
-                <p class="producto__nombre__dt"><%= producto.name %></p>
-                <p class="producto__precio__dt">$<%= producto.price %></p>
-                <p class="producto__descuento"><%= producto.discount %>% OFF <span class="span">en
+                <p class="producto__descripcion"><%= products.description %></p>
+                <p class="producto__nombre__dt"><%= products.name %></p>
+                <p class="producto__precio__dt">$<%= products.price %></p>
+                <p class="producto__descuento"><%= products.discount %>% OFF <span class="span">en
                         efectivo</span></p>
                 <p class="producto__garantiapf">Precio Final</p>
                 <p class="producto__preciof__dt">$<%= precio_final %></p>
-                <p class="producto__garantia">Garantia Oficial <%= producto.warranty %> meses</p>
+                <p class="producto__garantia">Garantia Oficial <%= products.warranty %> meses</p>
                 <div class="contenedor__producto__desc__dt">
                     <h3>Descripción</h3>
-                    <p class="producto__desc__dt"><%= producto.description %></p>
+                    <p class="producto__desc__dt"><%= products.description %></p>
                 </div>
             </div>
         </div>

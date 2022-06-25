@@ -164,7 +164,7 @@ body {
     cursor: default;
 }
 
-.producto__categoria {
+.producto__descripcion {
     font-size: 1.5rem;
     color: var(--blanco);   
 }
@@ -211,7 +211,7 @@ body {
     font-weight: bold;
 }
 
-.producto__categoria, .producto__descuento, 
+.producto__descripcion, .producto__descuento, 
 .producto__garantia, .producto__garantiapf {
     text-align: center;
     margin: 0.5rem 0;

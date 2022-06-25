@@ -33,6 +33,8 @@ const userControllers = {
         return res.render('../views/users/login.ejs');
     },
     procesoLogin: (req, res) => {
+        console.log('++++++++++++++++++', req.body)
+        
         db.Users.findOne({
             where: {
                 userName: req.body.userName,
@@ -42,13 +44,7 @@ const userControllers = {
         .then(function(users) {
             const rolId = ['administrador', 'cliente', 'invitado']   
             
-            return res.render('../views/users/perfil.ejs', {users: users, rolId: rolId});
-
-            // if (users.rol_ID_rol == 1) {                     
-            //     return res.render('../views/users/perfil.ejs', {users: users, rolId: rolId});
-            //     } else {
-            //     return res.send('No eres administrador');
-            //     }                   
+            return res.render('../views/users/perfil.ejs', {users: users, rolId: rolId});                             
         });  
         // return res.redirect('../users/perfil');
     },

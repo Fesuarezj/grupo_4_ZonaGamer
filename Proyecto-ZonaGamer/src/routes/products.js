@@ -7,25 +7,15 @@ const productsControllers = require('../controllers/productsControllers');
 
 const uploadFile= require('../middlewares/multerMiddlewareProducts');
 
-// const storage = multer.diskStorage({
-//     destination: (req, file, cb) => {
-//         cb(null, './public/images');
-//     },
-//     filename: (req, file, cb) => {
-//         // console.log(file);
-//         const nuevoNombreImagen = file.fieldname + '-' + Date.now() + path.extname(file.originalname); 
-//         // console.log(nuevoNombreImagen);
-//         cb(null, nuevoNombreImagen);
-//     }
-// });
-
-// const uploadFile = multer({ storage: storage });
-
 /*** LISTADO PRODUCTOS ***/
 router.get('/', productsControllers.index);
 
 /*** DETALLE PRODUCTO ***/
-router.get('/detalle/:id/', productsControllers.producto);
+router.get('/detalle/:ID_products', productsControllers.producto);
+
+/*** BUSCAR PRODUCTO ***/
+router.get('/buscar', productsControllers.buscarProducto);
+router.post('/buscar', productsControllers.encontrarProducto);
 
 /*** CARRITO PRODUCTO ***/
 router.get('/carrito', productsControllers.carrito);

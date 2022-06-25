@@ -6,40 +6,61 @@ const db = require('../database/models');
 // const productsFilePath = path.join(__dirname, '../data/productsData.json');
 // const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+// const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const productsControllers = {
+/*** LISTADO PRODUCTOS ***/    
     index: (req, res) => {        
         db.Products.findAll()
         .then(function(products) {              
             res.render('../views/products/listadoProductos.ejs', {products: products});
-        })
-
-        
-        // res.render('../views/products/listadoProductos.ejs', {productos : allProducts});
+        })               
     },
+/*** DETALLE PRODUCTO ***/
+    producto: (req, res) => {          
+        db.Products.findByPk(req.params.ID_products)
+            .then(function (products){
+                const precioFinal = products.price - (products.price * (products.discount / 100));
+                
+                return res.render('../views/products/detalleProducto.ejs', {products: products, precio_final: precioFinal });                              
+            })           
+        // const productsFilePath = path.join(__dirname, '../data/productsData.json');
+		// const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-    producto: (req, res) => {
-        const productsFilePath = path.join(__dirname, '../data/productsData.json');
-		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+        // const productoBuscado = products.find(producto => producto.id == req.params.id);
+        // const precioFinal = productoBuscado.price - (productoBuscado.price * (productoBuscado.discount / 100));	
 
-        const productoBuscado = products.find(producto => producto.id == req.params.id);
-        const precioFinal = productoBuscado.price - (productoBuscado.price * (productoBuscado.discount / 100));	
-
-        res.render('../views/products/detalleProducto.ejs', {producto: productoBuscado, precio_final: precioFinal})
+        // res.render('../views/products/detalleProducto.ejs', {producto: productoBuscado, precio_final: precioFinal})
+    },
+/*** BUSCAR PRODUCTO GET ***/    
+    buscarProducto: (req, res) => {
+        res.render('../views/products/buscarProducto.ejs')
+    },
+/*** ENCONTRAR PRODUCTO POST ***/
+    encontrarProducto: function (req, res)  { 
+        console.log('+++++++++++++++++++++', req.body)
+        
+        db.Products.findByPk(req.body.ID_products)
+            .then(function (products){ 
+                const precioFinal = products.price - (products.price * (products.discount / 100));
+                console.log(products)
+                    
+                return res.render('../views/products/detalleProducto.ejs', {products: products, precio_final: precioFinal });          
+                // return res.render('../views/products/detalleProducto.ejs', {products: products});                              
+            }) 
+        // res.render('../views/products/buscarProducto.ejs')
+        // res.send('producto encontado ' +  req.body.ID_products)
     },
     
     carrito: (req, res) => {
         res.render('../views/products/carrito.ejs')
     },
-
 /*** VISTA AGREGAR PRODUCTO ***/
     agregarProducto: (req, res) => {       
         res.render('../views/products/agregarProducto.ejs');        
     },
 /*** AGREGAR PRODUCTO ***/
-    store: (req, res) => { 
-        // const products = [];   
+    store: (req, res) => {            
         db.Products.create({
             name: req.body.name,
             description: req.body.description,
@@ -53,18 +74,18 @@ const productsControllers = {
         });
             return res.redirect('./');         
     },
-
-    /*** EDITAR PRODUCTO ***/
+/*** EDITAR PRODUCTO ***/
     editarProducto: (req, res) => {
-        const productsFilePath = path.join(__dirname, '../data/productsData.json');
-		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+        
+        // const productsFilePath = path.join(__dirname, '../data/productsData.json');
+		// const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-        const idProduct = req.params.id;
-		const productoBuscado = products.find(producto => producto.id == idProduct);      
+        // const idProduct = req.params.id;
+		// const productoBuscado = products.find(producto => producto.id == idProduct);      
 
-        res.render('../views/products/editarProducto.ejs', {producto: productoBuscado});
+        // res.render('../views/products/editarProducto.ejs', {producto: productoBuscado});
     },   
-    /*** ACTUALIZAR PRODUCTO ***/ 
+/*** ACTUALIZAR PRODUCTO ***/ 
     actualizar: (req, res) => {	
 		const productsFilePath = path.join(__dirname, '../data/productsData.json');
 		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -72,7 +93,6 @@ const productsControllers = {
 		const indiceProductoBuscado = products.findIndex(producto => producto.id == req.params.id);   
         
         console.log(products[indiceProductoBuscado]);
-
 
 		if (indiceProductoBuscado != -1) {
 			products[indiceProductoBuscado].name = req.body.name;
@@ -90,7 +110,7 @@ const productsControllers = {
 
 		res.redirect('/');
 	},
-
+/*** ELIMINAR PRODUCTO ***/ 
     	// Delete - Delete one product from DB
 	destroy : (req, res) => {
 		const productsFilePath = path.join(__dirname, '../data/productsData.json');
