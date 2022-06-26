@@ -41,24 +41,41 @@
           <div>
             <i class="fa-solid fa-computer"></i>
             <label>*Nombre del Producto</label>
-            <input name="name" type="text" id="signup-firstname" placeholder="Nombre nuevo del producto">
+            <input name="name" type="text" id="signup-firstname" placeholder="Nombre nuevo del producto"
+              value="<%= locals.oldData ? oldData.name : null %>">
+            <% if (locals.errors && errors.name) { %>
+            <div class="text-danger">
+              <%= errors.name.msg %>
+            </div>
+            <% } %>
           </div>
           <div>
             <i class="fa-solid fa-circle-info"></i>
             <label>*Descripción del Producto</label>
-            <textarea name="description" rows="3" cols="53" placeholder="Descrioción del nuevo producto"></textarea>
+            <textarea name="description" rows="3" cols="53" placeholder="Descrioción del nuevo producto"
+              value="<%= locals.oldData ? oldData.description : null %>"></textarea>
+            <% if (locals.errors && errors.description) { %>
+            <div class="text-danger">
+              <%= errors.description.msg %>
+            </div>
+            <% } %>
           </div>
           <div>
             <i class="fa-solid fa-camera"></i>
             <label>*Imagen del Producto</label>
             <input type="file" id="imagenProducto" name="imagenProducto" accept="image/*"
               title="Seleccionar la imagen del nuevo producto">
+            <% if (locals.errors && errors.imagenProducto) { %>
+            <div class="text-danger">
+              <%= errors.imagenProducto.msg %>
+            </div>
+            <% } %>
           </div>
 
           <div>
             <i class="fa-solid fa-list-check"></i>
             <label>*Categoría del Producto</label><br>
-            <select name="category">
+            <select name="category" value="<%= locals.oldData ? oldData.category : null %>">
               <option value="">Seleccionar...</option>
               <option value="1">Audio</option>
               <option value="2">Coolers</option>
@@ -73,37 +90,71 @@
               <option value="11">SSD</option>
               <option value="12">Teclados</option>
             </select>
+            <% if (locals.errors && errors.category) { %>
+            <div class="text-danger">
+              <%= errors.category.msg %>
+            </div>
+            <% } %>
           </div>
           <div>
             <i class="fa-solid fa-file-invoice-dollar"></i>
             <label>*Precio del Producto</label>
             <input name="price" type="number" id="precio-producto"
-              placeholder="Detalle el precio al público, incluir puntos">
+              placeholder="Detalle el precio al público, sin puntos"
+              value="<%= locals.oldData ? oldData.price : null %>">
+            <% if (locals.errors && errors.price) { %>
+            <div class="text-danger">
+              <%= errors.price.msg %>
+            </div>
+            <% } %>
           </div>
           <div>
             <i class="fa-solid fa-percent"></i>
             <label>*Descuento del Producto</label>
-            <input name="discount" type="number" id="precio-producto" placeholder="descuento por pago en efectivo">
+            <input name="discount" type="number" id="precio-producto" placeholder="descuento por pago en efectivo"
+              value="<%= locals.oldData ? oldData.discount : null %>">
+            <% if (locals.errors && errors.discount) { %>
+            <div class="text-danger">
+              <%= errors.discount.msg %>
+            </div>
+            <% } %>
           </div>
           <div>
             <i class="fa-solid fa-clock-rotate-left"></i>
             <label>*Garantía del Producto (meses)</label>
             <input name="warranty" type="number" id="garantia-producto"
-              placeholder="Detalle los meses de garantía del producto">
+              placeholder="Detalle los meses de garantía del producto"
+              value="<%= locals.oldData ? oldData.warranty : null %>">
+            <% if (locals.errors && errors.warranty) { %>
+            <div class="text-danger">
+              <%= errors.warranty.msg %>
+            </div>
+            <% } %>
           </div>
           <div>
             <i class="fa-regular fa-calendar-check"></i>
             <label>*Fecha de Ingreso</label>
-            <input name="date" type="date" id="signup-firstname" placeholder="Nombre nuevo del producto">
+            <input name="date" type="date" id="signup-firstname" placeholder="Nombre nuevo del producto"
+              value="<%= locals.oldData ? oldData.date : null %>">
+            <% if (locals.errors && errors.date) { %>
+            <div class="text-danger">
+              <%= errors.date.msg %>
+            </div>
+            <% } %>
           </div>
           <div>
             <i class="fa-regular fa-circle-check"></i>
             <label>*Estado del Producto</label><br>
-            <select name="status">
+            <select name="status" value="<%= locals.oldData ? oldData.status : null %>">
               <option value="">Seleccionar...</option>
               <option value="true">Activo</option>
               <option value="false">Inactivo</option>
             </select>
+            <% if (locals.errors && errors.status) { %>
+            <div class="text-danger">
+              <%= errors.status.msg %>
+            </div>
+            <% } %>
           </div>
 
           <input class="button" id="signup-submit" type="submit" value="Agregar Nuevo Producto">

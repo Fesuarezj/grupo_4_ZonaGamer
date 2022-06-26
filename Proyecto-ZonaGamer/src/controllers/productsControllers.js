@@ -1,3 +1,5 @@
+
+const {validationResult} = require('express-validator');
 const fs = require('fs');
 const path = require('path');
 
@@ -108,19 +110,28 @@ const productsControllers = {
         res.render('../views/products/agregarProducto.ejs');        
     },
 /*** AGREGAR PRODUCTO ***/
-    store: (req, res) => {            
-        db.Products.create({
-            name: req.body.name,
-            description: req.body.description,
-            image: req.file.filename,            
-            warranty: Number(req.body.warranty),
-            price: Number(req.body.price),
-            discount: Number(req.body.discount),
-            date: req.body.date,
-            estado_ID_estado: (req.body.status == "true")? 1 : 2,  
-            category_ID_category: Number(req.body.category) 
-        });
-            return res.redirect('./');         
+    store: (req, res) => {
+        const resultValdiation = validationResult(req);
+        
+        if(resultValdiation.errors.length > 0) {
+            return res.render('../views/products/agregarProducto.ejs', { 
+                errors: resultValdiation.mapped(),
+                oldData: req.body
+            });    
+        } else {            
+            db.Products.create({
+                name: req.body.name,
+                description: req.body.description,
+                image: req.file.filename,            
+                warranty: Number(req.body.warranty),
+                price: Number(req.body.price),
+                discount: Number(req.body.discount),
+                date: req.body.date,
+                estado_ID_estado: (req.body.status == "true")? 1 : 2,  
+                category_ID_category: Number(req.body.category) 
+            });
+                return res.redirect('./');  
+        }       
     },
 /*** EDITAR PRODUCTO GET ***/
     editarProducto: (req, res) => { 
