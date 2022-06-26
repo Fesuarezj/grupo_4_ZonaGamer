@@ -38,6 +38,11 @@
                     <h3>Descripción</h3>
                     <p class="producto__desc__dt"><%= products.description %></p>
                 </div>
+                <form>
+                    <a href="/products/editar/<%= products.ID_products %>">
+                        <input class="buttonEdit" id="signup-submit" type="button" value="Editar Producto">
+                    </a>
+                </form>
             </div>
         </div>
     </main>

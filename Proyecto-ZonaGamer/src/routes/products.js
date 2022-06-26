@@ -25,10 +25,11 @@ router.get('/agregar', productsControllers.agregarProducto);
 router.post('/agregar', uploadFile.single('imagenProducto'), productsControllers.store); 
 
 /*** EDITAR PRODUCTO ***/
-router.get('/editar/:id', productsControllers.editarProducto);
-router.put('/:id', productsControllers.actualizar); 
+router.get('/editar/:ID_products', productsControllers.editarProducto);
+router.post('/editar/:ID_products', uploadFile.single('imagenProducto'), productsControllers.actualizar); 
 
 /*** ELIMINAR PRODUCTO ***/ 
-router.delete('/:id', productsControllers.destroy); 
+router.post('/borrar/:ID_products', productsControllers.delete); 
+
 
 module.exports = router;

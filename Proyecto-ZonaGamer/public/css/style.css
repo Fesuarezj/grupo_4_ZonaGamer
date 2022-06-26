@@ -456,10 +456,31 @@ body {
     height: 20px;
 }
 
-.buttonp:hover {
+.buttonp:hover  {
     cursor: pointer;
     color: var(--blanco);
     background-color: var(--red);
+}
+
+.buttonEdit {
+    /* margin-bottom: 0px; */
+    margin-left: 40%;
+    margin-top: -50px;
+    color: var(--negro);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: var(--yellowGreen);
+    border-radius: 5px;
+    border: none;
+    width: 140px;
+    height: 20px;
+}
+
+.buttonEdit:hover {
+    cursor: pointer;
+    color: var(--blanco);
+    background-color: var(--celestePaula);
 }
 
 /* ---------------------------- */
