@@ -29,12 +29,11 @@ const userControllers = {
                 return res.render('../views/users/login.ejs')
         }            
     },
-    login: (req, res) => {    
+    login: (req, res) => { 
+        console.log(req.session)
         return res.render('../views/users/login.ejs');
     },
-    procesoLogin: (req, res) => {
-        console.log('++++++++++++++++++', req.body)
-        
+    procesoLogin: (req, res) => {             
         db.Users.findOne({
             where: {
                 userName: req.body.userName,
