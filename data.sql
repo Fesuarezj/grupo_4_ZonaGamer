@@ -13,10 +13,10 @@ VALUES (1, "activo");
 INSERT INTO estado(ID_estado, nombreEstado)
 VALUES (2, "inactivo");
 
-INSERT INTO users 
-VALUES (0,'Pablo','Scherpa','scherpablo@gmail.com','scherpablo','11111111','1653186366957_img.jpg',1,1);
+INSERT INTO users VALUES (0,'Pablo','Scherpa','scherpablo@gmail.com','scherpablo','11111111','1653186366957_img.jpg',1,1);
+INSERT INTO users VALUES (0,'Franklin','Suarez','franklin@gmail.com','FSuarez','22222222','1653186366957_img.jpg',2,1);
 
-INSERT INTO category values (0, 'Auriculares');
+INSERT INTO category values (0, 'Audio');
 INSERT INTO category values (0, 'Coolers');
 INSERT INTO category values (0, 'Discos Rígidos');
 INSERT INTO category values (0, 'Gabinetes');
@@ -29,6 +29,21 @@ INSERT INTO category values (0, 'Procesadoores');
 INSERT INTO category values (0, 'SSD');
 INSERT INTO category values (0,'Teclados');
 
-INSERT INTO products 
-VALUES(0,'Monitor','LG 19','1653186366957_img.jpg',6,20000,15,'2022-06-09',1,4);
+INSERT INTO products VALUES (0,'Monitor','Lb 19','1653186366957_img.jpg',6,20000,15,'2022-09-06',1,4);
+INSERT INTO products VALUES (0,'Monitor','Lb 19','1653186366957_img.jpg',6,20000,15,'2022-09-06',1,4);
+INSERT INTO products VALUES (0,'Monitor','Lb 19','1653186366957_img.jpg',6,20000,15,'2022-09-06',1,4);
+INSERT INTO products VALUES (0,'Monitor','Lb 19','1653186366957_img.jpg',6,20000,15,'2022-09-06',1,4);
+INSERT INTO products VALUES (0,'Monitor','Lb 19','1653186366957_img.jpg',6,20000,15,'2022-09-06',1,4);
+INSERT INTO products VALUES (0,'Monitor','Lb 19','1653186366957_img.jpg',6,20000,15,'2022-09-06',1,4);
+INSERT INTO products VALUES (0,'Monitor','Lb 19','1653186366957_img.jpg',6,20000,15,'2022-09-06',1,4);
+INSERT INTO products VALUES (0,'Monitor','Lb 19','1653186366957_img.jpg',6,20000,15,'2022-09-06',1,4);
+INSERT INTO products VALUES (0,'Monitor','Lb 19','1653186366957_img.jpg',6,20000,15,'2022-09-06',1,4);
+INSERT INTO products VALUES (0,'Monitor','Lb 19','1653186366957_img.jpg',6,20000,15,'2022-09-06',1,4);
+INSERT INTO products VALUES (0,'Monitor','Lb 19','1653186366957_img.jpg',6,20000,15,'2022-09-06',1,4);
+INSERT INTO products VALUES (0,'Monitor','Lb 19','1653186366957_img.jpg',6,20000,15,'2022-09-06',1,4);
+INSERT INTO products VALUES (0,'Monitor','Lb 19','1653186366957_img.jpg',6,20000,15,'2022-09-06',1,4);
+INSERT INTO products VALUES (0,'Monitor','Lb 19','1653186366957_img.jpg',6,20000,15,'2022-09-06',1,4);
+INSERT INTO products VALUES (0,'Monitor','Lb 19','1653186366957_img.jpg',6,20000,15,'2022-09-06',1,4);
+INSERT INTO products VALUES (0,'Monitor','Lb 19','1653186366957_img.jpg',6,20000,15,'2022-09-06',1,4);
+INSERT INTO products VALUES (0,'Monitor','Lb 19','1653186366957_img.jpg',6,20000,15,'2022-09-06',1,4);
 
