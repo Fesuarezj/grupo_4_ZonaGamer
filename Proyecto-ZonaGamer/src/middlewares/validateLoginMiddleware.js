@@ -16,14 +16,9 @@ module.exports = [
             } 
         }              
         return true;
-    }),
-    body('nombre').notEmpty().withMessage('Debes poner tu nombre'),
-    body('apellido').notEmpty().withMessage('Debes poner tu apellido'),
-    body('userName').notEmpty().withMessage('Crea un nombre de usuario'),
-    body('correoElectronico')
-    .notEmpty().withMessage('Debes poner un correo').bail()
-    .isEmail().withMessage('Debes escribir un formato de correo váliddo'),
+    }),    
+    body('userName').notEmpty().withMessage('Debes ingresar un nombre de usuario'),    
     body('contrasenia')
-    .notEmpty().withMessage('Debes poner una contraseña').bail()
+    .notEmpty().withMessage('Debes ingresar una contraseña').bail()
     .isLength({min: 8}).withMessage('Debe contener al menos 8 caracteres')
 ]

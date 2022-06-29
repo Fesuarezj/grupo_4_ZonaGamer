@@ -6,19 +6,20 @@ const userControllers = require('../controllers/userControllers');
 
 //MIDDLEWARES//
 const uploadFile= require('../middlewares/multerMiddleware');
-const validations = require('../middlewares/validateRegisterMiddleware');
+const validationsRegistro = require('../middlewares/validateRegisterMiddleware');
+const validationsLogin = require('../middlewares/validateLoginMiddleware');
 
 //FORMULARIO DE REGISTRO//
 router.get('/registro', userControllers.registro);
 
 //PROCESO DE REGISTRO//
-router.post('/registro', uploadFile.single('imagenPerfil'), validations, userControllers.procesoRegistro);
+router.post('/registro', uploadFile.single('imagenPerfil'), validationsRegistro, userControllers.procesoRegistro);
 
 //FORMULARIO DE LOGIN//
 router.get('/login', userControllers.login);
 
 //PROCESO DE LOGIN//
-router.post('/login', userControllers.procesoLogin);
+router.post('/login',validationsLogin, userControllers.procesoLogin);
 
 //PERFIL DE USUARIO//
 router.get('/perfil/:userId', userControllers.perfil);
