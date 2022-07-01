@@ -90,9 +90,10 @@
           <div>
             <i class="fa-solid fa-key"></i>
             <label>*Contraseña</label>
-            <input type="password" id="signup-password" name="contrasenia" placeholder="Ingrese un contraseña">
+            <input type="password" id="signup-password" name="contrasenia" placeholder="Ingrese un contraseña"
+              value="<%= locals.oldData ? oldData.contrasenia : null %>">
             <% if (locals.errors && errors.contrasenia) { %>
-            <div class="text-danger">
+            <div class=" text-danger">
               <%= errors.contrasenia.msg %>
             </div>
             <% } %>

@@ -42,7 +42,8 @@
           <div>
             <i class="fa-regular fa-id-badge"></i>
             <label>*Nombre de Usuario</label>
-            <input type="text" id="signup-username" name="userName" placeholder="Nombre de usuario">
+            <input type="text" id="signup-username" name="userName" placeholder="Nombre de usuario"
+              value="<%= locals.oldData ? oldData.userName : null %>">
             <% if (locals.errors && errors.userName) { %>
             <div class="text-danger">
               <%= errors.userName.msg %>
@@ -52,9 +53,10 @@
           <div>
             <i class="fa-solid fa-key"></i>
             <label>*Contraseña</label>
-            <input type="password" id="signup-password" name="contrasenia" placeholder="Ingrese un contraseña">
+            <input type="password" id="signup-password" name="contrasenia" placeholder="Ingrese un contraseña"
+              value="<%= locals.oldData ? oldData.contrasenia : null %>">
             <% if (locals.errors && errors.contrasenia) { %>
-            <div class="text-danger">
+            <div class=" text-danger">
               <%= errors.contrasenia.msg %>
             </div>
             <% } %>
