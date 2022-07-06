@@ -4,99 +4,118 @@ const {validationResult} = require('express-validator');
 const db = require('../database/models');
 
 const userControllers = {
+
     registro: (req, res) => {
         return res.render('../views/users/registro.ejs');
     },
-    procesoRegistro: (req, res) => {      
+
+    procesoRegistro: async (req, res) => {      
         const resultValdiation = validationResult(req);
         
         if(resultValdiation.errors.length > 0) {
             return res.render('../views/users/registro.ejs', { 
                 errors: resultValdiation.mapped(),
                 oldData: req.body
-            });
-            
-        
-
-
+            });           
         } else {
-            // const project = db.Users.findOne({ where: { userName: req.body.userName } });
-            // // console.log('***********gfgfgddgfdgdfgdf***********fdgfdgfdgfdgdf*', project)
-            
-            // if (project === null) {
-            //     console.log('*****Not found!*******');
-            // } else {
-            //     console.log('*******usuario encontrado********', project);                
-            // }
-            // db.Users.findOne({
-            //     where: {
-            //         userName: req.body.userName,                  
-            //     }
-            // })
-            // .then(function(users) {
-            //     console.log('ALERTA USER NAME REPERIDO')
-            //     return res.render('../views/users/registro.ejs', { 
-            //         errors: {
-            //             userName: {
-            //                 msg: 'Este nombre de usuario ya esta registrado'
-            //             }
-            //         },
-            //         oldData: req.body,                    
-            //     });                                            
-            // });
-
-            db.Users.create({
-                    nombre: req.body.nombre,
-                    apellido: req.body.apellido,
-                    correoElectronico: req.body.correoElectronico,
-                    userName: req.body.userName,
-                    // contrasenia: req.body.contrasenia,
-                    contrasenia: bcryptjs.hashSync(req.body.contrasenia, 10),
-                    imagenPerfil: req.file.filename,
-                    rol_ID_rol: 2, //todo usuario registrado y/o creado tendra el rol de cliente
-                    estado_ID_estado: 1 //todo usuario registrado y/o creado tendra el estado activo
+            const correoExiste = await db.Users.findOne({ where: {correoElectronico: req.body.correoElectronico}});
+            if (correoExiste) {
+                return res.render('../views/users/registro.ejs', { 
+                    errors: {
+                        correoElectronico: {
+                            msg: 'Este correo ya está registrado'
+                        }
+                    },
+                    oldData: req.body,                    
                 });
-                return res.render('../views/users/login.ejs')
+            } else {
+                const userNameExiste = await db.Users.findOne({ where: {userName: req.body.userName}});
+                if (userNameExiste) {
+                    return res.render('../views/users/registro.ejs', { 
+                        errors: {
+                            userName: {
+                                msg: 'Este nombre de usuario ya está registrado'
+                            }
+                        },
+                        oldData: req.body,                    
+                    });
+                } else {
+                    db.Users.create({
+                        nombre: req.body.nombre,
+                        apellido: req.body.apellido,
+                        correoElectronico: req.body.correoElectronico,
+                        userName: req.body.userName,                        
+                        contrasenia: bcryptjs.hashSync(req.body.contrasenia, 10),
+                        imagenPerfil: req.file.filename,
+                        rol_ID_rol: 2, //todo usuario registrado y/o creado tendra el rol de cliente
+                        estado_ID_estado: 1 //todo usuario registrado y/o creado tendra el estado activo
+                    });
+                    return res.render('../views/users/login.ejs')                    
+                }  
+            }
         }            
     },
+
     login: (req, res) => { 
         return res.render('../views/users/login.ejs');
-    },       
-    procesoLogin: (req, res) => {           
-        const resultValdiation = validationResult(req);
-        
-        console.log('0holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', req.body.userName)
-        console.log('0holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', req.body.contrasenia)
+    },
+
+    procesoLogin: async (req, res) => {           
+        const resultValdiation = validationResult(req);             
 
         if(resultValdiation.errors.length > 0) {
             return res.render('../views/users/login.ejs', { 
                 errors: resultValdiation.mapped(),
                 oldData: req.body
             });    
-        } else{         
-        console.log('1holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', req.body.userName)
-        console.log('1holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', req.body.contrasenia)
-        
-            db.Users.findOne({
-                where: {
-                    userName: req.body.userName,
-                    contrasenia: req.body.contrasenia                    
-                }
-            })
-            .then(function(users) {
-                const rolId = ['administrador', 'cliente', 'invitado']                   
-                return res.render('../views/users/perfil.ejs', {users: users, rolId: rolId});                             
-            });
-        }  
-        console.log('2holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', req.body.userName)
-        console.log('2holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', req.body.contrasenia)         
+        } else {        
+            const usuarioOk = await db.Users.findOne({ where: {userName: req.body.userName}});
+
+            if (usuarioOk) {                
+                if (usuarioOk.contrasenia == req.body.contrasenia) {                               
+                    delete usuarioOk.contrasenia;
+                    req.session.usuarioLogeado = usuarioOk;                
+                    return res.redirect('/users/perfil');    
+                } else {                    
+                    return res.render('../views/users/login.ejs', { 
+                        errors: {
+                            contrasenia: {
+                                msg: 'Contraseña Incorrecta'
+                            }
+                        },
+                        oldData: req.body,                    
+                    });                    
+                }                
+            } else {                
+                return res.render('../views/users/login.ejs', { 
+                    errors: {
+                        userName: {
+                            msg: 'Usuario Inexistente'
+                        }
+                    },
+                    oldData: req.body,                    
+                });
+            }           
+        }               
     },
-    perfil: (req, res) => {    
-        return res.render('../views/users/perfil.ejs');
-    },   
+
+    perfil: (req, res) => {
+        const rolId = ['administrador', 'cliente', 'invitado'];         
+        return res.render('../views/users/perfil.ejs', {users: req.session.usuarioLogeado, rolId: rolId});     
+    }, 
+
     editar: (req, res) => {    
-        return res.render('../views/users/editar.ejs');
-    },   
+        console.log('Estamos enm editar perfil', req.session.usuarioLogeado)
+        
+        return res.render('../views/users/editar.ejs',  {users: req.session.usuarioLogeado});
+        
+    },
+
+    logout: (req, res) => {
+        req.session.destroy();               
+        return res.redirect('/')
+    }, 
+
     contacto: (req, res) => {
         return res.render('../views/users/contacto.ejs');
     }

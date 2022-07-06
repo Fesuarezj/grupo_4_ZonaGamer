@@ -7,6 +7,7 @@ const productsControllers = require('../controllers/productsControllers');
 
 const uploadFile= require('../middlewares/multerMiddlewareProducts');
 const validations = require('../middlewares/validateAgregarProductoMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
 
 /*** LISTADO PRODUCTOS ***/
 router.get('/', productsControllers.index);
@@ -22,7 +23,7 @@ router.post('/buscar', productsControllers.encontrarProducto);
 router.get('/carrito', productsControllers.carrito);
 
 /*** AGREGAR PRODUCTO ***/
-router.get('/agregar', productsControllers.agregarProducto);
+router.get('/agregar', authMiddleware, productsControllers.agregarProducto);
 router.post('/agregar', uploadFile.single('imagenProducto'), validations,  productsControllers.store); 
 
 /*** EDITAR PRODUCTO ***/

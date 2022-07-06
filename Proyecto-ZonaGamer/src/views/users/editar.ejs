@@ -44,7 +44,7 @@
             <i class="fa-regular fa-id-badge"></i>
             <label>*Nombre de Usuario</label>
             <input type="text" id="signup-username" name="userName" placeholder="Nombre de usuario"
-              value="<%= locals.oldData ? oldData.userName : null %>">
+              value="<%= locals.oldData ? oldData.userName : users.userName %>">
             <% if (locals.errors && errors.userName) { %>
             <div class="text-danger">
               <%= errors.userName.msg %>
