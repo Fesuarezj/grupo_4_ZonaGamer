@@ -38,16 +38,42 @@
       </section>
 
       <section class="form-container">
-        <form action="/users/editar" method="GET" enctype="multipart/form-data">
+        <form action="/users/editar/<%= locals.usuarioLogeado.ID_usuario %>" method="POST"
+          enctype="multipart/form-data">
+
+
+          <div>
+            <i class="fa-regular fa-user"></i>
+            <label>*Nombre</label>
+            <input type="text" id="signup-firstname" name="nombre" placeholder="Nombre"
+              value="<%= locals.oldData ? oldData.usuarioLogeado : locals.usuarioLogeado.nombre %>">
+            <% if (locals.errors && errors.usuarioLogeado) { %>
+            <div class="text-danger">
+              <%= errors.usuarioLogeado.msg %>
+            </div>
+            <% } %>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-signature"></i>
+            <label>*Apellido</label>
+            <input type="text" id="signup-lastname" name="apellido" placeholder="Apellido"
+              value="<%= locals.oldData ? oldData.usuarioLogeado : locals.usuarioLogeado.apellido %>">
+            <% if (locals.errors && errors.usuarioLogeado) { %>
+            <div class="text-danger">
+              <%= errors.usuarioLogeado.msg %>
+            </div>
+            <% } %>
+          </div>
 
           <div>
             <i class="fa-regular fa-id-badge"></i>
             <label>*Nombre de Usuario</label>
             <input type="text" id="signup-username" name="userName" placeholder="Nombre de usuario"
-              value="<%= locals.oldData ? oldData.userName : users.userName %>">
-            <% if (locals.errors && errors.userName) { %>
+              value="<%= locals.oldData ? oldData.usuarioLogeado : locals.usuarioLogeado.userName %>" disabled="true">
+            <% if (locals.errors && errors.usuarioLogeado) { %>
             <div class="text-danger">
-              <%= errors.userName.msg %>
+              <%= errors.usuarioLogeado.msg %>
             </div>
             <% } %>
           </div>
@@ -66,7 +92,8 @@
             <i class="fa-solid fa-camera"></i>
             <label>*Imagen de Perfil</label>
             <input type="file" id="imagenPerfil" name="imagenPerfil" accept="image/*"
-              title="Seleccionar la imagen del nuevo producto">
+              title="Seleccionar la imagen del nuevo producto"
+              value="<%= locals.oldData ? oldData.usuarioLogeado : locals.usuarioLogeado.imagenPerfil %>">
             <% if (locals.errors && errors.imagenPerfil) { %>
             <div class="text-danger">
               <%= errors.imagenPerfil.msg %>
@@ -74,7 +101,7 @@
             <% } %>
           </div>
 
-          <input class="button" id="signup-submit" type="submit" value="Editar">
+          <input class="button" id="signup-submit" type="submit" value="Actualizar">
 
         </form>
 

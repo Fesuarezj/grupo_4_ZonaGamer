@@ -5,22 +5,22 @@ const db = require('../database/models');
 
 const userControllers = {
 
-    registro: (req, res) => {
-        return res.render('../views/users/registro.ejs');
+    registro: (req, res) => {        
+        return res.render('../views/users/registro');
     },
 
     procesoRegistro: async (req, res) => {      
         const resultValdiation = validationResult(req);
         
         if(resultValdiation.errors.length > 0) {
-            return res.render('../views/users/registro.ejs', { 
+            return res.render('../views/users/registro', { 
                 errors: resultValdiation.mapped(),
                 oldData: req.body
             });           
         } else {
             const correoExiste = await db.Users.findOne({ where: {correoElectronico: req.body.correoElectronico}});
             if (correoExiste) {
-                return res.render('../views/users/registro.ejs', { 
+                return res.render('../views/users/registro', { 
                     errors: {
                         correoElectronico: {
                             msg: 'Este correo ya está registrado'
@@ -31,7 +31,7 @@ const userControllers = {
             } else {
                 const userNameExiste = await db.Users.findOne({ where: {userName: req.body.userName}});
                 if (userNameExiste) {
-                    return res.render('../views/users/registro.ejs', { 
+                    return res.render('../views/users/registro', { 
                         errors: {
                             userName: {
                                 msg: 'Este nombre de usuario ya está registrado'
@@ -50,21 +50,21 @@ const userControllers = {
                         rol_ID_rol: 2, //todo usuario registrado y/o creado tendra el rol de cliente
                         estado_ID_estado: 1 //todo usuario registrado y/o creado tendra el estado activo
                     });
-                    return res.render('../views/users/login.ejs')                    
+                    return res.render('../views/users/login')                    
                 }  
             }
         }            
     },
 
-    login: (req, res) => { 
-        return res.render('../views/users/login.ejs');
+    login: (req, res) => {               
+        return res.render('../views/users/login');
     },
 
     procesoLogin: async (req, res) => {           
         const resultValdiation = validationResult(req);             
 
         if(resultValdiation.errors.length > 0) {
-            return res.render('../views/users/login.ejs', { 
+            return res.render('../views/users/login', { 
                 errors: resultValdiation.mapped(),
                 oldData: req.body
             });    
@@ -74,10 +74,15 @@ const userControllers = {
             if (usuarioOk) {                
                 if (usuarioOk.contrasenia == req.body.contrasenia) {                               
                     delete usuarioOk.contrasenia;
-                    req.session.usuarioLogeado = usuarioOk;                
-                    return res.redirect('/users/perfil');    
+                    req.session.usuarioLogeado = usuarioOk;    
+                    
+                    if (req.body.recordarUsuario) {
+                        res.cookie('userName', req.body.userName, { maxAge: (1000 * 60) * 60 });
+                    }
+
+                    return res.redirect('/users/perfil/' + req.session.usuarioLogeado.ID_usuario);    
                 } else {                    
-                    return res.render('../views/users/login.ejs', { 
+                    return res.render('../views/users/login', { 
                         errors: {
                             contrasenia: {
                                 msg: 'Contraseña Incorrecta'
@@ -87,7 +92,7 @@ const userControllers = {
                     });                    
                 }                
             } else {                
-                return res.render('../views/users/login.ejs', { 
+                return res.render('../views/users/login', { 
                     errors: {
                         userName: {
                             msg: 'Usuario Inexistente'
@@ -98,26 +103,44 @@ const userControllers = {
             }           
         }               
     },
-
-    perfil: (req, res) => {
+    /*** PERFIL USUARIO ***/ 
+    perfil: (req, res) => {        
         const rolId = ['administrador', 'cliente', 'invitado'];         
-        return res.render('../views/users/perfil.ejs', {users: req.session.usuarioLogeado, rolId: rolId});     
+        return res.render('../views/users/perfil', {users: req.session.usuarioLogeado, rolId: rolId});     
     }, 
-
-    editar: (req, res) => {    
-        console.log('Estamos enm editar perfil', req.session.usuarioLogeado)
-        
-        return res.render('../views/users/editar.ejs',  {users: req.session.usuarioLogeado});
+    /*** EDITAR USUARIO GET ***/ 
+    editar: (req, res) => { 
+        db.Users.findByPk(req.params.ID_usuario)
+            .then(function (users){                                                                     
+                return res.render('../views/users/editar', {users: users});                                   
+            })                    
+        // return res.render('../views/users/editar',  {users: req.session.usuarioLogeado});
         
     },
-
+    /*** ACTUALIZAR USUARIO POST ***/ 
+    actualizar: (req, res) => {	       
+        db.Users.update({
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            userName: req.body.userName,
+            contrasenia: req.body.contrasenia,            
+            imagenPerfil: req.file.filename,                    
+        }, {
+            where: {
+                ID_usuario: req.params.ID_usuario
+            }
+        })
+        return res.redirect('/users/editar/' + req.params.ID_usuario);		
+    },
+    /*** ELIMINAR USUARIO ***/ 
     logout: (req, res) => {
+        res.clearCookie('userName');
         req.session.destroy();               
         return res.redirect('/')
     }, 
 
     contacto: (req, res) => {
-        return res.render('../views/users/contacto.ejs');
+        return res.render('../views/users/contacto');
     }
 };
 

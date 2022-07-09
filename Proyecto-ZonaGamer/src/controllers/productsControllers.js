@@ -13,16 +13,10 @@ function buscarIdCategory (categoria){
             nameCategory: categoria
         }
     })
-    .then(function(category) {   
-        
-        console.log("TTTTTTTTTTTTTTTTTTTTTTTTTTT", category.ID_category)
-        idCategory = category.ID_category;
-        console.log("ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ", idCategory)
-                
+    .then(function(category) {                 
+        idCategory = category.ID_category;                 
         return   category.ID_category;        
-    });
-    // console.log('KKKKKKKKKKKKKKKKKKK', idCategory)
-
+    });    
     return idCategory;
 }
 
@@ -76,7 +70,7 @@ const productsControllers = {
     index: (req, res) => {        
         db.Products.findAll()
         .then(function(products) {              
-            res.render('../views/products/listadoProductos.ejs', {products: products});
+            res.render('../views/products/listadoProductos', {products: products});
         })               
     },
 /*** DETALLE PRODUCTO ***/
@@ -85,12 +79,12 @@ const productsControllers = {
             .then(function (products){
                 const precioFinal = products.price - (products.price * (products.discount / 100));
                 
-                return res.render('../views/products/detalleProducto.ejs', {products: products, precio_final: precioFinal });                             
+                return res.render('../views/products/detalleProducto', {products: products, precio_final: precioFinal });                             
             })              
     },
 /*** BUSCAR PRODUCTO GET ***/    
     buscarProducto: (req, res) => {
-        res.render('../views/products/buscarProducto.ejs')
+        res.render('../views/products/buscarProducto')
     },
 /*** ENCONTRAR PRODUCTO POST ***/
     encontrarProducto: function (req, res)  {         
@@ -98,23 +92,23 @@ const productsControllers = {
             .then(function (products){ 
                 const precioFinal = products.price - (products.price * (products.discount / 100));
 
-                return res.render('../views/products/detalleProducto.ejs', {products: products, precio_final: precioFinal });                                    
+                return res.render('../views/products/detalleProducto', {products: products, precio_final: precioFinal });                                    
             }) 
     },
     
     carrito: (req, res) => {
-        res.render('../views/products/carrito.ejs')
+        res.render('../views/products/carrito')
     },
 /*** VISTA AGREGAR PRODUCTO ***/
     agregarProducto: (req, res) => {       
-        res.render('../views/products/agregarProducto.ejs');        
+        res.render('../views/products/agregarProducto');        
     },
 /*** AGREGAR PRODUCTO ***/
     store: (req, res) => {
         const resultValdiation = validationResult(req);
         
         if(resultValdiation.errors.length > 0) {
-            return res.render('../views/products/agregarProducto.ejs', { 
+            return res.render('../views/products/agregarProducto', { 
                 errors: resultValdiation.mapped(),
                 oldData: req.body
             });    
@@ -134,31 +128,14 @@ const productsControllers = {
         }       
     },
 /*** EDITAR PRODUCTO GET ***/
-    editarProducto: (req, res) => { 
-        console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", req.params.ID_products);         
+    editarProducto: (req, res) => {             
         db.Products.findByPk(req.params.ID_products)
             .then(function (products){                                                                     
-                return res.render('../views/products/editarProducto.ejs', {products: products});                                   
+                return res.render('../views/products/editarProducto', {products: products});                                   
             })    
     },   
 /*** ACTUALIZAR PRODUCTO POST ***/ 
-    actualizar: (req, res) => {	
-        // console.log('$$$$$$$$$$$$$$$$$$$$$', req.params.ID_products)
-        // console.log(req.body.name)
-        // console.log(req.body.description)
-        // console.log(req.file.filename)
-        // console.log(Number(req.body.warranty))
-        // console.log(Number(req.body.price))
-        // console.log(Number(req.body.discount))
-        // console.log(req.body.date)
-        // console.log((req.body.status == "true")? 1 : 2)
-        // console.log("*****", req.body.category)
-        // console.log(categoryList(req.body.category));
-        // let id = buscarIdCategory(req.body.category); 
-
-        // console.log(id)
-        
-
+    actualizar: (req, res) => {	       
         db.Products.update({
             name: req.body.name,
             description: req.body.description,
@@ -169,7 +146,6 @@ const productsControllers = {
             date: req.body.date,
             estado_ID_estado: (req.body.status == "true")? 1 : 2, //(req.body.status)  
             category_ID_category: categoryList(req.body.category) 
-            // category_ID_category: id
         }, {
             where: {
                 ID_products: req.params.ID_products

@@ -14,7 +14,7 @@
                     <% if (locals.estaLogeado) { %>
                     <div class="nav-bar-user">
                         <li>
-                            <a href="#">
+                            <a href="/users/perfil/<%= locals.usuarioLogeado.ID_usuario %>">
                                 <img src="/images/avatars/<%= locals.usuarioLogeado.imagenPerfil %>" width="40"
                                     style="border-radius: 100%;">
                                 Hola <%= locals.usuarioLogeado.nombre %></a>
@@ -22,7 +22,7 @@
                     </div>
                     <div class="nav-bar-user">
                         <ul>
-                            <a href="/users/perfil">Mi Perfil</a>
+                            <a href="/users/perfil/<%= locals.usuarioLogeado.ID_usuario %>">Mi Perfil</a>
                             <li>
                                 <hr class="lineaDivisoria">
                             </li>
