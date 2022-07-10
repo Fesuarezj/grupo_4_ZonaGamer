@@ -7,16 +7,8 @@ async function userLoggedMidlleware(req, res, next) {
 
     if (usuarioEnCookie) {
         const usuarioDeLaCookie = await db.Users.findOne({ where: { userName: usuarioEnCookie } });
-        req.session.usuarioLogeado = usuarioDeLaCookie;
-        console.log('ggggggggggggggggggggggggg', usuarioDeLaCookie);
-        console.log('kjdhaskddhlkhdjkashdkljdhasadd', req.session.usuarioLogeado);
-        
-    } else { 
-        console.log('la cookie ha expirado')        
-    }
-    // if (usuarioDeLaCookie) {
-        
-    // }
+        req.session.usuarioLogeado = usuarioDeLaCookie;                
+    } 
 
     if (req.session.usuarioLogeado) {
         res.locals.estaLogeado = true;

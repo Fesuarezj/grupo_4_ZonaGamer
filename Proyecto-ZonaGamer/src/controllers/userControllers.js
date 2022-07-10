@@ -4,11 +4,11 @@ const {validationResult} = require('express-validator');
 const db = require('../database/models');
 
 const userControllers = {
-
+    /*** REGISTRO USUARIO GET ***/ 
     registro: (req, res) => {        
         return res.render('../views/users/registro');
     },
-
+    /*** REGISTRO USUARIO POST ***/ 
     procesoRegistro: async (req, res) => {      
         const resultValdiation = validationResult(req);
         
@@ -47,19 +47,19 @@ const userControllers = {
                         userName: req.body.userName,                        
                         contrasenia: bcryptjs.hashSync(req.body.contrasenia, 10),
                         imagenPerfil: req.file.filename,
-                        rol_ID_rol: 2, //todo usuario registrado y/o creado tendra el rol de cliente
-                        estado_ID_estado: 1 //todo usuario registrado y/o creado tendra el estado activo
+                        rol_ID_rol: 2, //todo usuario registrado y/o creado tendra el rol de cliente (rol_ID_rol 2)
+                        estado_ID_estado: 1 //todo usuario registrado y/o creado tendra el estado activo (estado_ID_estado 1)
                     });
                     return res.render('../views/users/login')                    
                 }  
             }
         }            
     },
-
+    /*** LOGIN USUARIO GET ***/ 
     login: (req, res) => {               
         return res.render('../views/users/login');
     },
-
+    /*** PERFIL USUARIO  POST ***/  
     procesoLogin: async (req, res) => {           
         const resultValdiation = validationResult(req);             
 
@@ -71,17 +71,35 @@ const userControllers = {
         } else {        
             const usuarioOk = await db.Users.findOne({ where: {userName: req.body.userName}});
 
-            if (usuarioOk) {                
-                if (usuarioOk.contrasenia == req.body.contrasenia) {                               
-                    delete usuarioOk.contrasenia;
-                    req.session.usuarioLogeado = usuarioOk;    
+            if (usuarioOk) {
+                const contraseniaCorrecta = bcryptjs.compareSync(usuarioOk.contrasenia, req.body.contrasenia);
+                console.log(req.body.contrasenia);
+                console.log(usuarioOk.contrasenia);
+                
+                if (contraseniaCorrecta) {  
+                    console.log('+++++++++++++++++++++', req.body.contrasenia);
+                    console.log('+++++++++++++++++++++', usuarioOk.contrasenia);
+                    // delete usuarioOk.contrasenia;
+                    // req.session.usuarioLogeado = usuarioOk;    
                     
                     if (req.body.recordarUsuario) {
-                        res.cookie('userName', req.body.userName, { maxAge: (1000 * 60) * 60 });
+                        res.cookie('userName', req.body.userName, { maxAge: (1000 * 60) * 10 });
                     }
 
                     return res.redirect('/users/perfil/' + req.session.usuarioLogeado.ID_usuario);    
-                } else {                    
+                }
+
+                // if (usuarioOk.contrasenia == req.body.contrasenia) {                               
+                //     delete usuarioOk.contrasenia;
+                //     req.session.usuarioLogeado = usuarioOk;    
+                    
+                //     if (req.body.recordarUsuario) {
+                //         res.cookie('userName', req.body.userName, { maxAge: (1000 * 60) * 10 });
+                //     }
+
+                //     return res.redirect('/users/perfil/' + req.session.usuarioLogeado.ID_usuario);    
+                // } 
+                 else {                    
                     return res.render('../views/users/login', { 
                         errors: {
                             contrasenia: {
