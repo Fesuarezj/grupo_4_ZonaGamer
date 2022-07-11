@@ -4,7 +4,7 @@ const { body } = require('express-validator');
 module.exports = [
 	body('imagenProducto').custom((value, { req }) =>{
         const file = req.file;
-        const acceptedExtensions = ['.jpg', '.png', '.gif']
+        const acceptedExtensions = ['.jpg', 'jpeg', '.png', '.gif']
         
         if (!file) {
             throw new Error('Tienes que subir una imagen');
@@ -17,16 +17,24 @@ module.exports = [
         }              
         return true;
     }),
-    body('name').notEmpty().withMessage('Debes ingresar un nombre al producto'),
+    body('name').notEmpty().withMessage('Debes ingresar un nombre al producto').bail()
+        .isLength({ min: 5 }).withMessage('Debe tener al menos 5 caracteres'),
+
     body('description').notEmpty().withMessage('Debes incluir una descripción del producto').bail()
-        .isLength({max: 50}).withMessage('Máximo 100 caracteres'),
+        .isLength({ min: 20 }).withMessage('Debe tener al menos 20 caracteres'),
+    
     body('category').notEmpty().withMessage('Debes selecionar una categoria'),
+
     body('price').notEmpty().withMessage('Debes ingresar un precio').bail()
-        .isLength({max: 7}).withMessage('Máximo 7 caracteres'),
+        .isLength({ min: 1 }).withMessage('Debe tener al menos 1 caracter'),
+    
     body('discount').notEmpty().withMessage('Debes ingresar un descuento').bail()
-        .isLength({max: 2}).withMessage('Máximo 2 caracteres'),
+        .isLength({ max: 2 }).withMessage('Máximo 2 caracteres'),
+    
     body('warranty').notEmpty().withMessage('Debes ingresar una garantía').bail()
-        .isLength({max: 2}).withMessage('Máximo 2 caracteres'),
+        .isLength({ max: 2 }).withMessage('Máximo 2 caracteres'),
+    
     body('date').notEmpty().withMessage('Debes ingresar la fecha de registro'),
+
     body('status').notEmpty().withMessage('Debes ingresar un estado')
 ]
