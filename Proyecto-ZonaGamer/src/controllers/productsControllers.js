@@ -5,20 +5,20 @@ const path = require('path');
 
 const db = require('../database/models');
 
-function buscarIdCategory (categoria){
-    let idCategory;
+// function buscarIdCategory (categoria){
+//     let idCategory;
 
-    db.Categorys.findOne({
-        where: {
-            nameCategory: categoria
-        }
-    })
-    .then(function(category) {                 
-        idCategory = category.ID_category;                 
-        return   category.ID_category;        
-    });    
-    return idCategory;
-}
+//     db.Categorys.findOne({
+//         where: {
+//             nameCategory: categoria
+//         }
+//     })
+//     .then(function(category) {                 
+//         idCategory = category.ID_category;                 
+//         return   category.ID_category;        
+//     });    
+//     return idCategory;
+// }
 
 function categoryList(categoria){
     let idCategoria = 0;    
@@ -70,7 +70,8 @@ const productsControllers = {
     index: (req, res) => {        
         db.Products.findAll()
         .then(function(products) {              
-            res.render('../views/products/listadoProductos', {products: products});
+            // res.render('../views/products/listadoProductos', {products: products});
+            res.json(products);
         })               
     },
 /*** DETALLE PRODUCTO ***/
