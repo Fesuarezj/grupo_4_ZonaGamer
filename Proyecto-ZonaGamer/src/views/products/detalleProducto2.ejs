@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle Productos - Zona Gamer</title>
+    <link rel="preload" href="/css/normalize.css" as="style">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="/css/style.css" as="style">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://kit.fontawesome.com/3a84dfeae6.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <%- include('../partials/header')%>
+
+    <main class="contenedor__dt">
+        <h1 class="titulo__producto__dt">Detalle del Producto</h1>
+        <div class="producto__dt">
+            <img class="producto__imagen__dt" src="/images/products/<%= products.image %>" alt="imagen monitor01">
+            <div class="producto__informacion__dt">
+                <p class="producto__descripcion"><%= products.description %></p>
+                <p class="producto__nombre__dt"><%= products.name %></p>
+                <p class="producto__precio__dt">$<%= products.price %></p>
+                <p class="producto__descuento"><%= products.discount %>% OFF <span class="span">en
+                        efectivo</span></p>
+                <p class="producto__garantiapf">Precio Final</p>
+                <p class="producto__preciof__dt">$<%= precio_final %></p>
+                <p class="producto__garantia">Garantia Oficial <%= products.warranty %> meses</p>
+                <div class="contenedor__producto__desc__dt">
+                    <h3>Descripción</h3>
+                    <p class="producto__desc__dt"><%= products.description %></p>
+                </div>
+                <form>
+                    <a href="/products/editar/<%= products.ID_products %>">
+                        <input class="buttonEdit" id="signup-submit" type="button" value="Editar Producto">
+                    </a>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <%- include('../partials/footer')%>
+
+</body>
+
+</html>

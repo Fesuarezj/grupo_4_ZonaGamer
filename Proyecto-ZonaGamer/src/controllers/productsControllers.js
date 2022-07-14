@@ -79,8 +79,10 @@ const productsControllers = {
         db.Products.findByPk(req.params.ID_products)
             .then(function (products){
                 const precioFinal = products.price - (products.price * (products.discount / 100));
+                const estadoID = ['Disponible', 'No Disponible'];
+                console.log('AAAAAAAAAAAAAAAAAAAAAAAA', estadoID);
                 
-                return res.render('../views/products/detalleProducto', {products: products, precio_final: precioFinal });                             
+                return res.render('../views/products/detalleProducto', {products: products, precio_final: precioFinal, estadoID: estadoID });                             
             })              
     },
 /*** BUSCAR PRODUCTO GET ***/    

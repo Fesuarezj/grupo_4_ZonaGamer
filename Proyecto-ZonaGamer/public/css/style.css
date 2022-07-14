@@ -102,7 +102,7 @@ body {
     padding-bottom: 10px;
 }
 
-.titulo__producto, .titulo__producto__dt {
+.titulo__producto, .titulo__producto__dc {
     color: var(--blanco);
     text-align: center;
     font-weight: bold;
@@ -129,16 +129,11 @@ body {
 /* PRODUCTO */
 /* ------------------------------ */
 
-.producto, .producto__dt {
+.producto {
     background-color: var(--grisMedio);
     padding: 1.5rem;
     border-radius: 1rem;
     text-decoration: none;    
-}
-
-.producto__dt {
-    margin: 10px;
-    border: 2px solid var(--blanco);
 }
 
 .producto:hover {
@@ -150,7 +145,7 @@ body {
     text-decoration: none;
 }
 
-.producto__imagen, .producto__imagen__dt {
+.producto__imagen {
     width: 100%;    
     border-radius: 0.5rem;
 }
@@ -158,9 +153,6 @@ body {
 .producto__imagen:hover {
     box-shadow: 0px 0px 5px 5px var(--blanco);
     transition: all 0.5s;
-}
-
-.producto__imagen:hover {
     cursor: default;
 }
 
@@ -179,11 +171,6 @@ body {
     color: var(--blanco);
 }
 
-.producto__preciof__dt {
-    font-size: 2.7rem;
-    color: var(--negro);
-}
-
 .producto__descuento {
     font-size: 1.5rem;
     color: var(--yellowGreen);
@@ -193,46 +180,125 @@ body {
     font-size: 1.2rem;
 }
 
+.producto__precio__final {
+    font-size: 1.2rem;
+    color: var(--celestePaula);
+    text-align: center;    
+}
+
+.producto__precioOf {
+    font-size: 2.7rem;
+    color: var(--negro);
+    text-align: center;    
+}
+
 .producto__garantia {
-    font-size: 0.8rem;
-    color: var(--celestePaula);
-}
-
-.producto__garantiapf {
     font-size: 1rem;
-    color: var(--celestePaula);
+    color: var(--blanco);
+    text-align: center;
 }
 
-.producto__nombre, .producto__precio, 
-.producto__nombre__dt, .producto__precio__dt,
-.producto__preciof__dt {
+.producto__nombre, .producto__precio,
+.producto__precioOf {
     text-align: center;
     margin: 0.5rem 0;
     font-weight: bold;
 }
 
-.producto__descripcion, .producto__descuento, 
-.producto__garantia, .producto__garantiapf {
+.producto__descripcion, .producto__descuento,
+.producto__garantia, .producto__precio__final {
     text-align: center;
     margin: 0.5rem 0;
     font-weight: 400;
 }
 
-.producto__nombre__dt {
-    font-size: 2rem;
-    color: var(--celestePaula);
-}
+/* ------------------------------------*/
+/* CONTENEDOR DESCRIPCION DEL PRODUCTO */
+/* ------------------------------------*/
 
-.producto__precio__dt {
-    font-size: 1.8rem;
+.producto__titulo__dc {
+    font-size: 1.5rem;
     color: var(--blanco);
+    /* text-align: center;    */
+    font-weight: bold;
 }
 
-.producto__informacion__dt a {
+.producto__estado__dc {
+    font-size: 1.2rem;
+    color: var(--yellowGreen);
+    /* text-align: center;    */
+    font-weight: bold;
+}
+
+.producto__codigo__dc {
+    font-size: 1.2rem;
+    color: var(--celestePaula);
+    /* text-align: center;  */
+    font-weight: 550;  
+}
+
+.span__cdc {
+    font-size: 1.2rem;
+    font-weight: bold;    
+    color: var(--yellowGreen);
+    
+}
+
+.producto__fpago__dc {
+    font-size: 1.5rem;
+    color: var(--blanco);
+    /* text-align: center; */
+    font-weight: bold;
+}
+
+.span__fdp {
+    font-size: 1rem;  
+    font-weight: 550;
+    /* text-align: center; */
+    color: var(--celestePaula);  
+    /* margin-top: -10px; */
+}
+
+.producto__mp__dc {
+    font-size: 1.5rem;
+    color: var(--yellowGreen);
+    /* text-align: center; */
+    font-weight: bold;    
+}
+
+.span__cuotas {
+    font-size: 1.2rem;
+    font-weight: 500;
+    /* text-align: center; */
+    color: var(--negro);
+    /* margin-top: -20px; */
+}
+
+.producto__legales__dc {
+    font-size: 1rem;
+    color: var(--blanco);
+    text-align: center;
+}
+
+.producto__titulo__dc, .producto__estado__dc, .producto__codigo__dc,
+.span__cdc, .producto__fpago__dc, .producto__mp__dc,
+.producto__legales__dc {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.span__fdp, .span__cuotas {
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+
+
+/* .producto__informacion__dc a {
     text-decoration: none;
-}
+} */
 
-.contenedor__producto__desc__dt, .contenedor__producto__carac__dt {
+/* .contenedor__producto__desc__dt, .contenedor__producto__carac__dt {
     text-align: center;
     border-top: 1px solid var(--blanco);
 }
@@ -244,7 +310,7 @@ body {
 
 .contenedor__producto__desc__dt p, .contenedor__producto__carac__dt p {
     color: var(--blanco);
-}
+} */
 
 .boton__eliminar {
     color: var(--blanco);
@@ -367,7 +433,7 @@ body {
 }
 
 /* ---------------------------- */
-/* PERFIL EJS */
+/* PERFIL USUARIO */
 /* ---------------------------- */
 
 .contenedor-main-imagen-perfil {
@@ -694,7 +760,10 @@ body {
     .formulario {
         max-width: 420px;
         margin: 0 auto;
-    }      
+    } 
+    .producto__imagen__dt {
+        width: 450px;
+    }     
 }
 
 @media (min-width: 768px) {
@@ -737,6 +806,7 @@ body {
         grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
         padding: 1rem;
+        /* width: 1100px; */
     }   
     .grid_2 {
         display: grid;
@@ -762,14 +832,7 @@ body {
     }
     .tipo__producto {
         display: block;
-    }   
-    .producto__dt {
-        width: 720px;
-        margin: 0 auto;
-    }    
-    .producto__imagen__dt {
-        width: 715px;
-    }   
+    }       
     .navegacion, .navegacion__home {
         display: none;
     }   
@@ -781,6 +844,7 @@ body {
         grid-template-columns: repeat(4, 1fr);
         gap: 1rem;
         padding: 1rem;
+        /* width: 1140px; */
     }
     .grid_2 {
         display: grid;
