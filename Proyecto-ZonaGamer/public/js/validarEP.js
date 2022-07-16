@@ -5,6 +5,8 @@ window.addEventListener('load', function () {
 
         const errores = [];
 
+// ***VALIDAMOS NOMBRE DEL PRODCUTO*** //        
+
         const name = document.querySelector('input.name');
 
         if (name.value === '') {
@@ -13,18 +15,35 @@ window.addEventListener('load', function () {
             errores.push('El nombre del producto debe tener al menos 5 caracteres');
         }     
         
-        // const description = document.querySelector('textarea.description');
-        const description = document.getElementById('description');
+// ***VALIDAMOS DESCRIPCION DEL PRODCUTO*** //        
+                // // const description = document.querySelector('textarea.description');
+        const description = document.querySelector('textarea');
 
-        if (description.value.length > 20) {
-            errores.push('La descripción debe tener máximo 20 caracteres');
+        if (description.value === '') {
+            errores.push('Debes ingresar una dscripcón del producto');
+        } else if (description.value.length < 5 ) {
+            errores.push('La descripción debe tener mínimo 5 caracteres');
+        } else if (description.value.length > 30 ) {
+            errores.push('La descripción debe tener máximo 30 caracteres');
+        }    
+
+// ***VALIDAMOS EXTENSION DE IMAGEN DEL PRODCUTO*** //        
+
+        const extensionesPermitidas = ["jpg", "jpeg", "png", "gif"]
+        const image = document.querySelector('input[name="imagenProducto"]');
+
+        if (image != undefined) {
+            const extension = image.value.substring(image.value.lastIndexOf('.') + 1).toLowerCase()
+
+            if (image.value == "") {
+                errores.push('Debes seleccionar una imagen');
+            }
+            else if (extensionesPermitidas.indexOf(extension) == -1) {
+                errores.push('Los formatos de imagen permitidos son, "jpg", "jpeg", "png", "gif" ');                
+            }
         }
-
-        // if (imagen.value === '') {
-        //     alert('El nombre es obligatorio');
-        // } else if (nombre.value.length < 3) { 
-        //     alert('El nombre debe tener al menos 3 caracteres');
-        // }  
+        
+// ***PREVENIMOS ENVIO DEL FORMULARIO*** //        
 
         if (errores.length > 0) {
             event.preventDefault();
