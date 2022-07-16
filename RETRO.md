@@ -134,3 +134,33 @@
 15. Dejar de hacer.
     -Pensar que es imposible realizar un proyecto web, creer que nunca vamos a alncar un nivel senior en este campo.
     -Frustarse o desanimarse cuando las cosas no salen o van como el grupo quisiera.
+
+    ## Retrosprectiva Sprint 7
+
+16. Comenzar a hacer.
+    -Mejoras en las vistas, estilos
+    -Agregado de prodctos a la base de datos para que este más completo
+    -Complementar con recursos externos ciertos conocimientos requeridos de acuerdo a necesidades surgidas.  
+    -Reunirnos mas veces o las mismas pero mayor cantidad de tiempo para llevar más tranquilos los tiempos entre sprint y sprint.
+
+17. Hacer más.
+    -Fortalecer la dinámica de las metodologías ágiles en el desarrollo de software.
+    -Identificación ya de funcionalidades que deberán irse teniendo encuenta para poder ir integrando al proyecto.
+    -Seguir plasmando todos los conocimientos adquiridos en las clases desde la perspesctiva de cada uno de los integrantes del proyecto.
+
+18. Continuar haciendo.
+    -Revisar el feedback de cada sprint anterior, tomando en cuenta las sugerencias y mejoras recibidas.
+    -Seguir revisando documentación y consolidando los conocimientos que vamos adquiriendo clase a clase y mediante el playground.
+    -Revisar con el equipo de trabajo, las falencias y fortalezcas que vayaos descubriendo.
+    -Seguir comunicandonos e interactunado via whatsapp e ir ajustando temas para llegar a las reuniones por zoom mas organizados.
+    -Implementado ciertas mejoras al proyecto a medida que vamos adquiriendo mas conocimiento con el transcurrir de las clases y nuevas dudadas e inquitudus que nos hacemos.
+    -Adicionar más funcionalidades que van surgiendo a medida que avanzamos de acorde a la ionfoemación que queremos mostrar.
+    -Nutrirnos de información externa de modo que complemente los conocimientos a implementar en el proyecto.
+
+19. Hacer menos.
+    -Confiarnos con los tiempos y dejar las cosas para otro momento.
+    -Procrastinar
+
+20. Dejar de hacer.
+    -Pensar que es imposible realizar un proyecto web, creer que nunca vamos a alncar un nivel senior en este campo.
+    -Frustarse o desanimarse cuando las cosas no salen o van como el grupo quisiera.

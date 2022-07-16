@@ -1,0 +1,86 @@
+Validaciones del back-end
+
+Registro de usuarios
+○ Nombre y apellido
+■ Obligatorio.
+■ Deberá tener al menos 2 caracteres.
+
+○ Email
+■ Obligatorio.
+■ Deberá ser un formato de e-mail válido.
+■ No puede repetirse con los e-mails ya registrados.
+
+○ Contraseña
+■ Obligatoria.
+■ Deberá tener al menos 8 caracteres.
+
+○ Imagen
+■ Deberá ser un archivo válido (JPG, JPEG, PNG, GIF).
+● Login de usuarios
+
+○ Email
+■ Obligatorio.
+■ Deberá ser válido.
+■ Deberá existir en base.
+
+○ Contraseña
+■ Obligatoria.
+■ Deberá coincidir con la existente en base.
+
+● Creación y modificación de productos
+○ Nombre
+■ Obligatorio.
+■ Deberá tener al menos 5 caracteres.
+
+○ Descripción
+■ Deberá tener al menos 20 caracteres.
+
+○ Imagen
+■ Deberá ser un archivo válido (JPG, JPEG, PNG, GIF).
+
+○ (Opcional) Tablas secundarias
+■ Verificar que los valores existan en base. Es decir, que los valores
+de talles, colores, etc. que lleguen sean válidos en la base.
+
+
+
+
+
+Validaciones del front-end
+
+● Registro de usuarios
+
+○ Nombre y apellido
+■ Obligatorio.
+■ Deberá tener al menos 2 caracteres.
+
+○ Email
+■ Obligatorio.
+■ Deberá ser válido.
+
+○ Contraseña
+■ Obligatoria.
+■ Deberá tener al menos 8 caracteres.
+
+○ Imagen
+■ Deberá ser un archivo válido (JPG, JPEG, PNG, GIF).
+● Login de usuarios
+
+○ Email
+■ Obligatorio.
+■ Deberá ser válido.
+
+○ Contraseña
+■ Obligatoria.
+
+● Creación y modificación de productos
+
+○ Nombre
+■ Obligatorio.
+■ Deberá tener al menos 5 caracteres.
+
+○ Descripción
+■ Deberá tener al menos 20 caracteres.
+
+○ Imagen
+■ Deberá ser un archivo válido (JPG, JPEG, PNG, GIF).
