@@ -151,6 +151,11 @@ form .eliminar {
 form i, .informacion-lateral i{
     color: rgb(22, 240, 22); 
     font-size: 20px;
+    margin-bottom: 10px;
+}
+
+div.errores {
+    color: red;
 }
 
 /*///////////////////////////////////////////////////////////////////////////*/

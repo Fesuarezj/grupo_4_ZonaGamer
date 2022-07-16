@@ -292,8 +292,6 @@ body {
     margin: 0.5rem 0;
 }
 
-
-
 /* .producto__informacion__dc a {
     text-decoration: none;
 } */
@@ -344,6 +342,15 @@ body {
 .tipo__producto__informacion p {
     color: yellowgreen;
     font-weight: 550; 
+}
+
+.iamgenIcono {
+    text-align: center;
+    width: 100%;
+    margin-top: 15px;
+    /* width: 150px; */
+    height: 70px;
+    color: var(--blanco);
 }
 
 /* ------------------------------ */
@@ -529,18 +536,16 @@ body {
 }
 
 .buttonEdit {
-    /* margin-bottom: 0px; */
-    margin-left: 40%;
-    margin-top: -50px;
+    margin-top: 15px;
+    position: relative;
+    left: 50px;
     color: var(--negro);
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
     background-color: var(--yellowGreen);
     border-radius: 5px;
-    border: none;
-    width: 140px;
-    height: 20px;
+    border: none;    
 }
 
 .buttonEdit:hover {

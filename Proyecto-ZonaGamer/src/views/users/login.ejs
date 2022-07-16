@@ -38,12 +38,12 @@
       </section>
 
       <section class="form-container">
-        <form action="/users/login" method="POST" name="form-login">
+        <form action="/users/login" method="POST" name="form-login" class="formLU">
           <div>
             <i class="fa-regular fa-id-badge"></i>
             <label>*Nombre de Usuario</label>
             <input type="text" id="signup-username" name="userName" placeholder="Nombre de usuario"
-              value="<%= locals.oldData ? oldData.userName : null %>">
+              value="<%= locals.oldData ? oldData.userName : null %>" class="userName">
             <% if (locals.errors && errors.userName) { %>
             <div class="text-danger">
               <%= errors.userName.msg %>
@@ -54,7 +54,7 @@
             <i class="fa-solid fa-key"></i>
             <label>*Contraseña</label>
             <input type="password" id="signup-password" name="contrasenia" placeholder="Ingrese un contraseña"
-              value="<%= locals.oldData ? oldData.contrasenia : null %>">
+              value="<%= locals.oldData ? oldData.contrasenia : null %>" class="contrasenia">
             <% if (locals.errors && errors.contrasenia) { %>
             <div class=" text-danger">
               <%= errors.contrasenia.msg %>
@@ -70,6 +70,11 @@
           </div>
 
           <input class="button" id="signup-submit" type="submit" value="Ingresar">
+
+          <div class="errores">
+            <ul></ul>
+          </div>
+
         </form>
 
         <p class="terminos">Para ingresar como admiistrador ingresar con admin/adminr <br><span>Para Ir a agregar/editar
@@ -94,6 +99,7 @@
   <%- include('../partials/footer')%>
 
   <!--*** FIN FOOTER ****-->
+  <script src="/js/validarL.js"></script>
 </body>
 
 </html>

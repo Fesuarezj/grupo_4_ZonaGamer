@@ -37,25 +37,26 @@
       </section>
 
       <section class="form-container">
-        <form action="/products/editar/<%= products.ID_products %>" method="POST" enctype="multipart/form-data">
+        <form action="/products/editar/<%= products.ID_products %>" method="POST" enctype="multipart/form-data"
+          class="formEP">
           <div>
             <i class="fa-solid fa-computer"></i>
             <label>*Nombre del Producto</label>
             <input name="name" type="text" id="signup-firstname" placeholder="Nombre nuevo del producto"
-              value="<%= products.name %>">
+              value="<%= products.name %>" class="name">
           </div>
           <div>
             <i class="fa-solid fa-circle-info"></i>
             <label>*Descripción del Producto</label>
-            <textarea name="description" rows="3" cols="53"
-              placeholder="Descripción del producto"><%= products.description %></textarea>
+            <textarea name="description" rows="3" cols="53" placeholder="Descripción del producto" class="description"
+              id="description"><%= products.description %></textarea>
           </div>
           <div>
             <!-- <imput type="hidden" name="imagenProductoEdit" value="<%= products.iamage %>"> -->
             <i class="fa-solid fa-camera"></i>
             <label>*Imagen del Producto</label>
             <input type="file" id="imagenProducto" name="imagenProducto" accept="image/*" title="<%= products.image %>"
-              value="<%= products.image %>">
+              value="<%= products.image %>" class="image">
           </div>
 
           <div>
@@ -130,6 +131,11 @@
 
         <form action="/products/borrar/<%= products.ID_products %>" method="POST">
           <input class="button eliminar" id="signup-submit" type="submit" value="Eliminar Producto">
+
+          <div class="errores">
+            <ul></ul>
+          </div>
+
         </form>
 
         <p class="terminos">Al dar clic -Editar Producto-, estás adicionando un nuevo producto al público </p>
@@ -155,6 +161,7 @@
   <%- include('../partials/footer')%>
 
   <!--*** FIN FOOTER ****-->
+  <script src="/js/validarEP.js"></script>
 </body>
 
 </html>

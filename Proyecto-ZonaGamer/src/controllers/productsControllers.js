@@ -70,8 +70,8 @@ const productsControllers = {
     index: (req, res) => {        
         db.Products.findAll()
         .then(function(products) {              
-            // res.render('../views/products/listadoProductos', {products: products});
-            res.json(products);
+            res.render('../views/products/listadoProductos', {products: products});
+            // res.json(products);
         })               
     },
 /*** DETALLE PRODUCTO ***/
@@ -79,9 +79,7 @@ const productsControllers = {
         db.Products.findByPk(req.params.ID_products)
             .then(function (products){
                 const precioFinal = products.price - (products.price * (products.discount / 100));
-                const estadoID = ['Disponible', 'No Disponible'];
-                console.log('AAAAAAAAAAAAAAAAAAAAAAAA', estadoID);
-                
+                const estadoID = ['Disponible', 'No Disponible'];                         
                 return res.render('../views/products/detalleProducto', {products: products, precio_final: precioFinal, estadoID: estadoID });                             
             })              
     },
@@ -94,11 +92,19 @@ const productsControllers = {
         db.Products.findByPk(req.body.ID_products)
             .then(function (products){ 
                 const precioFinal = products.price - (products.price * (products.discount / 100));
-
-                return res.render('../views/products/detalleProducto', {products: products, precio_final: precioFinal });                                    
+                const estadoID = ['Disponible', 'No Disponible'];
+                return res.render('../views/products/detalleProducto', {products: products, precio_final: precioFinal, estadoID: estadoID  });                                    
             }) 
     },
-    
+    filtarPorCategoria: async (req, res) => {
+        await db.Products.findAll()
+            .then(function (products) { 
+                // res.render('home', {products: products.filter(product => product.category_ID_category == 1)});
+                res.render('home', {products: products.filter(product => product.category_ID_category == req.params.ID_category)});
+                console.log('AAAAAAAAAAAAAAAAAAA', {products: products.filter(product => product.category_ID_category == 4)})
+                
+            })
+    },    
     carrito: (req, res) => {
         res.render('../views/products/carrito')
     },

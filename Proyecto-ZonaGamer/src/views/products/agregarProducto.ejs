@@ -37,12 +37,12 @@
       </section>
 
       <section class="form-container">
-        <form action="/products/agregar" method="POST" enctype="multipart/form-data">
+        <form action="/products/agregar" method="POST" enctype="multipart/form-data" class="formAP">
           <div>
             <i class="fa-solid fa-computer"></i>
             <label>*Nombre del Producto</label>
             <input name="name" type="text" id="signup-firstname" placeholder="Nombre nuevo del producto"
-              value="<%= locals.oldData ? oldData.name : null %>">
+              value="<%= locals.oldData ? oldData.name : null %>" class="name">
             <% if (locals.errors && errors.name) { %>
             <div class="text-danger">
               <%= errors.name.msg %>
@@ -53,7 +53,8 @@
             <i class="fa-solid fa-circle-info"></i>
             <label>*Descripción del Producto</label>
             <textarea name="description" rows="3" cols="53" placeholder="Descrioción del nuevo producto"
-              value="<%= locals.oldData ? oldData.description : null %>"></textarea>
+              value="<%= locals.oldData ? oldData.description : null %>" class="description"
+              id="description"></textarea>
             <% if (locals.errors && errors.description) { %>
             <div class="text-danger">
               <%= errors.description.msg %>
@@ -64,7 +65,7 @@
             <i class="fa-solid fa-camera"></i>
             <label>*Imagen del Producto</label>
             <input type="file" id="imagenProducto" name="imagenProducto" accept="image/*"
-              title="Seleccionar la imagen del nuevo producto">
+              title="Seleccionar la imagen del nuevo producto" class="image">
             <% if (locals.errors && errors.imagenProducto) { %>
             <div class="text-danger">
               <%= errors.imagenProducto.msg %>
@@ -158,6 +159,11 @@
           </div>
 
           <input class="button" id="signup-submit" type="submit" value="Agregar Nuevo Producto">
+
+          <div class="errores">
+            <ul></ul>
+          </div>
+
         </form>
 
         <p class="terminos">Al dar clic -Agregar-, estás adicionando un nuevo producto al público </p>
@@ -183,6 +189,8 @@
   <%- include('../partials/footer')%>
 
   <!--*** FIN FOOTER ****-->
+
+  <script src="/js/validarAP.js"></script>
 </body>
 
 </html>

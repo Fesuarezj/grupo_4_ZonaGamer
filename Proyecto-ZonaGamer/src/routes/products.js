@@ -19,6 +19,9 @@ router.get('/detalle/:ID_products', productsControllers.producto);
 router.get('/buscar', productsControllers.buscarProducto);
 router.post('/buscar', productsControllers.encontrarProducto);
 
+/*** FILTRAR PRODUCTO ***/
+router.get('/filtar/:ID_category', productsControllers.filtarPorCategoria);
+
 /*** CARRITO PRODUCTO ***/
 router.get('/carrito', productsControllers.carrito);
 

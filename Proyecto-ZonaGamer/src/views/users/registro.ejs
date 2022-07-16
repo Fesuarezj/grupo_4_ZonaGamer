@@ -38,13 +38,14 @@
       </section>
 
       <section class="form-container">
-        <form action="/users/registro" method="POST" enctype="multipart/form-data">
+
+        <form action="/users/registro" method="POST" enctype="multipart/form-data" class="formRU">
 
           <div>
             <i class="fa-regular fa-user"></i>
             <label>*Nombre</label>
             <input type="text" id="signup-firstname" name="nombre" placeholder="Nombre"
-              value="<%= locals.oldData ? oldData.nombre : null %>">
+              value="<%= locals.oldData ? oldData.nombre : null %>" class="nombre">
             <% if (locals.errors && errors.nombre) { %>
             <div class="text-danger">
               <%= errors.nombre.msg %>
@@ -56,7 +57,7 @@
             <i class="fa-solid fa-signature"></i>
             <label>*Apellido</label>
             <input type="text" id="signup-lastname" name="apellido" placeholder="Apellido"
-              value="<%= locals.oldData ? oldData.apellido : null %>">
+              value="<%= locals.oldData ? oldData.apellido : null %>" class="apellido">
             <% if (locals.errors && errors.apellido) { %>
             <div class="text-danger">
               <%= errors.apellido.msg %>
@@ -68,7 +69,7 @@
             <i class="fa-regular fa-envelope"></i>
             <label>E-mail</label>
             <input type="text" id="signup-email" name="correoElectronico" placeholder="Correo Electrónico"
-              value="<%= locals.oldData ? oldData.correoElectronico : null %>">
+              value="<%= locals.oldData ? oldData.correoElectronico : null %>" class="correo">
             <% if (locals.errors && errors.correoElectronico) { %>
             <div class="text-danger">
               <%= errors.correoElectronico.msg %>
@@ -91,7 +92,7 @@
             <i class="fa-solid fa-key"></i>
             <label>*Contraseña</label>
             <input type="password" id="signup-password" name="contrasenia" placeholder="Ingrese un contraseña"
-              value="<%= locals.oldData ? oldData.contrasenia : null %>">
+              value="<%= locals.oldData ? oldData.contrasenia : null %>" class="contrasenia">
             <% if (locals.errors && errors.contrasenia) { %>
             <div class=" text-danger">
               <%= errors.contrasenia.msg %>
@@ -109,7 +110,7 @@
             <i class="fa-solid fa-camera"></i>
             <label>*Imagen de Perfil</label>
             <input type="file" id="imagenPerfil" name="imagenPerfil" accept="image/*"
-              title="Seleccionar la imagen del nuevo producto">
+              title="Seleccionar la imagen del nuevo producto" class="imagen">
             <% if (locals.errors && errors.imagenPerfil) { %>
             <div class="text-danger">
               <%= errors.imagenPerfil.msg %>
@@ -118,6 +119,10 @@
           </div>
 
           <input class="button" id="signup-submit" type="submit" value="Resgistrarse">
+
+          <div class="errores">
+            <ul></ul>
+          </div>
 
         </form>
 
@@ -145,6 +150,7 @@
   <%- include('../partials/footer')%>
 
   <!--*** FIN FOOTER ****-->
+  <script src="/js/validarR.js"></script>
 </body>
 
 </html>

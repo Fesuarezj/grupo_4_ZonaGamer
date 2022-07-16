@@ -21,7 +21,7 @@ module.exports = [
         .isLength({ min: 5 }).withMessage('Debe tener al menos 5 caracteres'),
 
     body('description').notEmpty().withMessage('Debes incluir una descripción del producto').bail()
-        .isLength({ min: 20 }).withMessage('Debe tener al menos 20 caracteres'),
+        .isLength({ max: 30 }).withMessage('Máximo 30 caracteres'),
     
     body('category').notEmpty().withMessage('Debes selecionar una categoria'),
 
