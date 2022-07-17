@@ -100,8 +100,9 @@ const productsControllers = {
         await db.Products.findAll()
             .then(function (products) { 
                 // res.render('home', {products: products.filter(product => product.category_ID_category == 1)});
-                res.render('home', {products: products.filter(product => product.category_ID_category == req.params.ID_category)});
-                console.log('AAAAAAAAAAAAAAAAAAA', {products: products.filter(product => product.category_ID_category == 4)})
+                // res.render('home', {products: products.filter(product => product.category_ID_category == req.params.ID_category)});
+                res.render('../views/products/productosFiltrados', {products: products.filter(product => product.category_ID_category == req.params.ID_category)});
+                // console.log('AAAAAAAAAAAAAAAAAAA', {products: products.filter(product => product.category_ID_category == 4)})
                 
             })
     },    

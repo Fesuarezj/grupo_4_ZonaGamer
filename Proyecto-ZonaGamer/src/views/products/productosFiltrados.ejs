@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('./partials/head')%>
+<%- include('../partials/head')%>
 
 <body>
 
-    <%- include('./partials/header')%>
+    <%- include('../partials/header')%>
 
     <main class="contenedor">
-        <h1 class="titulo__producto">Productos Destacados</h1>
 
-
+        <h1 class="titulo__producto">Productos Filtrados</h1>
 
         <div class="grid">
 
@@ -33,19 +32,19 @@
 
             <% } %>
 
-            <div class="imagenI imagen__extra"></div>
+            <!-- <div class="imagenI imagen__extra"></div>
             <div class="imagenP imagen__extra2"></div>
             <div class="imagenI imagen__extra3"></div>
             <div class="imagenP imagen__extra4"></div>
-            <div class="imagenI imagen__extra5"></div>
+            <div class="imagenI imagen__extra5"></div> -->
 
         </div>
 
-        <%- include('./partials/filtro')%>
+        <%- include('../partials/filtro')%>
 
     </main>
 
-    <%- include('./partials/footer')%>
+    <%- include('../partials/footer')%>
 
 </body>
 
