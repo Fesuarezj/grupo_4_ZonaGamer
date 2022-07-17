@@ -98,12 +98,8 @@ const productsControllers = {
     },
     filtarPorCategoria: async (req, res) => {
         await db.Products.findAll()
-            .then(function (products) { 
-                // res.render('home', {products: products.filter(product => product.category_ID_category == 1)});
-                // res.render('home', {products: products.filter(product => product.category_ID_category == req.params.ID_category)});
-                res.render('../views/products/productosFiltrados', {products: products.filter(product => product.category_ID_category == req.params.ID_category)});
-                // console.log('AAAAAAAAAAAAAAAAAAA', {products: products.filter(product => product.category_ID_category == 4)})
-                
+            .then(function (products) {                 
+                res.render('../views/products/productosFiltrados', {products: products.filter(product => product.category_ID_category == req.params.ID_category)});               
             })
     },    
     carrito: (req, res) => {

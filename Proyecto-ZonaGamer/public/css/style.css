@@ -719,7 +719,7 @@ body {
 /* MEDIA QUERYS */
 /* ---------------------------- */
 
-@media (min-width: 480px) {  
+@media (min-width: 568px) {  
     .main-header {
         display: flex;
         flex-direction: row;
@@ -771,7 +771,7 @@ body {
     }     
 }
 
-@media (min-width: 768px) {
+@media (min-width: 840px) {
     .main-header {
         display: flex;
         flex-direction: row;
