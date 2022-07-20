@@ -70,35 +70,44 @@ const productsControllers = {
     index: (req, res) => {        
         db.Products.findAll()
         .then(function(products) {              
-            res.render('../views/products/listadoProductos', {products: products});
-            // res.status(200).json({
-            //     total: products.length,
-            //     data: products,
-            //     status: 200
-            // });
+            // res.render('../views/products/listadoProductos', {products: products});
+            res.status(200).json({
+                total: products.length,
+                data: products,
+                status: 200
+            });
         })               
     },
 /*** DETALLE PRODUCTO ***/
-    producto: (req, res) => {         
+    producto: (req, res) => { 
         db.Products.findByPk(req.params.ID_products)
-            .then(function (products){
-                const precioFinal = products.price - (products.price * (products.discount / 100));
-                const estadoID = ['Disponible', 'No Disponible'];                         
-                return res.render('../views/products/detalleProducto', {products: products, precio_final: precioFinal, estadoID: estadoID });                             
-            })              
+        .then(function(product) {              
+            // res.render('../views/products/listadoProductos', {products: products});
+            res.status(200).json({                
+                data: product,
+                status: 200
+            });
+        })
+        // db.Products.findByPk(req.params.ID_products)
+        //     .then(function (products){
+        //         const precioFinal = products.price - (products.price * (products.discount / 100));
+        //         const estadoID = ['Disponible', 'No Disponible'];                         
+        //         return res.render('../views/products/detalleProducto', {products: products, precio_final: precioFinal, estadoID: estadoID });                             
+        //     })              
     },
 /*** BUSCAR PRODUCTO GET ***/    
     buscarProducto: (req, res) => {
         res.render('../views/products/buscarProducto')
     },
 /*** ENCONTRAR PRODUCTO POST ***/
-    encontrarProducto: function (req, res) {           
-        db.Products.findByPk(req.body.ID_products)
-            .then(function (products){ 
-                const precioFinal = products.price - (products.price * (products.discount / 100));
-                const estadoID = ['Disponible', 'No Disponible'];
-                return res.render('../views/products/detalleProducto', {products: products, precio_final: precioFinal, estadoID: estadoID  });                                    
-            }) 
+    encontrarProducto: function (req, res) {   
+        
+        // db.Products.findByPk(req.body.ID_products)
+        //     .then(function (products){ 
+        //         const precioFinal = products.price - (products.price * (products.discount / 100));
+        //         const estadoID = ['Disponible', 'No Disponible'];
+        //         return res.render('../views/products/detalleProducto', {products: products, precio_final: precioFinal, estadoID: estadoID  });                                    
+        //     }) 
     },
     filtarPorCategoria: async (req, res) => {
         await db.Products.findAll()
@@ -115,27 +124,37 @@ const productsControllers = {
     },
 /*** AGREGAR PRODUCTO ***/
     store: (req, res) => {
-        const resultValdiation = validationResult(req);
+        return res.json(req.body)
+        // db.Products.create(req.body)
+        // .then(function(products) {              
+        //     // res.render('../views/products/listadoProductos', {products: products});
+        //     res.status(200).json({
+        //         total: products.length,
+        //         data: products,
+        //         status: 200
+        //     });
+        // }) 
+        // const resultValdiation = validationResult(req);
         
-        if(resultValdiation.errors.length > 0) {
-            return res.render('../views/products/agregarProducto', { 
-                errors: resultValdiation.mapped(),
-                oldData: req.body
-            });    
-        } else {            
-            db.Products.create({
-                name: req.body.name,
-                description: req.body.description,
-                image: req.file.filename,            
-                warranty: Number(req.body.warranty),
-                price: Number(req.body.price),
-                discount: Number(req.body.discount),
-                date: req.body.date,
-                estado_ID_estado: (req.body.status == "true")? 1 : 2,  
-                category_ID_category: Number(req.body.category) 
-            });
-                return res.redirect('./');  
-        }       
+        // if(resultValdiation.errors.length > 0) {
+        //     return res.render('../views/products/agregarProducto', { 
+        //         errors: resultValdiation.mapped(),
+        //         oldData: req.body
+        //     });    
+        // } else {            
+        //     db.Products.create({
+        //         name: req.body.name,
+        //         description: req.body.description,
+        //         image: req.file.filename,            
+        //         warranty: Number(req.body.warranty),
+        //         price: Number(req.body.price),
+        //         discount: Number(req.body.discount),
+        //         date: req.body.date,
+        //         estado_ID_estado: (req.body.status == "true")? 1 : 2,  
+        //         category_ID_category: Number(req.body.category) 
+        //     });
+        //         return res.redirect('./');  
+        // }       
     },
 /*** EDITAR PRODUCTO GET ***/
     editarProducto: (req, res) => {             

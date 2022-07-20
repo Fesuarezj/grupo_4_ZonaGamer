@@ -219,21 +219,18 @@ body {
 .producto__titulo__dc {
     font-size: 1.5rem;
     color: var(--blanco);
-    /* text-align: center;    */
     font-weight: bold;
 }
 
 .producto__estado__dc {
     font-size: 1.2rem;
     color: var(--yellowGreen);
-    /* text-align: center;    */
     font-weight: bold;
 }
 
 .producto__codigo__dc {
     font-size: 1.2rem;
     color: var(--celestePaula);
-    /* text-align: center;  */
     font-weight: 550;  
 }
 
@@ -247,31 +244,25 @@ body {
 .producto__fpago__dc {
     font-size: 1.5rem;
     color: var(--blanco);
-    /* text-align: center; */
     font-weight: bold;
 }
 
 .span__fdp {
     font-size: 1rem;  
     font-weight: 550;
-    /* text-align: center; */
     color: var(--celestePaula);  
-    /* margin-top: -10px; */
 }
 
 .producto__mp__dc {
     font-size: 1.5rem;
     color: var(--yellowGreen);
-    /* text-align: center; */
     font-weight: bold;    
 }
 
 .span__cuotas {
     font-size: 1.2rem;
     font-weight: 500;
-    /* text-align: center; */
     color: var(--negro);
-    /* margin-top: -20px; */
 }
 
 .producto__legales__dc {
@@ -292,24 +283,6 @@ body {
     margin: 0.5rem 0;
 }
 
-/* .producto__informacion__dc a {
-    text-decoration: none;
-} */
-
-/* .contenedor__producto__desc__dt, .contenedor__producto__carac__dt {
-    text-align: center;
-    border-top: 1px solid var(--blanco);
-}
-
-.contenedor__producto__desc__dt h3, .contenedor__producto__carac__dt h3 {
-    color: var(--celestePaula);
-    font-size: 2rem;
-}
-
-.contenedor__producto__desc__dt p, .contenedor__producto__carac__dt p {
-    color: var(--blanco);
-} */
-
 .boton__eliminar {
     color: var(--blanco);
     font-weight: bold;
@@ -317,6 +290,11 @@ body {
     border-radius: 5px;
     border: solid 2px var(--red);
 }
+
+div.producto.tres, 
+    div.producto.cuatro {
+        display: none;
+    } 
 
 /* ------------------------------ */
 /* GRID 2 */
@@ -348,7 +326,6 @@ body {
     text-align: center;
     width: 100%;
     margin-top: 15px;
-    /* width: 150px; */
     height: 70px;
     color: var(--blanco);
 }
@@ -396,6 +373,12 @@ body {
 .tipo__producto a {
     text-decoration: none;
 }
+
+/* ------------------------------ */
+/* FOOTER */
+/* ------------------------------ */
+
+
 
 /* ------------------------------ */
 /* FOOTER */
@@ -537,8 +520,8 @@ body {
 
 .buttonEdit {
     margin-top: 15px;
-    position: relative;
-    left: 50px;
+    width: 100%;
+    padding: 1rem;    
     color: var(--negro);
     font-weight: bold;
     text-transform: uppercase;
@@ -769,6 +752,20 @@ body {
     .producto__imagen__dt {
         width: 450px;
     }     
+    div.producto.tres, 
+    div.producto.cuatro {
+        display: none;
+    }   
+    h1.textoZG {
+        font-weight: bold;
+        font-size: 2rem;
+        text-align: center;
+    }
+    img.logoImagenTres {
+        width: 50%;
+        position: relative;
+        left: 70px;
+    }    
 }
 
 @media (min-width: 840px) {
@@ -854,6 +851,12 @@ body {
     }       
     .navegacion, .navegacion__home {
         display: none;
+    }
+    div.producto.tres {
+        display: block;
+    }   
+    div.producto.cuatro {
+        display: none;
     }   
 }
 
@@ -910,4 +913,7 @@ body {
     .imagen__extra4 {
         grid-column: 2 / 5;          
     }
+    div.producto.cuatro {
+        display: block;
+    }   
 }

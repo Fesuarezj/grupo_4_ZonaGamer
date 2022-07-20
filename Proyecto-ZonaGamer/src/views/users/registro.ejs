@@ -3,23 +3,21 @@
 
 <%- include('../partials/head')%>
 
-<head>
+<!-- <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registro de Usuario - Zona Gamer</title>
   <link rel="preload" href="/css/normalize.css" as="style">
   <link rel="stylesheet" href="/css/normalize.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="preload" href="/css/style.css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="preload" href="/css/style-registro.css">
+  <link rel="stylesheet" href="/css/style-registro.css">
   <script src="https://kit.fontawesome.com/3a84dfeae6.js" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/89cdafc43a.js" crossorigin="anonymous"></script>
-  <link rel="preload" href="/css/style-register.css">
-  <link rel="stylesheet" href="/css/style-register.css">
-</head>
+  <link rel="preload" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head> -->
 
 
 <body>
@@ -32,116 +30,124 @@
   <!--*** CUERPO PRINCIPAL ****-->
   <main>
 
-    <section class="signup-group">
-      <section class="container-titulo-form">
-        <h2><span class="semi-bold">Formulario de Registro</h2>
-      </section>
+    <div class="contenedor_principal">
 
-      <section class="form-container">
+      <h2 class="titulo">Formulario de Registro</h2>
 
-        <form action="/users/registro" method="POST" enctype="multipart/form-data" class="formRU">
-
-          <div>
-            <i class="fa-regular fa-user"></i>
-            <label>*Nombre</label>
-            <input type="text" id="signup-firstname" name="nombre" placeholder="Nombre"
-              value="<%= locals.oldData ? oldData.nombre : null %>" class="nombre">
-            <% if (locals.errors && errors.nombre) { %>
-            <div class="text-danger">
-              <%= errors.nombre.msg %>
+      <div class="contenedor_form">
+        <div class="form_agregar_producto">
+          <form action="/users/registro" method="POST" enctype="multipart/form-data" class="formRU">
+            <div>
+              <i class="fa-regular fa-id-badge"></i>
+              <label>*Nombre</label>
+              <input type="text" id="signup-username" name="nombre" placeholder="Nombre"
+                value="<%= locals.oldData ? oldData.nombre : null %>" class="nombre">
+              <% if (locals.errors && errors.nombre) { %>
+              <div class="text-danger">
+                <%= errors.nombre.msg %>
+              </div>
+              <% } %>
             </div>
-            <% } %>
-          </div>
-
-          <div>
-            <i class="fa-solid fa-signature"></i>
-            <label>*Apellido</label>
-            <input type="text" id="signup-lastname" name="apellido" placeholder="Apellido"
-              value="<%= locals.oldData ? oldData.apellido : null %>" class="apellido">
-            <% if (locals.errors && errors.apellido) { %>
-            <div class="text-danger">
-              <%= errors.apellido.msg %>
+            <div>
+              <i class="fa-regular fa-id-badge"></i>
+              <label>*Apellido</label>
+              <input type="text" id="signup-username" name="apellido" placeholder="Apellido"
+                value="<%= locals.oldData ? oldData.userName : null %>" class="apellido">
+              <% if (locals.errors && errors.apellido) { %>
+              <div class="text-danger">
+                <%= errors.apellido.msg %>
+              </div>
+              <% } %>
             </div>
-            <% } %>
-          </div>
-
-          <div>
-            <i class="fa-regular fa-envelope"></i>
-            <label>E-mail</label>
-            <input type="text" id="signup-email" name="correoElectronico" placeholder="Correo Electrónico"
-              value="<%= locals.oldData ? oldData.correoElectronico : null %>" class="correo">
-            <% if (locals.errors && errors.correoElectronico) { %>
-            <div class="text-danger">
-              <%= errors.correoElectronico.msg %>
+            <div>
+              <i class="fa-regular fa-id-badge"></i>
+              <label>*E-mail</label>
+              <input type="text" id="signup-username" name="correoElectronico" placeholder="correoElectronico"
+                value="<%= locals.oldData ? oldData.userName : null %>" class="correo">
+              <% if (locals.errors && errors.correoElectronico) { %>
+              <div class="text-danger">
+                <%= errors.correoElectronico.msg %>
+              </div>
+              <% } %>
             </div>
-            <% } %>
-          </div>
-
-          <div>
-            <i class="fa-regular fa-id-badge"></i>
-            <label>*Nombre de Usuario</label>
-            <input type="text" id="signup-username" name="userName" placeholder="Nombre de usuario"
-              value="<%= locals.oldData ? oldData.userName : null %>">
-            <% if (locals.errors && errors.userName) { %>
-            <div class="text-danger">
-              <%= errors.userName.msg %>
+            <div>
+              <i class="fa-regular fa-id-badge"></i>
+              <label>*Nombre de Usuario</label>
+              <input type="text" id="signup-username" name="userName" placeholder="Nombre de Usuario"
+                value="<%= locals.oldData ? oldData.userName : null %>">
+              <% if (locals.errors && errors.userName) { %>
+              <div class="text-danger">
+                <%= errors.userName.msg %>
+              </div>
+              <% } %>
             </div>
-            <% } %>
-          </div>
-          <div>
-            <i class="fa-solid fa-key"></i>
-            <label>*Contraseña</label>
-            <input type="password" id="signup-password" name="contrasenia" placeholder="Ingrese un contraseña"
-              value="<%= locals.oldData ? oldData.contrasenia : null %>" class="contrasenia">
-            <% if (locals.errors && errors.contrasenia) { %>
-            <div class=" text-danger">
-              <%= errors.contrasenia.msg %>
+            <div>
+              <i class="fa-solid fa-key"></i>
+              <label>*Contraseña</label>
+              <input type="password" id="signup-password" name="contrasenia" placeholder="Ingrese una contraseña"
+                value="<%= locals.oldData ? oldData.contrasenia : null %>" class="contrasenia">
+              <% if (locals.errors && errors.contrasenia) { %>
+              <div class=" text-danger">
+                <%= errors.contrasenia.msg %>
+              </div>
+              <% } %>
             </div>
-            <% } %>
-          </div>
-
-          <div>
-            <i class="fa-solid fa-spell-check"></i>
-            <label>*Confirmar Contraseña</label>
-            <input type="password" id="signup-password" placeholder="Confirmar la contraseña asignada">
-          </div>
-
-          <div>
-            <i class="fa-solid fa-camera"></i>
-            <label>*Imagen de Perfil</label>
-            <input type="file" id="imagenPerfil" name="imagenPerfil" accept="image/*"
-              title="Seleccionar la imagen del nuevo producto" class="imagen">
-            <% if (locals.errors && errors.imagenPerfil) { %>
-            <div class="text-danger">
-              <%= errors.imagenPerfil.msg %>
+            <div>
+              <i class="fa-solid fa-spell-check"></i>
+              <label>*Confirmar Contraseña</label>
+              <input type="password" id="signup-password" placeholder="Confirmar la contraseña asignada">
             </div>
-            <% } %>
-          </div>
+            <div>
+              <i class="fa-solid fa-camera"></i>
+              <label>*Imagen de Perfil</label>
+              <input type="file" id="imagenPerfil" name="imagenPerfil" accept="image/*"
+                title="Seleccionar la imagen del nuevo producto" class="imagen">
+              <% if (locals.errors && errors.imagenPerfil) { %>
+              <div class="text-danger">
+                <%= errors.imagenPerfil.msg %>
+              </div>
+              <% } %>
+            </div>
 
-          <input class="button" id="signup-submit" type="submit" value="Resgistrarse">
+            <!-- <input class="button" id="signup-submit" type="submit" value="Agregar Nuevo Producto"> -->
+            <button class="button" id="signup-submit" type="submit" value="Registrarse">
+              Registrarse
+            </button>
 
-          <div class="errores">
-            <ul></ul>
-          </div>
+            <div class="errores">
+              <ul></ul>
+            </div>
 
-        </form>
+          </form>
 
-        <p class="terminos">Al dar clic -Registrarse-, estás aceptando nuestros <span>Términos y
-            Condiciones</span> </p>
-      </section>
-    </section>
+          <p class="terminos">Al dar clic -Registrarse-, estás aceptando nuestros <span>Términos y
+              Condiciones</span> </p>
 
-    <section>
-      <header class="informacion-lateral">
-        <h1>¿Qué beneficios tenés al registarte?</h1>
-        <p><i class="fa-solid fa-cart-plus"> </i> Compra protegida. Si tu compra no es lo que querías, te devolvemos tu
-          dinero.</p><br>
-        <p><i class="fa-solid fa-truck-fast"> </i> Envío rápido y gratis. Con envíos rápidos compras hoy y recibes
-          gratis entre 24 y 48 hrs en productos seleccionados.</p><br>
-        <p><i class="fa-solid fa-tags"> </i> 95% productos nuevos. Descubre miles de productos nuevos en nuestras
-          Tiendas Oficiales.</p>
-      </header>
-    </section>
+        </div>
+        <div class="form_info">
+          <header class="informacion-lateral">
+            <h3>Tener en Cuenta al Registrarse</h3>
+            <p><i class="fa-solid fa-circle-info"> </i> Descripción del Producto. Describa la características más
+              relevantes
+              del producto que se mustrarán al público.</p>
+            <p><i class="fa-solid fa-file-invoice-dollar"> </i> Tener en cuenta al detallar el Precio al Público del
+              Producto, debe expresarlo solo numeros e incluir puntos.</p>
+            <p><i class="fa-solid fa-file-invoice-dollar"> </i> Tener en cuenta al detallar el Precio al Público del
+              Producto, debe expresarlo solo numeros e incluir puntos.</p>
+            <p><i class="fa-solid fa-clock-rotate-left"> </i> Debe expresar el número de meses que tendrá de garantía el
+              nuevo producto.</p>
+            <p><i class="fa-solid fa-clock-rotate-left"> </i> Debe expresar el número de meses que tendrá de garantía el
+              nuevo producto.</p>
+            <p><i class="fa-solid fa-clock-rotate-left"> </i> Debe expresar el número de meses que tendrá de garantía el
+              nuevo producto.</p>
+          </header>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </main>
   <!--*** FIN CUERPO PRINCIPAL ****-->
 

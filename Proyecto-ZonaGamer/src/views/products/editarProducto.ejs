@@ -1,29 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!--*** HEAD ****-->
+
 <%- include('../partials/head')%>
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Editar Producto - Zona Gamer</title>
-  <link rel="preload" href="/css/normalize.css" as="style">
-  <link rel="stylesheet" href="/css/normalize.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="preload" href="/css/style-register.css">
-  <link rel="stylesheet" href="/css/style-register.css">
-  <script src="https://kit.fontawesome.com/3a84dfeae6.js" crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/89cdafc43a.js" crossorigin="anonymous"></script>
-  <link rel="preload" href="/css/style.css">
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-
 
 <body>
   <!--***CABECERA****-->
+
   <%- include('../partials/header')%>
 
   <!--*** FIN CABECERA ****-->
@@ -31,128 +15,139 @@
   <!--*** CUERPO PRINCIPAL ****-->
   <main>
 
-    <section class="signup-group">
-      <section class="container-titulo-form">
-        <h2><span class="semi-bold">Editando Producto <i>ID: <%= products.ID_products %></i></span></h2>
-      </section>
+    <div class="contenedor_principal">
 
-      <section class="form-container">
-        <form action="/products/editar/<%= products.ID_products %>" method="POST" enctype="multipart/form-data"
-          class="formEP">
-          <div>
-            <i class="fa-solid fa-computer"></i>
-            <label>*Nombre del Producto</label>
-            <input name="name" type="text" id="signup-firstname" placeholder="Nombre nuevo del producto"
-              value="<%= products.name %>" class="name">
-          </div>
-          <div>
-            <i class="fa-solid fa-circle-info"></i>
-            <label>*Descripción del Producto</label>
-            <textarea name="description" rows="3" cols="53" placeholder="Descripción del producto" class="description"
-              id="description"><%= products.description %></textarea>
-          </div>
-          <div>
-            <!-- <imput type="hidden" name="imagenProductoEdit" value="<%= products.iamage %>"> -->
-            <i class="fa-solid fa-camera"></i>
-            <label>*Imagen del Producto</label>
-            <input type="file" id="imagenProducto" name="imagenProducto" accept="image/*" title="<%= products.image %>"
-              value="<%= products.image %>" class="image">
-          </div>
+      <h2 class="titulo">Editando Producto</h2>
 
-          <div>
-            <i class="fa-solid fa-list-check"></i>
-            <label>*Categoría del Producto</label><br>
-            <select name="category" value="<%= products.category_ID_category %>">
-              <option value="">Seleccionar...</option>
-              <option value="Audio" <%= (products.category_ID_category == 1)? 'selected' : '' %>>Audio</option>
-              <option value="Coolers" <%= (products.category_ID_category == 2)? 'selected' : '' %>>Coolers
-              </option>
-              <option value="Discos Rigidos" <%= (products.category_ID_category == 3)? 'selected' : '' %>>
-                Discos Rigidos
-              </option>
-              <option value="Gabinetes" <%= (products.category_ID_category == 4)? 'selected' : '' %>>Gabinetes
-              </option>
-              <option value="Memorias" <%= (products.category_ID_category == 5)? 'selected' : '' %>>Memorias
-              </option>
-              <option value="Monitores" <%= (products.category_ID_category == 6)? 'selected' : '' %>>Monitores
-              </option>
-              <option value="Motherboards" <%= (products.category_ID_category == 7)? 'selected' : '' %>>
-                Motherboards
-              </option>
-              <option value="Perifericos" <%= (products.category_ID_category == 8)? 'selected' : '' %>>
-                Periféricos
-              </option>
-              <option value="Placas de Video" <%= (products.category_ID_category == 9)? 'selected' : '' %>>Placas de
-                Video</option>
-              <option value="Procesadores" <%= (products.category_ID_category == 10)? 'selected' : '' %>>
-                Procesadores
-              </option>
-              <option value="SSD" <%= (products.category_ID_category == 11)? 'selected' : '' %>>SSD</option>
-              <option value="Teclados" <%= (products.category_ID_category == 12)? 'selected' : '' %>>Teclados
-              </option>
-            </select>
-          </div>
-          <div>
-            <i class="fa-solid fa-file-invoice-dollar"></i>
-            <label>*Precio del Producto</label>
-            <input name="price" type="number" id="precio-producto"
-              placeholder="Detalle el precio al público, incluir puntos" value="<%= products.price %>">
-          </div>
-          <div>
-            <i class="fa-solid fa-percent"></i>
-            <label>*Descuento del Producto</label>
-            <input name="discount" type="number" id="precio-producto" placeholder="descuento por pago en efectivo"
-              value="<%= products.discount %>">
-          </div>
-          <div>
-            <i class="fa-solid fa-clock-rotate-left"></i>
-            <label>*Garantía del Producto (meses)</label>
-            <input name="warranty" type="number" id="garantia-producto"
-              placeholder="Detalle los meses de garantía del producto" value="<%= products.warranty %>">
-          </div>
-          <div>
-            <i class="fa-regular fa-calendar-check"></i>
-            <label>*Fecha de Ingreso</label>
-            <input name="date" type="date" id="signup-firstname" placeholder="Nombre nuevo del producto"
-              value="<%= products.date %>">
-          </div>
-          <div>
-            <i class="fa-regular fa-circle-check"></i>
-            <label>*Estado del Producto</label><br>
-            <select name="status" value="<%= products.estado_ID_estado %>">
-              <option value="">Seleccionar...</option>
-              <option value="true" <%= (products.estado_ID_estado == 1)? 'selected' : '' %>>Activo</option>
-              <option value="false" <%= (products.estado_ID_estado == 2)? 'selected' : '' %>>Inactivo</option>
-            </select>
-          </div>
+      <div class="contenedor_form">
 
-          <input class="button" id="signup-submit" type="submit" value="Actualizar Producto">
-        </form>
+        <div class="form_agregar_producto">
 
-        <form action="/products/borrar/<%= products.ID_products %>" method="POST">
-          <input class="button eliminar" id="signup-submit" type="submit" value="Eliminar Producto">
+          <form action="/products/editar/<%= products.ID_products %>" method="POST" enctype="multipart/form-data"
+            class="formEP">
+            <div>
+              <i class="fa-solid fa-computer"></i>
+              <label>*Nombre del Producto</label>
+              <input name="name" type="text" id="signup-firstname" placeholder="Nombre nuevo del producto"
+                value="<%= products.name %>" class="name">
+            </div>
+            <div>
+              <i class="fa-solid fa-circle-info"></i>
+              <label>*Descripción del Producto</label>
+              <textarea name="description" rows="3" cols="53" placeholder="Descripción del producto" class="description"
+                id="description"><%= products.description %></textarea>
+            </div>
+            <div>
+              <i class="fa-solid fa-camera"></i>
+              <label>*Imagen del Producto</label>
+              <input type="file" id="imagenProducto" name="imagenProducto" accept="image/*"
+                title="<%= products.image %>" value="<%= products.image %>" class="image">
+            </div>
 
-          <div class="errores">
-            <ul></ul>
-          </div>
+            <div>
+              <i class="fa-solid fa-list-check"></i>
+              <label>*Categoría del Producto</label><br>
+              <select name="category" value="<%= products.category_ID_category %>">
+                <option value="">Seleccionar...</option>
+                <option value="Audio" <%= (products.category_ID_category == 1)? 'selected' : '' %>>Audio</option>
+                <option value="Coolers" <%= (products.category_ID_category == 2)? 'selected' : '' %>>Coolers
+                </option>
+                <option value="Discos Rigidos" <%= (products.category_ID_category == 3)? 'selected' : '' %>>
+                  Discos Rigidos
+                </option>
+                <option value="Gabinetes" <%= (products.category_ID_category == 4)? 'selected' : '' %>>Gabinetes
+                </option>
+                <option value="Memorias" <%= (products.category_ID_category == 5)? 'selected' : '' %>>Memorias
+                </option>
+                <option value="Monitores" <%= (products.category_ID_category == 6)? 'selected' : '' %>>Monitores
+                </option>
+                <option value="Motherboards" <%= (products.category_ID_category == 7)? 'selected' : '' %>>
+                  Motherboards
+                </option>
+                <option value="Perifericos" <%= (products.category_ID_category == 8)? 'selected' : '' %>>
+                  Periféricos
+                </option>
+                <option value="Placas de Video" <%= (products.category_ID_category == 9)? 'selected' : '' %>>Placas de
+                  Video</option>
+                <option value="Procesadores" <%= (products.category_ID_category == 10)? 'selected' : '' %>>
+                  Procesadores
+                </option>
+                <option value="SSD" <%= (products.category_ID_category == 11)? 'selected' : '' %>>SSD</option>
+                <option value="Teclados" <%= (products.category_ID_category == 12)? 'selected' : '' %>>Teclados
+                </option>
+              </select>
+            </div>
+            <div>
+              <i class="fa-solid fa-file-invoice-dollar"></i>
+              <label>*Precio del Producto</label>
+              <input name="price" type="number" id="precio-producto"
+                placeholder="Detalle el precio al público, incluir puntos" value="<%= products.price %>">
+            </div>
+            <div>
+              <i class="fa-solid fa-percent"></i>
+              <label>*Descuento del Producto</label>
+              <input name="discount" type="number" id="precio-producto" placeholder="descuento por pago en efectivo"
+                value="<%= products.discount %>">
+            </div>
+            <div>
+              <i class="fa-solid fa-clock-rotate-left"></i>
+              <label>*Garantía del Producto (meses)</label>
+              <input name="warranty" type="number" id="garantia-producto"
+                placeholder="Detalle los meses de garantía del producto" value="<%= products.warranty %>">
+            </div>
+            <div>
+              <i class="fa-regular fa-calendar-check"></i>
+              <label>*Fecha de Ingreso</label>
+              <input name="date" type="date" id="signup-firstname" placeholder="Nombre nuevo del producto"
+                value="<%= products.date %>">
+            </div>
+            <div>
+              <i class="fa-regular fa-circle-check"></i>
+              <label>*Estado del Producto</label><br>
+              <select name="status" value="<%= products.estado_ID_estado %>">
+                <option value="">Seleccionar...</option>
+                <option value="true" <%= (products.estado_ID_estado == 1)? 'selected' : '' %>>Activo</option>
+                <option value="false" <%= (products.estado_ID_estado == 2)? 'selected' : '' %>>Inactivo</option>
+              </select>
+            </div>
 
-        </form>
+            <button class="botonActualizar" id="signup-submita" type="submit" value="Actualizar Producto">
+              Actualizar Producto
+            </button>
 
-        <p class="terminos">Al dar clic -Editar Producto-, estás adicionando un nuevo producto al público </p>
-      </section>
+            <form action="/products/borrar/<%= products.ID_products %>" method="POST">
+              <button class="botonEliminar" id="signup-submit" type="submit" value="Eliminar Producto">
+                Eliminar Producto
+              </button>
+            </form>
 
-    </section>
-    <section>
-      <header class="informacion-lateral">
-        <h1>Tener en Cuenta al Agregar Productos</h1>
-        <p><i class="fa-solid fa-circle-info"> </i> Descripción del Producto. Describa la características más relevantes
-          del producto que se mustrarán al público.</p><br>
-        <p><i class="fa-solid fa-file-invoice-dollar"> </i> Tener en cuenta al detallar el Precio al Público del
-          Producto, debe expresarlo solo numeros e incluir puntos.</p><br>
-        <p><i class="fa-solid fa-clock-rotate-left"> </i> Debe expresar el número de meses que tendrá de garantía el
-          nuevo producto.</p>
-      </header>
-    </section>
+            <div class="errores">
+              <ul></ul>
+            </div>
+
+          </form>
+
+        </div>
+
+        <div class="form_info">
+
+          <header class="informacion-lateral">
+            <h3>Tener en Cuenta al Agregar Productos</h3>
+            <p><i class="fa-solid fa-circle-info"> </i> Descripción del Producto. Describa la características más
+              relevantes
+              del producto que se mustrarán al público.</p><br>
+            <p><i class="fa-solid fa-file-invoice-dollar"> </i> Tener en cuenta al detallar el Precio al Público del
+              Producto, debe expresarlo solo numeros e incluir puntos.</p><br>
+            <p><i class="fa-solid fa-clock-rotate-left"> </i> Debe expresar el número de meses que tendrá de garantía el
+              nuevo producto.</p>
+          </header>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </main>
   <!--*** FIN CUERPO PRINCIPAL ****-->
 
@@ -161,7 +156,9 @@
   <%- include('../partials/footer')%>
 
   <!--*** FIN FOOTER ****-->
+
   <script src="/js/validarEP.js"></script>
+
 </body>
 
 </html>

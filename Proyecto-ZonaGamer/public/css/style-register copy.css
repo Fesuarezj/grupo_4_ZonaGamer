@@ -1,0 +1,249 @@
+@import url(https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap);
+
+* {
+    box-sizing: border-box;   
+    font-family: 'Ubuntu', sans-serif;   
+}
+
+
+:root {
+    /* Colors */
+    --cPrimary-red: hsl(0, 100%, 74%) ;
+    --cPrimary-green: hsl(154, 59%, 51%);
+    --cSecondary-darkerGreen: hwb(61 10% 3%);
+    --cAccent-blue: hsl(248, 32%, 49%);
+    --cNeutral-dark: hsl(249, 10%, 26%);
+    --cTransparent-dark: rgba(219, 207, 207, 0.25);
+    --cNeutral-light: hsl(246, 25%, 77%);
+    --background-dark: #222222;
+    
+
+    /* Font weights */
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semiBold: 600;
+    --fw-bold: 700;
+
+    /* Drop shadows */
+    --ds-blackNoblur: drop-shadow(10px 10px 10px var(--cTransparent-dark));
+    --ds-greenNoblur: drop-shadow(0px 5px 0px var(--cSecondary-darkerGreen));
+
+    /* Font sizes */
+    --fs-0: 0.800rem;
+    --fs-1: 1.000rem;
+    --fs-2: 1.250rem;
+    --fs-3: 1.563rem;
+    --fs-4: 1.953rem;
+    --fs-5: 3.052rem;
+}
+
+
+
+/*  STATES  */
+form .button:hover {
+    opacity: 50%;
+}
+
+input:focus {
+    outline: 0;
+    border: 3px solid rgb(65, 180, 247);
+    background-color: rgb(221, 245, 212);
+}
+
+textarea:focus {
+    outline: 0;
+    border: 3px solid rgb(65, 180, 247);
+    background-color: rgb(221, 245, 212);
+}
+
+/*///////////////////////////////////////////////////////////////////////////*/
+
+
+
+/*  ESTRUCURA REGISTRO */
+body {    
+    background: var(--background-dark);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin: auto 5vw;
+    max-width: 520px;
+}
+
+
+/*  MAIN */
+
+.informacion-lateral{    
+    width: 100%;
+    color: white;
+    padding: 5vh;
+    border: solid rgb(151, 149, 149) 10px; 
+}
+
+.container-titulo-form {
+    width: 100%;
+    background: var(--cAccent-blue);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    filter: var(--ds-blackNoblur);
+    
+} 
+.container-titulo-form h2 { 
+    padding: 20px 80px;    
+    margin-top: 1rem; 
+}
+
+.form-container {
+    width: 100%;
+    padding: 1rem;
+    background: #969694;
+    border-radius: 10px;
+    filter: var(--ds-blackNoblur);    
+    background-color: rgb(8, 8, 8);    
+    margin-bottom: 2rem;    
+}
+
+.text-danger {
+    color: var(--red);
+}
+
+.label {
+    display: block;
+    padding-left: 15px;
+    text-indent: -15px;
+}
+
+.check {
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    margin:0;
+    vertical-align: bottom;
+    position: relative;
+    top: -1px;
+    *overflow: hidden;
+}
+
+form > * { margin-bottom: 1rem; }
+
+form input, textarea, select {
+    width: 100%;
+    border: 1px solid var(--cNeutral-light);
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+form .button {
+    border: 0;
+    background: var(--cAccent-blue);
+    filter: var(--cNeutral-light);
+    cursor: pointer;
+}
+form .eliminar {
+    border: 0;
+    background: var(--cPrimary-red);
+    filter: var(--cNeutral-light);
+    cursor: pointer;
+}
+
+form i, .informacion-lateral i{
+    color: rgb(22, 240, 22); 
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+div.errores {
+    color: red;
+}
+
+/*///////////////////////////////////////////////////////////////////////////*/
+
+
+
+/*  TYPOGRAPHY  */
+.semi-bold { font-weight: var(--fw-semiBold); }
+
+.container-titulo-form h2 {
+    font-weight: var(--fw-regular);
+    color: white;
+}
+form > * {
+    color: var(--cNeutral-light);
+    font-weight: var(--fw-semiBold);    
+}
+
+form input, textarea, select {
+    font-weight: var(--fw-semiBold);    
+}
+
+form .button {
+    font-weight: var(--fw-bold);
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+.form-container .terminos {
+    font-size: var(--fs-0);
+}
+
+.form-container .terminos {
+    font-weight: var(--fw-medium);
+    color: var(--cNeutral-light);
+}
+
+/*///////////////////////////////////////////////////////////////////////////*/
+
+@media (min-width: 580px) {
+    .grid_form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+}
+@media (min-width: 768px) {
+    main {
+        /* flex-direction: row; */
+        /* text-align: left; */
+        /* align-items: center; */
+        justify-content: center;
+        /* max-width: 1100px; */
+    }
+    .signup-group {
+        position: relative;
+        left: 25%;
+        min-width: 520px;
+    } 
+
+    .container-titulo-form, .terminos { text-align: center; }
+
+    .informacion-lateral{ 
+        position: relative;
+        left: 25%;
+        /* margin-left: 10vw; */
+    }
+}
+
+@media (min-width: 1140px) {
+    main {
+        /* flex-direction: row; */
+        /* text-align: left; */
+        /* align-items: center; */
+        justify-content: center;
+        /* max-width: 1100px; */
+    }
+    .signup-group {
+        position: relative;
+        left: 65%;
+        min-width: 520px;
+    } 
+
+    .container-titulo-form, .terminos { text-align: center; }
+
+    .informacion-lateral{ 
+        position: relative;
+        left: 65%;
+        /* margin-left: 10vw; */
+    }
+}
