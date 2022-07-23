@@ -5,21 +5,6 @@ const path = require('path');
 
 const db = require('../database/models');
 
-// function buscarIdCategory (categoria){
-//     let idCategory;
-
-//     db.Categorys.findOne({
-//         where: {
-//             nameCategory: categoria
-//         }
-//     })
-//     .then(function(category) {                 
-//         idCategory = category.ID_category;                 
-//         return   category.ID_category;        
-//     });    
-//     return idCategory;
-// }
-
 function categoryList(categoria){
     let idCategoria = 0;    
     switch(categoria){        
@@ -67,15 +52,10 @@ function categoryList(categoria){
 
 const productsControllers = {
 /*** LISTADO PRODUCTOS ***/    
-    index: (req, res) => {        
-        db.Products.findAll()
+    index: async (_req, res) => {        
+        await db.Products.findAll()
         .then(function(products) {              
-            res.render('../views/products/listadoProductos', {products: products});
-            // res.status(200).json({
-            //     total: products.length,
-            //     data: products,
-            //     status: 200
-            // });
+            return res.render('../views/products/listadoProductos', {products: products});            
         })               
     },
 /*** DETALLE PRODUCTO ***/
@@ -84,21 +64,43 @@ const productsControllers = {
             .then(function (products){
                 const precioFinal = products.price - (products.price * (products.discount / 100));
                 const estadoID = ['Disponible', 'No Disponible'];                         
-                return res.render('../views/products/detalleProducto', {products: products, precio_final: precioFinal, estadoID: estadoID });                             
+                return res.render('../views/products/detalleProducto', {products: products, precio_final: precioFinal, estadoID: estadoID});                             
             })              
     },
 /*** BUSCAR PRODUCTO GET ***/    
-    buscarProducto: (req, res) => {
+    buscarProducto: (_req, res) => {
         res.render('../views/products/buscarProducto')
     },
 /*** ENCONTRAR PRODUCTO POST ***/
-    encontrarProducto: function (req, res) {           
-        db.Products.findByPk(req.body.ID_products)
-            .then(function (products){ 
-                const precioFinal = products.price - (products.price * (products.discount / 100));
-                const estadoID = ['Disponible', 'No Disponible'];
-                return res.render('../views/products/detalleProducto', {products: products, precio_final: precioFinal, estadoID: estadoID  });                                    
-            }) 
+    encontrarProducto: async function (req, res) {  
+        const resultValdiation = validationResult(req);
+        
+        
+        if (resultValdiation.errors.length > 0) {            
+            return res.render('../views/products/buscarProducto', {
+                errors: resultValdiation.mapped(),
+                oldData: req.body
+            });
+        } else {   
+            const idExiste = await db.Products.findByPk(req.body.ID_products);
+            if (!idExiste) {
+                return res.render('../views/products/buscarProducto', {
+                    errors: {
+                        ID_products: {
+                            msg: 'Este ID no existe en la Base de Datos'
+                        }
+                    },
+                    oldData: req.body,
+                });
+            } else {
+                db.Products.findByPk(req.body.ID_products)
+                    .then(function (products) {
+                        const precioFinal = products.price - (products.price * (products.discount / 100));
+                        const estadoID = ['Disponible', 'No Disponible'];
+                        return res.render('../views/products/detalleProducto', { products: products, precio_final: precioFinal, estadoID: estadoID });
+                    })
+            }
+        }
     },
     filtarPorCategoria: async (req, res) => {
         await db.Products.findAll()
@@ -106,11 +108,11 @@ const productsControllers = {
                 res.render('../views/products/productosFiltrados', {products: products.filter(product => product.category_ID_category == req.params.ID_category)});               
             })
     },    
-    carrito: (req, res) => {
+    carrito: (_req, res) => {
         res.render('../views/products/carrito')
     },
 /*** VISTA AGREGAR PRODUCTO ***/
-    agregarProducto: (req, res) => {       
+    agregarProducto: (_req, res) => {       
         res.render('../views/products/agregarProducto');        
     },
 /*** AGREGAR PRODUCTO ***/

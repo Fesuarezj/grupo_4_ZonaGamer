@@ -143,6 +143,10 @@ div label input.check {
 .form_agregar_producto p.terminos {
     margin-top: -10px;
 }
+.form_agregar_producto p.terminosBuscar {
+    margin-top: 30px;
+    text-align: center;
+}
 
 /* ------------------------------ */
 /* MEDIAS QUERY */

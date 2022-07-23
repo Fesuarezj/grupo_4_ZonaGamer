@@ -7,7 +7,8 @@
     <div class="contenedor2">
         <div class="contenedor2-1">
             <div class="contenedor-barra">
-                <input class="barraBusqueda" size="30" type="search" name="busqueda" placeholder="¿qué estás buscando?">
+                <!-- <input class="barraBusqueda" size="30" type="search" name="busqueda" placeholder="¿qué estás buscando?"> -->
+                <h1 class="tituloHeader">Un sitio hecho para vos!!!</h1>
             </div>
             <nav>
                 <ul class="nav-bar">
@@ -31,9 +32,12 @@
                         </li>
                     </div>
                     <% } else { %>
-                    <li><a href="/products">Productos</a> <i class="fa fa-solid fa-store"></i> </li>
-                    <li><a href="/users/registro">Registro</a> <i class="fa fa-solid fa-address-card"></i> </li>
-                    <li><a href="/users/login">Login</a> <i class="fas fa-sign-in-alt"></i> </li>
+                    <div class="enlaces">
+                        <li class="enlaces"><a href="/products">Productos</a> <i class="fa fa-solid fa-store"></i> </li>
+                        <li class="enlaces"><a href="/users/registro">Registro</a> <i
+                                class="fa fa-solid fa-address-card"></i> </li>
+                        <li class="enlaces"><a href="/users/login">Login</a> <i class="fas fa-sign-in-alt"></i> </li>
+                    </div>
                     <% } %>
                 </ul>
             </nav>

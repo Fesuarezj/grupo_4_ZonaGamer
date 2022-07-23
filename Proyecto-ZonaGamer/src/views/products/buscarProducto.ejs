@@ -3,25 +3,6 @@
 
 <%- include('../partials/head')%>
 
-<!-- <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Buscar Producto - Zona Gamer</title>
-  <link rel="preload" href="/css/normalize.css" as="style">
-  <link rel="stylesheet" href="/css/normalize.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="preload" href="/css/style-register.css">
-  <link rel="stylesheet" href="/css/style-register.css">
-  <script src="https://kit.fontawesome.com/3a84dfeae6.js" crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/89cdafc43a.js" crossorigin="anonymous"></script>
-  <link rel="preload" href="/css/style.css">
-  <link rel="stylesheet" href="/css/style.css">
-</head> -->
-
-
 <body>
   <!--***CABECERA****-->
 
@@ -32,32 +13,55 @@
   <!--*** CUERPO PRINCIPAL ****-->
   <main>
 
-    <section class="signup-group">
-      <section class="container-titulo-form">
-        <h2><span class="semi-bold">Buscar Producto por ID</h2>
-      </section>
+    <div class="contenedor_principal">
 
-      <section class="form-container">
-        <form action="/products/buscar" method="POST" name="form-login">
-          <div>
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <label>*Ingrese ID Producto</label>
-            <input type="text" id="signup-username" name="ID_products" placeholder="ID">
+      <h2 class="titulo">Buscar Producto por ID</h2>
+
+      <div class="contenedor_form">
+        <div class="form_agregar_producto">
+          <form action="/products/buscar" method="POST" name="form-login" class="formBP">
+            <div>
+              <i class="fa-solid fa-computer"></i>
+              <label>*Ingrese ID del Producto</label>
+              <input name="ID_products" type=" text" id="id" placeholder="ID" class="id">
+              <% if (locals.errors && errors.ID_products) { %>
+              <div class="text-danger">
+                <%= errors.ID_products.msg %>
+              </div>
+              <% } %>
+            </div>
+
+
+            <button class="button" id="signup-submit" type="submit" value="Buscar Producto">
+              Buscar Producto
+            </button>
+
+          </form>
+
+          <p class="terminosBuscar">Para ingresar como administrador ingresar con admin/adminr. <span> Para Ir a
+              agregar/editar productos</span> </p>
+
+          <div class="errores">
+            <ul></ul>
           </div>
 
-          <input class="button" id="signup-submit" type="submit" value="Buscar">
-        </form>
+        </div>
 
-        <p class="terminos">Al dar clic -Buscar-, estás buscando un producto por su ID </p>
-      </section>
+        <div class="form_info">
+          <header class="informacion-lateral">
+            <p><i class="fa-solid fa-circle-info"> </i> Descripción del Producto. Describa la características más
+              relevantes
+              del producto que se mustrarán al público.</p>
+            <p><i class="fa-solid fa-file-invoice-dollar"> </i> Tener en cuenta al detallar el Precio al Público del
+              Producto, debe expresarlo solo numeros e incluir puntos.</p>
+          </header>
 
-    </section>
-    <section>
-      <header class="informacion-lateral">
-        <h1>Tener en Cuenta al Buscar Productos</h1>
-        <p><i class="fa-solid fa-circle-info"> </i> ID: Para buscar un producto debes conocer previamente su ID. </p>
-      </header>
-    </section>
+        </div>
+
+      </div>
+
+    </div>
+
   </main>
   <!--*** FIN CUERPO PRINCIPAL ****-->
 
@@ -66,6 +70,9 @@
   <%- include('../partials/footer')%>
 
   <!--*** FIN FOOTER ****-->
+
+  <script src="/js/validarBP.js"></script>
+
 </body>
 
 </html>
