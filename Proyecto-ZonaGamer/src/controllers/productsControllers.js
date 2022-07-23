@@ -67,11 +67,11 @@ const productsControllers = {
                 return res.render('../views/products/detalleProducto', {products: products, precio_final: precioFinal, estadoID: estadoID});                             
             })              
     },
-/*** BUSCAR PRODUCTO GET ***/    
+/*** VISTA BUSCAR PRODUCTO ***/    
     buscarProducto: (_req, res) => {
         res.render('../views/products/buscarProducto')
     },
-/*** ENCONTRAR PRODUCTO POST ***/
+/*** PROCESO ENCONTRAR PRODUCTO POST ***/
     encontrarProducto: async function (req, res) {  
         const resultValdiation = validationResult(req);
         
@@ -102,12 +102,14 @@ const productsControllers = {
             }
         }
     },
+/*** FILTRAR PRODUCTO ***/    
     filtarPorCategoria: async (req, res) => {
         await db.Products.findAll()
             .then(function (products) {                 
                 res.render('../views/products/productosFiltrados', {products: products.filter(product => product.category_ID_category == req.params.ID_category)});               
             })
-    },    
+    },
+/*** CARRITO DE COMPRAS ***/    
     carrito: (_req, res) => {
         res.render('../views/products/carrito')
     },
@@ -115,7 +117,7 @@ const productsControllers = {
     agregarProducto: (_req, res) => {       
         res.render('../views/products/agregarProducto');        
     },
-/*** AGREGAR PRODUCTO ***/
+/*** PROCESO AGREGAR PRODUCTO ***/
     store: (req, res) => {
         const resultValdiation = validationResult(req);
         
@@ -139,14 +141,14 @@ const productsControllers = {
                 return res.redirect('./');  
         }       
     },
-/*** EDITAR PRODUCTO GET ***/
+/*** VISTA EDITAR PRODUCTO ***/
     editarProducto: (req, res) => {             
         db.Products.findByPk(req.params.ID_products)
             .then(function (products){                                                                     
                 return res.render('../views/products/editarProducto', {products: products});                                   
             })    
     },   
-/*** ACTUALIZAR PRODUCTO POST ***/ 
+/*** PROCESO ACTUALIZAR PRODUCTO ***/ 
     actualizar: (req, res) => {	       
         db.Products.update({
             name: req.body.name,
@@ -156,7 +158,7 @@ const productsControllers = {
             price: Number(req.body.price),
             discount: Number(req.body.discount),
             date: req.body.date,
-            estado_ID_estado: (req.body.status == "true")? 1 : 2, //(req.body.status)  
+            estado_ID_estado: (req.body.status == "true")? 1 : 2,
             category_ID_category: categoryList(req.body.category) 
         }, {
             where: {

@@ -5,7 +5,6 @@
     font-family: 'Ubuntu', sans-serif;   
 }
 
-
 :root {
     /* Colors */
     --cPrimary-red: hsl(0, 100%, 74%) ;
@@ -16,74 +15,65 @@
     --cTransparent-dark: rgba(219, 207, 207, 0.25);
     --cNeutral-light: hsl(246, 25%, 77%);
     --background-dark: #222222;
-    
-
-    /* Font weights */
-    /* --fw-regular: 400;
-    --fw-medium: 500;
-    --fw-semiBold: 600;
-    --fw-bold: 700; */
-
-    /* Drop shadows */
-    /* --ds-blackNoblur: drop-shadow(10px 10px 10px var(--cTransparent-dark));
-    --ds-greenNoblur: drop-shadow(0px 5px 0px var(--cSecondary-darkerGreen)); */
-
-    /* Font sizes */
-    /* --fs-0: 0.800rem;
-    --fs-1: 1.000rem;
-    --fs-2: 1.250rem;
-    --fs-3: 1.563rem;
-    --fs-4: 1.953rem;
-    --fs-5: 3.052rem; */
 }
 
-/*  ESTRUCURA REGISTRO */
+/* ------------------------------ */
+/* ESTRUCTURA FORMULARIOS */
+/* ------------------------------ */
+
 main {    
     background: var(--background-dark);
     color: #fff;
     line-height: 1.6;    
     padding: 0 1.5em;
 }
-h2 {
-    /* background-color:  hsl(248, 32%, 49%); */
+h2 {   
     border-radius: 5px;
     padding: 0.5rem;
     font-size: 2.5rem;
 }
+
 .contenedor_principal {
     max-width: 1170px;
     margin-left: auto;
     margin-right: auto;
     padding: 1.5em;
 }
-.contenedor_form {
-    /* box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3); */
+
+.contenedor_form {    
     width: 100%;
-    padding: 1rem;
-    /* background: #969694; */
+    padding: 1rem;    
     border-radius: 10px;
-    filter: var(--ds-blackNoblur);    
-    /* background-color: hsl(249, 10%, 26%);     */
+    filter: var(--ds-blackNoblur);        
     margin-bottom: 2rem;    
 }
+
 .contenedor_form > * {
     padding: 1rem;
 }
+
+.contenedorFiltro {
+    margin-top: 0px;
+}
+
 form i, header i {
     color: rgb(22, 240, 22); 
     font-size: 20px;
     margin-bottom: 10px;
 }
+
 .form_agregar_producto {
     border-radius: 10px;
     background: black;
     /* border: 1px solid white;    */
     box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);
 }
+
 .form_agregar_producto form div {
     margin: 0;
     padding: 0.5rem;  
 }
+
 .form_agregar_producto label {
     color:  #ffffff;
     font-family: 'Ubuntu', sans-serif;
@@ -103,6 +93,7 @@ form i, header i {
     outline: 0;
     color: black;
 }
+
 .form_agregar_producto form button {
     margin-top: 50px;
     background: lightgreen;
@@ -111,6 +102,7 @@ form i, header i {
     color: black;
     font-weight: bold;
 }
+
 .form_agregar_producto form button:hover,
 .form_agregar_producto form button:focus {
     background: green;
@@ -118,35 +110,43 @@ form i, header i {
     transition: background-color 0.5s ease-out;
     outline: 0;
 }
+
 form button.botonEliminar {
     background: lightcoral;
     margin-top: 20px;
 }
+
 form button.botonEliminar:hover,
 form button.botonEliminar:focus {
     background: red;
 }
+
 .form_info {
     background:hsl(249, 10%, 26%);
     border: 10px solid rgba(219, 207, 207, 0.25);
     margin-top: 20px;
 }
+
 .form_info h3 {
     text-align: center;
     font-weight: bold;
     font-size: 2.5rem;
 }
+
 .text-danger {
     color: var(--red);
 }
+
 .errores {
     color: var(--red);
 }
+
 .recordar {
     display: block;
     padding-left: 15px;
     text-indent: -15px;
 }
+
 .check {
     width: 13px;
     height: 13px;
@@ -158,9 +158,11 @@ form button.botonEliminar:focus {
     *overflow: hidden;
 }
 
+/* ---------------------------- */
+/* MEDIA QUERYS */
+/* ---------------------------- */
 
-
-@media (min-width: 760px) {
+@media (min-width: 860px) {
     main {
         padding: 0 2rem;
     }    
@@ -171,7 +173,7 @@ form button.botonEliminar:focus {
     }
     .contenedor_form > * {
         padding: 3rem;
-    }
+    }    
     .form_info {
         margin-top: 0px;
     }

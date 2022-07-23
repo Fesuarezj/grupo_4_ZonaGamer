@@ -4,11 +4,11 @@ const {validationResult} = require('express-validator');
 const db = require('../database/models');
 
 const userControllers = {
-    /*** REGISTRO USUARIO GET ***/ 
+    /*** VISTA REGISTRO USUARIO ***/ 
     registro: (req, res) => {        
         return res.render('../views/users/registro');
     },
-    /*** REGISTRO USUARIO POST ***/ 
+    /*** PROCESO REGISTRO USUARIO ***/ 
     procesoRegistro: async (req, res) => {      
         const resultValdiation = validationResult(req);
         
@@ -56,11 +56,11 @@ const userControllers = {
             }
         }            
     },
-    /*** LOGIN USUARIO GET ***/ 
+    /*** VISTA LOGIN USUARIO ***/ 
     login: (req, res) => {               
         return res.render('../views/users/login');
     },
-    /*** PERFIL USUARIO  POST ***/  
+    /*** PROCESO LOGIN USUARIO ***/  
     procesoLogin: async (req, res) => {           
         const resultValdiation = validationResult(req);             
 
@@ -80,7 +80,6 @@ const userControllers = {
                     if (req.body.recordarUsuario) {
                         res.cookie('userName', req.body.userName, { maxAge: (1000 * 60) * 10 });
                     }
-
                     return res.redirect('/users/perfil/' + req.session.usuarioLogeado.ID_usuario);    
                 } else {                    
                     return res.render('../views/users/login', { 
@@ -104,12 +103,12 @@ const userControllers = {
             }           
         }               
     },
-    /*** PERFIL USUARIO ***/ 
+    /*** VISTA PERFIL USUARIO ***/ 
     perfil: (req, res) => {        
         const rolId = ['administrador', 'cliente', 'invitado'];         
         return res.render('../views/users/perfil', {users: req.session.usuarioLogeado, rolId: rolId});     
     }, 
-    /*** EDITAR USUARIO GET ***/ 
+    /*** VISTA EDITAR USUARIO ***/ 
     editar: (req, res) => { 
         db.Users.findByPk(req.params.ID_usuario)
             .then(function (users){                                                                     
@@ -118,7 +117,7 @@ const userControllers = {
         // return res.render('../views/users/editar',  {users: req.session.usuarioLogeado});
         
     },
-    /*** ACTUALIZAR USUARIO POST ***/ 
+    /*** PROCESO ACTUALIZAR USUARIO ***/ 
     actualizar: (req, res) => {	       
         db.Users.update({
             nombre: req.body.nombre,

@@ -8,6 +8,7 @@
     <%- include('../partials/header')%>
 
     <main class="contenedor">
+
         <h1 class="titulo__producto__dc">Detalle del Producto</h1>
 
         <div class="grid">
@@ -32,6 +33,7 @@
                     </a>
                 </form>
             </div>
+
             <div class="producto">
                 <a href="/products/detalle/<%= products.ID_products %>">
                     <img class="producto__imagen" src="/images/products/" alt="">
@@ -52,6 +54,7 @@
                     </div>
                 </a>
             </div>
+
             <div class="producto tres">
                 <a href="/products/detalle/<%= products.ID_products %>">
                     <img class="producto__imagen" src="/images/extras/gamer08.jpg" alt="imagen monitor01">
@@ -66,6 +69,7 @@
                     <h1 class="textoZG">Animate a Más!!!</h1>
                 </p>
             </div>
+
             <div class="producto cuatro">
                 <a href="/products/detalle/<%= products.ID_products %>">
                     <img class="producto__imagen" src="/images/extras/gamer12.jpg" alt="imagen monitor01">
@@ -75,8 +79,6 @@
                 </p>
             </div>
 
-            <!-- <div class="imagen__extra"></div>
-            <div class="imagen__extra2"></div> -->
         </div>
 
         <%- include('../partials/filtro')%>

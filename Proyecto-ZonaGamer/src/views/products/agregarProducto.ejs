@@ -3,25 +3,6 @@
 
 <%- include('../partials/head')%>
 
-<!-- <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registro de Usuario - Zona Gamer</title>
-  <link rel="preload" href="/css/normalize.css" as="style">
-  <link rel="stylesheet" href="/css/normalize.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="preload" href="/css/style-agregar.css">
-  <link rel="stylesheet" href="/css/style-agregar.css">
-  <script src="https://kit.fontawesome.com/3a84dfeae6.js" crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/89cdafc43a.js" crossorigin="anonymous"></script>
-  <link rel="preload" href="/css/style.css">
-  <link rel="stylesheet" href="/css/style.css">
-</head> -->
-
-
 <body>
   <!--***CABECERA****-->
 
@@ -37,8 +18,11 @@
       <h2 class="titulo">Agregando Nuevo Producto</h2>
 
       <div class="contenedor_form">
+
         <div class="form_agregar_producto">
+
           <form action="/products/agregar" method="POST" enctype="multipart/form-data" class="formAP">
+
             <div>
               <i class="fa-solid fa-computer"></i>
               <label>*Nombre del Producto</label>
@@ -50,6 +34,7 @@
               </div>
               <% } %>
             </div>
+
             <div>
               <i class="fa-solid fa-circle-info"></i>
               <label>*Descripción del Producto</label>
@@ -57,6 +42,7 @@
                 value="<%= locals.oldData ? oldData.description : null %>" class="description"
                 id="description"></textarea>
             </div>
+
             <div>
               <i class="fa-solid fa-camera"></i>
               <label>*Imagen del Producto</label>
@@ -93,6 +79,7 @@
               </div>
               <% } %>
             </div>
+
             <div>
               <i class="fa-solid fa-file-invoice-dollar"></i>
               <label>*Precio del Producto</label>
@@ -105,6 +92,7 @@
               </div>
               <% } %>
             </div>
+
             <div>
               <i class="fa-solid fa-percent"></i>
               <label>*Descuento del Producto</label>
@@ -116,6 +104,7 @@
               </div>
               <% } %>
             </div>
+
             <div>
               <i class="fa-solid fa-clock-rotate-left"></i>
               <label>*Garantía del Producto (meses)</label>
@@ -128,6 +117,7 @@
               </div>
               <% } %>
             </div>
+
             <div>
               <i class="fa-regular fa-calendar-check"></i>
               <label>*Fecha de Ingreso</label>
@@ -139,6 +129,7 @@
               </div>
               <% } %>
             </div>
+
             <div>
               <i class="fa-regular fa-circle-check"></i>
               <label>*Estado del Producto</label><br>
@@ -154,7 +145,6 @@
               <% } %>
             </div>
 
-            <!-- <input class="button" id="signup-submit" type="submit" value="Agregar Nuevo Producto"> -->
             <button class="button" id="signup-submit" type="submit" value="Agregar Nuevo Producto">
               Agregar Nuevo Producto
             </button>
@@ -166,8 +156,11 @@
           </form>
 
         </div>
+
         <div class="form_info">
+
           <header class="informacion-lateral">
+
             <h3>Tener en Cuenta al Agregar Productos</h3>
             <p><i class="fa-solid fa-circle-info"> </i> Descripción del Producto. Describa la características más
               relevantes

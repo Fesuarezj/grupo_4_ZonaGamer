@@ -26,13 +26,11 @@ router.post('/login',validationsLogin, userControllers.procesoLogin);
 
 //PERFIL DE USUARIO//
 router.get('/perfil/:ID_usuario', authMiddleware,  userControllers.perfil);
-// router.get('/perfil', authMiddleware,  userControllers.perfil);
 
 //LOGOUT//
 router.get('/logout/', userControllers.logout);
 
 //EDITAR USUARIO//
-// router.get('/editar', userControllers.editar);
 router.get('/editar/:ID_usuario', userControllers.editar);
 router.post('/editar/:ID_usuario', uploadFile.single('imagenPerfil'), userControllers.actualizar); 
 
