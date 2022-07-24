@@ -1,9 +1,19 @@
 const bcryptjs = require('bcryptjs');
-const {validationResult} = require('express-validator');
+const { validationResult } = require('express-validator');
+
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 const db = require('../database/models');
 
 const userControllers = {
+    /*** LISTADO PRODUCTOS ***/    
+    listado: async (req, res) => {            
+        await fetch('http://localhost:3040/api/usersApi')
+            .then(response => response.json())
+            .then(users => {        
+                return res.render('../views/users/listadoUsuario', {users: users.data});
+            })                    
+    },
     /*** VISTA REGISTRO USUARIO ***/ 
     registro: (req, res) => {        
         return res.render('../views/users/registro');

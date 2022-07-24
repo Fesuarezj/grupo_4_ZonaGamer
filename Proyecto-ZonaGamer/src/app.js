@@ -11,6 +11,11 @@ const homeRouter = require('./routes/home');
 const userRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
 
+
+const homeApiRouter = require('./routes/api/homeApi');
+const userApiRouter = require('./routes/api/usersApi');
+const productsApiRouter = require('./routes/api/productsApi');
+
 const app = express();
 
 const userLoggedMidlleware = require('./middlewares/userLoggedMidlleware');
@@ -33,11 +38,16 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '../public')));
-app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
+app.use(methodOverride('_method'));
 
 app.use('/', homeRouter);
 app.use('/users', userRouter);
 app.use('/products', productsRouter);
+
+
+app.use('/api', homeApiRouter);
+app.use('/api/usersApi', userApiRouter);
+app.use('/api/productsApi', productsApiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -16,7 +16,7 @@ window.addEventListener('load', function () {
         }     
         
 // ***VALIDAMOS DESCRIPCION DEL PRODCUTO*** //        
-                // // const description = document.querySelector('textarea.description');
+
         const description = document.querySelector('textarea');
 
         if (description.value === '') {

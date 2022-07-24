@@ -4,36 +4,117 @@
 <%- include('../partials/head')%>
 
 <body>
+    <!--***CABECERA****-->
 
     <%- include('../partials/header')%>
 
-    <main class="contenedor-ctto">
+    <!--*** FIN CABECERA ****-->
 
-        <h3 class="centrar-texto">Contacto</h3>
-        <div class="contacto--bg"></div>
-        <form class="formulario">
-            <div class="campo">
-                <label class="campo__label" for="nombre">Nombre</label>
-                <input class="campo__field" type="text" placeholder="tu nombre" id="nombre">
+    <!--*** CUERPO PRINCIPAL ****-->
+    <main>
+
+        <div class="contenedor_principal">
+
+            <h2 class="titulo">Formulario de Contacto</h2>
+
+            <div class="contenedor_form">
+                <div class="form_agregar_producto">
+                    <form action="#" method="GET" class="formC">
+                        <div>
+                            <i class="fa-regular fa-id-badge"></i>
+                            <label>*Nombre</label>
+                            <input type="text" id="signup-username" name="nombre" placeholder="Nombre"
+                                value="<%= locals.oldData ? oldData.nombre : null %>" class="nombre">
+                            <% if (locals.errors && errors.nombre) { %>
+                            <div class="text-danger">
+                                <%= errors.nombre.msg %>
+                            </div>
+                            <% } %>
+                        </div>
+                        <div>
+                            <i class="fa-regular fa-id-badge"></i>
+                            <label>*Apellido</label>
+                            <input type="text" id="signup-username" name="apellido" placeholder="Apellido"
+                                value="<%= locals.oldData ? oldData.userName : null %>" class="apellido">
+                            <% if (locals.errors && errors.apellido) { %>
+                            <div class="text-danger">
+                                <%= errors.apellido.msg %>
+                            </div>
+                            <% } %>
+                        </div>
+                        <div>
+                            <i class="fa-regular fa-id-badge"></i>
+                            <label>*E-mail</label>
+                            <input type="text" id="signup-username" name="correoElectronico"
+                                placeholder="correoElectronico" value="<%= locals.oldData ? oldData.userName : null %>"
+                                class="correo">
+                            <% if (locals.errors && errors.correoElectronico) { %>
+                            <div class="text-danger">
+                                <%= errors.correoElectronico.msg %>
+                            </div>
+                            <% } %>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-circle-info"></i>
+                            <label>*Descripción del Producto</label>
+                            <textarea name="description" rows="5" placeholder="Descrioción del nuevo producto"
+                                value="<%= locals.oldData ? oldData.description : null %>" class="description"
+                                id="description"></textarea>
+                            <% if (locals.errors && errors.description) { %>
+                            <div class="text-danger">
+                                <%= errors.description.msg %>
+                            </div>
+                            <% } %>
+                        </div>
+
+                        <button class="button" id="signup-submit" type="submit" value="Enviar Consulta">
+                            Enviar Consulta
+                        </button>
+
+                        <div class="errores">
+                            <ul></ul>
+                        </div>
+
+                    </form>
+
+                    <p class="terminos">Completa todos los campos para enviar tu consulta. Te responderemos a la
+                        brevedad.</p>
+
+                </div>
+                <div class="form_info">
+                    <header class="informacion-lateral">
+                        <h3>Tener en Cuenta al Registrarse</h3>
+                        <p><i class="fa-solid fa-circle-info"> </i> Descripción del Producto. Describa la
+                            características más
+                            relevantes
+                            del producto que se mustrarán al público.</p>
+                        <p><i class="fa-solid fa-file-invoice-dollar"> </i> Tener en cuenta al detallar el Precio al
+                            Público del
+                            Producto, debe expresarlo solo numeros e incluir puntos.</p>
+                        <p><i class="fa-solid fa-file-invoice-dollar"> </i> Tener en cuenta al detallar el Precio al
+                            Público del
+                            Producto, debe expresarlo solo numeros e incluir puntos.</p>
+                        <p><i class="fa-solid fa-clock-rotate-left"> </i> Debe expresar el número de meses que tendrá de
+                            garantía el
+                            nuevo producto.</p>
+                    </header>
+
+                </div>
+
             </div>
-            <div class="campo">
-                <label class="campo__label" for="correo">E-Mail</label>
-                <input class="campo__field" type="email" placeholder="tu correo" id="correo">
-            </div>
-            <div class="campo">
-                <label class="campo__label" for="mensaje">Mensaje</label>
-                <textarea class="campo__field campo__field--textarea" id="mensaje"
-                    placeholder="escribe tu mensaje aquí"></textarea>
-            </div>
-            <div class="input__btn">
-                <input type="submit" value="Enviar" class="boton boton--primario">
-            </div>
-        </form>
+
+        </div>
 
     </main>
+    <!--*** FIN CUERPO PRINCIPAL ****-->
+
+    <!--*** FOOTER ****-->
 
     <%- include('../partials/footer')%>
 
+    <!--*** FIN FOOTER ****-->
+    <script src="/js/validarR.js"></script>
 </body>
 
 </html>

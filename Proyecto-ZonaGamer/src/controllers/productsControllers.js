@@ -1,7 +1,9 @@
 
+const { response } = require('express');
 const {validationResult} = require('express-validator');
 const fs = require('fs');
 const path = require('path');
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 const db = require('../database/models');
 
@@ -52,23 +54,25 @@ function categoryList(categoria){
 
 const productsControllers = {
 /*** LISTADO PRODUCTOS ***/    
-    index: async (_req, res) => {        
-        await db.Products.findAll()
-        .then(function(products) {              
-            return res.render('../views/products/listadoProductos', {products: products});            
-        })               
+    index: async (req, res) => {            
+        await fetch('http://localhost:3040/api/productsApi')
+            .then(response => response.json())
+            .then(products => {        
+                return res.render('../views/products/listadoProductos', {products: products.data});
+            })                    
     },
 /*** DETALLE PRODUCTO ***/
-    producto: (req, res) => {         
-        db.Products.findByPk(req.params.ID_products)
-            .then(function (products){
-                const precioFinal = products.price - (products.price * (products.discount / 100));
-                const estadoID = ['Disponible', 'No Disponible'];                         
-                return res.render('../views/products/detalleProducto', {products: products, precio_final: precioFinal, estadoID: estadoID});                             
-            })              
+    producto: async (req, res) => { 
+        await fetch('http://localhost:3040/api/productsApi/detalle/' + req.params.ID_products)
+            .then(response => response.json())
+            .then(products => {  
+                const estadoID = ['Disponible', 'No Disponible'];  
+                const estado = estadoID[products.data.estado_ID_estado - 1];
+                return res.render('../views/products/detalleProducto', {products: products.data, estado: estado, precio_final: products.precio_final});     
+            })                    
     },
 /*** VISTA BUSCAR PRODUCTO ***/    
-    buscarProducto: (_req, res) => {
+    buscarProducto: (req, res) => {
         res.render('../views/products/buscarProducto')
     },
 /*** PROCESO ENCONTRAR PRODUCTO POST ***/
@@ -118,7 +122,7 @@ const productsControllers = {
         res.render('../views/products/agregarProducto');        
     },
 /*** PROCESO AGREGAR PRODUCTO ***/
-    store: (req, res) => {
+    store: async (req, res) => {
         const resultValdiation = validationResult(req);
         
         if(resultValdiation.errors.length > 0) {
@@ -139,7 +143,7 @@ const productsControllers = {
                 category_ID_category: Number(req.body.category) 
             });
                 return res.redirect('./');  
-        }       
+        }   
     },
 /*** VISTA EDITAR PRODUCTO ***/
     editarProducto: (req, res) => {             
@@ -173,7 +177,7 @@ const productsControllers = {
             where: {
                 ID_products: req.params.ID_products
             }
-        })
+        })       
         res.redirect('/');		
 	}
 };

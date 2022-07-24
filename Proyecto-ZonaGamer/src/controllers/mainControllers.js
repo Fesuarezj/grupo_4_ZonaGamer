@@ -1,17 +1,17 @@
 const fs = require('fs');
 const path = require('path');
 
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+
 const db = require('../database/models');
 
 const mainControllers = {
-    home: (req, res) => {       
-        db.Products.findAll()
-            .then(function(products) {                                 
-                res.render('home', {products: products.filter(product => product.estado_ID_estado == 1)});
-        })
-
-
-        // res.render('home', {productos : allProducts});
+    home: async (_req, res) => {  
+            await fetch('http://localhost:3040/api')
+            .then(response => response.json())
+                .then(products => {                   
+                return res.render('home', {products: products.data});
+            })         
     }
 };
 

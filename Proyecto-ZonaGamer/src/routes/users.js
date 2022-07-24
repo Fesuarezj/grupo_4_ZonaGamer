@@ -12,6 +12,9 @@ const guestMiddleware = require('../middlewares/guestMiddleware');
 const guestMiddlewareLogin = require('../middlewares/guestMiddlewareLogin');
 const authMiddleware = require('../middlewares/authMiddleware');
 
+//LISTADO DE USUARIOS//
+router.get('/', userControllers.listado);
+
 //FORMULARIO DE REGISTRO//
 router.get('/registro', guestMiddleware, userControllers.registro);
 

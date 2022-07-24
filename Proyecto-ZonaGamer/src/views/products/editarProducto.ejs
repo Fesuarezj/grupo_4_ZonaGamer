@@ -120,16 +120,16 @@
               Actualizar Producto
             </button>
 
-            <form action="/products/borrar/<%= products.ID_products %>" method="POST">
-              <button class="botonEliminar" id="signup-submit" type="submit" value="Eliminar Producto">
-                Eliminar Producto
-              </button>
-            </form>
-
             <div class="errores">
               <ul></ul>
             </div>
 
+          </form>
+
+          <form action="/products/borrar/<%= products.ID_products %>" method="POST">
+            <button class="botonEliminar" id="signup-submit" type="submit" value="Eliminar Producto">
+              Eliminar Producto
+            </button>
           </form>
 
         </div>
