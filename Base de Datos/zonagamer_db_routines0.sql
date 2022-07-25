@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `zonagamer_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
-USE `zonagamer_db`;
 -- MariaDB dump 10.19  Distrib 10.4.21-MariaDB, for Win64 (AMD64)
 --
 -- Host: localhost    Database: zonagamer_db
@@ -60,4 +58,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-20  0:26:26
+-- Dump completed on 2022-07-25  0:39:01

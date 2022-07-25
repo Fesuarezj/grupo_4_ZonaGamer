@@ -103,8 +103,29 @@ form i, header i {
     font-weight: bold;
 }
 
+button.buttonRU {
+    width: 100%;    
+    border-radius: 5px;
+    border: none;    
+    background-color: #ffffff;
+    outline: 0;      
+    background: lightgreen;
+    text-transform: uppercase;
+    padding: 1rem;
+    color: black;
+    font-weight: bold;
+}
+
 .form_agregar_producto form button:hover,
 .form_agregar_producto form button:focus {
+    background: green;
+    color: #fff;
+    transition: background-color 0.5s ease-out;
+    outline: 0;
+}
+
+button.buttonRU:hover,
+button.buttonRU:focus {
     background: green;
     color: #fff;
     transition: background-color 0.5s ease-out;

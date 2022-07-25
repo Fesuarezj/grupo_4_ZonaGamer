@@ -49,6 +49,30 @@ const productsApiControllers = {
                     })
                 })            
     },
+    /*** LISTADO DE CATEGORIAS ***/    
+    listCategory: async (req, res) => { 
+        await db.Categorys.findAll()
+            .then(function (categorys) {                            
+                return res.status(200).json({
+                    description: 'Listado de Categorias',                    
+                    data: categorys,                                    
+                    status: 200,
+                    url: '/api/productsApi/categorias'
+                });                             
+            })            
+    },
+    /*** ULTIMO PRODUCTO ***/    
+    lastProduct: async (req, res) => { 
+        await db.Products.findOne({order: [['ID_products', 'desc']] })           
+            .then(function (products) {                  
+                return res.status(200).json({
+                    description: 'Ultimo Producto',                    
+                    data: products,                                    
+                    status: 200,
+                    url: '/api/productsApi/ultimoProducto'
+                });                             
+            })            
+    }
 };
 
 module.exports = productsApiControllers;

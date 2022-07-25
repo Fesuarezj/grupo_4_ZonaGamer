@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `zonagamer_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
-USE `zonagamer_db`;
 -- MariaDB dump 10.19  Distrib 10.4.21-MariaDB, for Win64 (AMD64)
 --
 -- Host: localhost    Database: zonagamer_db
@@ -42,7 +40,7 @@ CREATE TABLE `users` (
   KEY `fk_user_estado1_idx` (`estado_ID_estado`),
   CONSTRAINT `fk_user_estado1` FOREIGN KEY (`estado_ID_estado`) REFERENCES `estado` (`ID_estado`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_user_rol` FOREIGN KEY (`rol_ID_rol`) REFERENCES `rol` (`ID_rol`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -51,7 +49,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (39,'bbbbbb','bbbbbbbbb','brian@brian.com','ssssssssssssssssssssss','$2a$10$Yl19BE0dan24eMbgqCioqOtfjHcMAWrdvTGw9h8wiajJqgW4oGnQy','1658198778695_img.jpg',2,1),(2,'Liam','Scherpa','liamscherpa@gmail.com','LiamRacing','$2a$10$SEcpEXuRlP3S1s17lV6aCuS0.J4TyYkCNGtlb1QOWcASBirMM/g0y','1655770397643_img.jpg',2,1),(36,'Pablito','Papa','pablito@papa.com','pablito','$2a$10$SEcpEXuRlP3S1s17lV6aCuS0.J4TyYkCNGtlb1QOWcASBirMM/g0y','1657506645384_img.jpg',2,1),(38,'AAAAAAAAAAAAA','AAAAAAAAA','pablo@pablo.com','AAAAAAAAAA','$2a$10$8Gg2C7CGLma/r0rGltDk.OcOx.y/OcoGVz7/pOhwVC0oyUzXnUB6.','1658198237794_img.jpg',2,1),(1,'Pablo','Scherpa','scherpablo@gmail.com','scherpablo','$2a$10$SEcpEXuRlP3S1s17lV6aCuS0.J4TyYkCNGtlb1QOWcASBirMM/g0y','1657380095798_img.jpg',1,1);
+INSERT INTO `users` VALUES (2,'Liam','Scherpa','liamscherpa@gmail.com','LiamRacing','$2a$10$SEcpEXuRlP3S1s17lV6aCuS0.J4TyYkCNGtlb1QOWcASBirMM/g0y','1655770397643_img.jpg',2,1),(1,'Pablo','Scherpa','scherpablo@gmail.com','scherpablo','$2a$10$SEcpEXuRlP3S1s17lV6aCuS0.J4TyYkCNGtlb1QOWcASBirMM/g0y','1657380095798_img.jpg',1,1);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -64,4 +62,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-20  0:26:26
+-- Dump completed on 2022-07-25  0:39:01

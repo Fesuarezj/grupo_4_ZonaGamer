@@ -4,22 +4,36 @@ var session = require('express-session');
 var path = require('path');
 var cookies = require('cookie-parser');
 var logger = require('morgan');
-const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
+const methodOverride = require('method-override'); // Pasar poder usar los métodos PUT y DELETE
+const cors = require('cors');
 
 // var indexRouter = require('./routes/home');
 const homeRouter = require('./routes/home');
 const userRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
 
-
 const homeApiRouter = require('./routes/api/homeApi');
 const userApiRouter = require('./routes/api/usersApi');
 const productsApiRouter = require('./routes/api/productsApi');
+const categorysApiRouter = require('./routes/api/categorysApi');
 
 const app = express();
 
 const userLoggedMidlleware = require('./middlewares/userLoggedMidlleware');
 const { cookie } = require('express-validator');
+
+const config = {
+    application: {
+        cors: {
+            server: [
+                {
+                    origin: "localhost:3000", //servidor que deseas que consuma o (*) en caso que sea acceso libre
+                    credentials: true
+                }
+            ]
+        }
+    }
+}
 
 app.use(session({
     secret: 'Es secreto',
@@ -39,6 +53,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(methodOverride('_method'));
+app.use(cors(config.application.cors.server));
 
 app.use('/', homeRouter);
 app.use('/users', userRouter);
@@ -48,6 +63,7 @@ app.use('/products', productsRouter);
 app.use('/api', homeApiRouter);
 app.use('/api/usersApi', userApiRouter);
 app.use('/api/productsApi', productsApiRouter);
+app.use('/api/categorysApi', categorysApiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

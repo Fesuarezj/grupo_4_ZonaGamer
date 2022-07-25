@@ -76,6 +76,18 @@ h1.tituloHeader {
     padding-left: 10px;
 }
 
+a.dash {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--blanco);
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: -5px;
+    margin-bottom: 10px;    
+}
+
 div.enlaces {
     display: flex;
     margin-left: -30px;
@@ -739,6 +751,9 @@ a.navegacion-contacto, a.navegacion-enlace {
         display: flex;
         margin-left: -32px;
     }
+    a.dash {
+        margin-bottom: 20px;
+    }
     .grid, .gridLP {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -804,9 +819,8 @@ a.navegacion-contacto, a.navegacion-enlace {
     div.contenedor-img {
         margin-left: -18px;
     } 
-    .barraBusqueda {
-        position: relative;
-        left: 30px;
+    a.dash {
+        margin-bottom: 5px;
     }
     .contenedor2 {
         display: flex;
