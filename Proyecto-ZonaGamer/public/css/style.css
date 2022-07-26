@@ -875,7 +875,6 @@ a.navegacion-contacto, a.navegacion-enlace {
     .imagen__extra {
         grid-row: 2 / 3;        
         background-image: url(../images/header/imagen_extra.jpg);   
-
     }
     .imagen__extra2 {
         grid-row: 5 / 6;        

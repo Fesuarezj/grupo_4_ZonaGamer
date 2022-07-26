@@ -5,11 +5,6 @@ var router = express.Router();
 const userApiControllers = require('../../controllers/api/userApiControllers');
 
 //MIDDLEWARES//
-// const uploadFile = require('../middlewares/multerMiddleware');
-// const validationsRegistro = require('../middlewares/validateRegisterMiddleware');
-// const validationsLogin = require('../middlewares/validateLoginMiddleware');
-// const guestMiddleware = require('../middlewares/guestMiddleware');
-// const guestMiddlewareLogin = require('../middlewares/guestMiddlewareLogin');
 const authMiddleware = require('../../middlewares/authMiddleware');
 
 //LISTADO DE USUARIOS//

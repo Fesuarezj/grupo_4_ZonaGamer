@@ -25,7 +25,7 @@ const productsApiControllers = {
         await db.Products.findByPk(req.params.ID_products)
             .then(function (products) {                            
                 return res.status(200).json({
-                    description: 'Detalle del Producto',                    
+                    description: 'Detalle del Producto',                     
                     data: products,
                     precio_final: products.price - (products.price * (products.discount / 100)),                    
                     status: 200,

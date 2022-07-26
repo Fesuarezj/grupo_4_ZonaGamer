@@ -28,9 +28,12 @@ window.addEventListener('load', function () {
 // ***PREVENIMOS EL ENVIO DEL FORMULARIO*** //    
 
         if (errores.length > 0) {
-            event.preventDefault();
+            event.preventDefault();            
 
             const ulErrores = document.querySelector('div.errores ul');
+
+            ulErrores.innerHTML = ''
+
             for (let i = 0; i < errores.length; i++) {
 
                 ulErrores.innerHTML += '<li>' + errores[i] + '</li>'
