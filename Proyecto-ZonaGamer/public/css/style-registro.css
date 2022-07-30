@@ -188,7 +188,7 @@ div label input.check {
     .contenedor_form > * {
         padding: 3rem;
     }
-    .form_info {
+    div.form_info {
         margin-top: 0px;
     }
     .form_info h3 {
